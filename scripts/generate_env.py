@@ -1,11 +1,10 @@
-from subprocess import call
 from tkinter import *
 import base64
 import datetime
 import os
 import webbrowser
 
-# The following dependencies must be install separately
+# The following dependencies must be installed separately
 from PIL import Image
 import pyotp
 import qrcode
@@ -144,10 +143,7 @@ MIX_PUSHER_APP_CLUSTER="${{PUSHER_APP_CLUSTER}}"
 
         Label(self.master, text="Done!", font="sans-serif 18 bold").grid(row=0, column=0, columnspan=2)
         Label(self.master, text="Your .env file has been created.").grid(row=1, column=0)
-
-        if self.is_custom_APP_KEY == False:
-            # Note to the user to generate their own API Keys
-            Label(self.master, text="In order to generate your API keys, please execute\n'php artisan key:generate' on the root directory", fg="red").grid(row=1, column=0)
+        Label(self.master, text="If you are new to this repository, please execute\n'php artisan key:generate' on the root directory\nto create a new APP_KEY.", fg="red").grid(row=2, column=0)
         
     def generateTotpChallenge(self):
         self.destroyAllWidgets()
@@ -201,6 +197,8 @@ MIX_PUSHER_APP_CLUSTER="${{PUSHER_APP_CLUSTER}}"
             widget.destroy()
     
     def exitProgram(self):
+        if os.path.exists("temp.png"):
+            os.remove("temp.png")
         exit()
     
     def openLink(self, url):
