@@ -65,15 +65,15 @@ MIX_PUSHER_APP_CLUSTER="${{PUSHER_APP_CLUSTER}}"
         Frame.__init__(self, master)
         self.master = master
 
-        # menu = Menu(self.master)
-        # self.master.config(menu=menu)
+        menu = Menu(self.master)
+        self.master.config(menu=menu)
 
         # "About" menu
-        # aboutMenu = Menu(menu)
-        # aboutMenu.add_command(label="Website (for event promotion)", command=self.openLink("http://computerun.id"))
-        # aboutMenu.add_command(label="GitHub Repository", command=self.openLink("http://github.com/reinhart1010/computerun-2020"))
-        # aboutMenu.add_command(label="Sponsor Our Event")
-        # menu.add_cascade(label="About", menu=aboutMenu)
+        aboutMenu = Menu(menu)
+        aboutMenu.add_command(label="Website (for event promotion)", command=self.websiteLink)
+        aboutMenu.add_command(label="GitHub Repository", command=self.githubLink)
+        aboutMenu.add_command(label="Sponsor Our Event")
+        menu.add_cascade(label="About", menu=aboutMenu)
 
         # Form fields
         Label(master, text="Step 1: Fill Optional Details", font="sans-serif 18 bold").grid(row=0, column=0, columnspan=2)
@@ -85,7 +85,7 @@ MIX_PUSHER_APP_CLUSTER="${{PUSHER_APP_CLUSTER}}"
         Label(master, text="DB Server Username").grid(row=6, column=0)
         Label(master, text="DB Server Password").grid(row=7, column=0)
         Label(master, text="Admin 2FA Key").grid(row=8, column=0)
-        
+
         input_APP_KEY = Entry(master)
         input_DB_CONNECTION = Entry(master)
         input_DB_HOST = Entry(master)
@@ -125,7 +125,7 @@ MIX_PUSHER_APP_CLUSTER="${{PUSHER_APP_CLUSTER}}"
             self.generateTotpChallenge()
 
         Button(master, text="Generate", command=clicked).grid(row=9,column=0, columnspan=2)
-    
+
     def generateEnvFile(self):
         print("Generating .env file...")
         envFile = open("../.env", "w")
@@ -144,14 +144,14 @@ MIX_PUSHER_APP_CLUSTER="${{PUSHER_APP_CLUSTER}}"
         Label(self.master, text="Done!", font="sans-serif 18 bold").grid(row=0, column=0, columnspan=2)
         Label(self.master, text="Your .env file has been created.").grid(row=1, column=0)
         Label(self.master, text="If you are new to this repository, please execute\n'php artisan key:generate' on the root directory\nto create a new APP_KEY.", fg="red").grid(row=2, column=0)
-        
+
     def generateTotpChallenge(self):
         self.destroyAllWidgets()
         Label(self.master, text="Step 2: TOTP Verification", font="sans-serif 18 bold").grid(row=0, column=0, columnspan=2)
 
         # Create the QR code
         base32Encoded = base64.b32encode(str.encode(self.env_ADMIN_2FA_KEY)).decode()
-        
+
         totp = pyotp.totp.TOTP(base32Encoded)
 
         qrPayload = totp.provisioning_uri(name="Admin", issuer_name="Computerun 2020")
@@ -195,14 +195,20 @@ MIX_PUSHER_APP_CLUSTER="${{PUSHER_APP_CLUSTER}}"
     def destroyAllWidgets(self):
         for widget in self.master.winfo_children():
             widget.destroy()
-    
+
     def exitProgram(self):
         if os.path.exists("temp.png"):
             os.remove("temp.png")
         exit()
-    
+
     def openLink(self, url):
         webbrowser.open(url)
+
+    def githubLink(self):
+        webbrowser.open("https://www.github.com/reinhart1010/computerun-2020")
+
+    def websiteLink(self):
+        webbrowser.open("http://computerun.id")
 
 root = Tk()
 app = App(root)
