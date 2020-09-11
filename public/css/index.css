@@ -1,7 +1,5 @@
 body {
     font-family: Qanelas, Poppins, sans-serif;
-    background-color: #0c1631;
-    color: #ffffff;
     margin: 0;
 }
 /* Responsive Typography, based on Bootstrap 5 */
@@ -48,6 +46,7 @@ h6, .h6 {
 .container-2 {
     width: 100%;
     background: rgb(50,70,133);
+    color: #ffffff;
     background: linear-gradient(77.5deg, rgba(50,70,133,1) -2.5%, rgba(38,55,107,1) 17.5%, rgba(12,22,49,1) 75%);
     padding-top: 10px;
     padding-bottom: 20px;
@@ -55,8 +54,13 @@ h6, .h6 {
 .container-1 {
     width: 100%;
     background: rgba(12,22,49);
+    color: #ffffff;
     padding-top: 10px;
-    padding-bottom: 10px;
+}
+.container-0 {
+    width: 100%;
+    background: #f1f3fe;
+    color: rgba(12,22,49);
 }
 .container-clip{
     position: absolute;
@@ -132,12 +136,6 @@ h6, .h6 {
     }
 }
 
-/* */
-.runner-mobile {
-    width: 100%;
-    height: auto;
-}
-
 /* HIMSISFO and HIMTI Logo Container */
 .himsisfo-himti-container {
     width: 380px;
@@ -188,6 +186,7 @@ h6, .h6 {
 .full-underline{
     margin: auto;
     width: max-content;
+    font-weight: 800;
 }
 .full-underline::after{
     content: "";
@@ -202,6 +201,132 @@ h6, .h6 {
 + Qanelas: 146px
 + Poppins: 150px
 */
+
+/* With COMPUTERUN Background */
+.with-computerun-background {
+    display: table-cell;
+    text-align: center;
+    background-image: url('/img/backgrounds/HomeBG-2a.png');
+    width: 100vw;
+    height: 29vw;
+    background-size: 60%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    font-weight: 800;
+}
+
+/* Icons Container (2 or 3 icons) */
+.icons-container {
+    position: absolute;
+    margin-top: -12.5vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    padding-left: 15%;
+    padding-right: 15%;
+    font-weight: 700;
+}
+.icons-container.items-2 div {
+    width: 50%;
+}
+.icons-container.items-3 div {
+    width: 33.3%;
+}
+.icons-container div {
+    text-align: center;
+}
+.icons-container div img {
+    width: 15vw;
+}
+.after-icons-container {
+    padding-top: 20vw;
+}
+@media (max-width: 767px){
+    .icons-container {
+        position: static;
+        margin-top: 0;
+    }
+    .icons-container div, .icons-container.items-2 div, .icons-container.items-3 div {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .icons-container div img {
+        width: 30vw;
+    }
+    .after-icons-container {
+        padding-top: 0;
+    }
+}
+
+/* Card Containers */
+.card-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: calc(80px - 2.5vw);
+}
+.card-container .card {
+    width: calc(25% - 50px);
+    margin: 8px;
+    padding: 16px;
+    background-color: #ffffff;
+    border: 1px solid #bbbbbb;
+    border-radius: 24px;
+}
+.card-container .card img {
+    width: 100%;
+}
+/* @media (min-width: 992px) and (max-width: 1199px){
+    .card-container .card {
+        width: calc(33.3% - 50px);
+    }
+} */
+@media (max-width: 991px){
+    .card-container .card {
+        width: 100%;
+    }
+}
+
+/* Image Cards */
+.image-card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.image-card div:nth-child(even){
+    text-align: center;
+    vertical-align: top;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .image-card div:nth-child(odd) {
+        width: 25%;
+    }
+    .image-card div:nth-child(even) {
+        width: calc(75% - 8px);
+        margin-left: 8px;
+    }
+}
+@media (max-width: 991px){
+    .image-card div:nth-child(odd) img {
+        max-width: 150px;
+    }
+    .image-card div:nth-child(even) {
+        text-align: left;
+    }
+}
+@media (max-width: 767px) {
+    .image-card div:nth-child(odd) {
+        width: 35%;
+    }
+    .image-card div:nth-child(even) {
+        width: calc(65% - 8px);
+        margin-left: 8px;
+    }
+}
 
 /* UTILITY FUNCTIONS */
 /* Backgrounds*/
@@ -232,10 +357,17 @@ h6, .h6 {
 .content-top {
     padding-top: calc(10px + env(safe-area-inset-top));
 }
+.content-divider {
+    padding-top: 40px;
+}
 /* Wide content padding */
 .margin-2 {
     margin-left: calc(10% + env(safe-area-inset-left));
     margin-right: calc(10% + env(safe-area-inset-right));
+}
+.margin-1 {
+    margin-left: calc(5% + env(safe-area-inset-left));
+    margin-right: calc(5% + env(safe-area-inset-right));
 }
 
 /* Text colors */
@@ -244,6 +376,14 @@ h6, .h6 {
 }
 .teal-text {
     color: #37e2bc;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.font-800 {
+    font-weight: 800;
 }
 
 /* @font-face declaration for Poppins */

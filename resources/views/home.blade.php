@@ -7,7 +7,7 @@
     <body>
         <div class="container-2 content-top bg-home-b">
             <div class="margin-2">
-                <h1 class="tagline margin-1">
+                <h1 class="tagline">
                     <p>BEYOND</p>
                     <p>INSIGHT.</p>
                 </h1>
@@ -37,6 +37,70 @@
                     </p>
                 </div>
             </div>
+            <div class="with-computerun-background">
+                <h1>core values</h1>
+            </div>
+        </div>
+        <div class="container-0">
+            <img class="container-clip" src="/img/backgrounds/5.png">
+            <div class="icons-container items-2 after-container-clip">
+                <div>
+                    <img src="/img/icons/Compute with intelligent.png"><br>
+                    <span class="h2">Compute with intelligence</span>
+                </div>
+                <div>
+                    <img src="/img/icons/Run with innovation.png"><br>
+                    <span class="h2">Run with innovation</span>
+                </div>
+            </div>
+            <h1 class="full-underline after-icons-container">events</h1>
+            <div class="card-container margin-1">
+                <div class="card image-card">
+                    <div>
+                        <img src="/img/icons/Events - Webinar.png">
+                    </div>
+                    <div>
+                        <span class="h4 font-800">Webinar</span>
+                        <p>
+                            An online seminar to share new knowledge about Technology in Business
+                        </p>
+                    </div>
+                </div>
+                <div class="card image-card">
+                    <div>
+                        <img src="/img/icons/Events - Business-IT Case.png">
+                    </div>
+                    <div>
+                        <span class="h4 font-800">Business-IT Case</span>
+                        <p>
+                            National-scale business case competition to train synergy in solving a real case in a company
+                        </p>
+                    </div>
+                </div>
+                <div class="card image-card">
+                    <div>
+                        <img src="/img/icons/Events - Mobile Apps.png">
+                    </div>
+                    <div>
+                        <span class="h4 font-800">Mobile Apps</span>
+                        <p>
+                            A competition where you can develop an application for a mobile platform
+                        </p>
+                    </div>
+                </div>
+                <div class="card image-card">
+                    <div>
+                        <img src="/img/icons/Events - E-Sport.png">
+                    </div>
+                    <div>
+                        <span class="h4 font-800">E-Sport</span>
+                        <p>
+                            Challenge your teamwork tactics in the online battle arena
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <h1 class="full-underline content-divider">our partners</h1>
         </div>
     </body>
 </html>
