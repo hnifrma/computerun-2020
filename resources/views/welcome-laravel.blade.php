@@ -81,9 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel<br>
-                    @component('components.navbar', ["name" => "jajaja"])
-                    @endcomponent
+                    Laravel
                 </div>
 
                 <div class="links">

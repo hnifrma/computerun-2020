@@ -2,10 +2,105 @@ body {
     font-family: Qanelas, Poppins, sans-serif;
     background-color: #0c1631;
     color: #ffffff;
+    margin: 0;
 }
+/* Responsive Typography, based on Bootstrap 5 */
+h1, .h1 {
+    font-size: calc(1.375rem + 1.5vw);
+}
+h2, .h2 {
+    font-size: calc(1.325rem + .9vw);
+}
+h3, .h3 {
+    font-size: calc(1.3rem + .6vw);
+}
+h4, .h4 {
+    font-size: calc(1.275rem + .3vw);
+}
+h5, .h5 {
+    font-size: 1.25rem;
+}
+h6, .h6 {
+    font-size: 1rem;
+}
+.display-1 {
+    font-size: calc(1.625rem + 4.5vw);
+}
+.display-2 {
+    font-size: calc(1.575rem + 3.9vw);
+}
+.display-3 {
+    font-size: calc(1.525rem + 3.3vw);
+}
+.display-4 {
+    font-size: calc(1.475rem + 2.7vw);
+}
+.display-5 {
+    font-size: calc(1.425rem + 2.1vw);
+}
+.display-6 {
+    font-size: calc(1.375rem + 1.5vw)
+}
+
+/* TOP-LEVEL COMPONENTS */
+/* CONTAINER */
+/* Top-level container */
+.container-2 {
+    width: 100%;
+    background: rgb(50,70,133);
+    background: linear-gradient(77.5deg, rgba(50,70,133,1) -2.5%, rgba(38,55,107,1) 17.5%, rgba(12,22,49,1) 75%);
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.container-1 {
+    width: 100%;
+    background: rgba(12,22,49);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.container-clip{
+    position: absolute;
+    left: 0;
+    width: 22.135%;
+    height: auto;
+}
+.container-1 .container-clip, .container-2 .container-clip{
+    margin-top: -10px;
+}
+@media (max-width: 1199px){
+    .container-2 {
+        background: linear-gradient(77.5deg, rgba(50,70,133,1) -2.5%, rgba(38,55,107,1) 17.5%, rgba(12,22,49,1) 100%);
+    }
+}
+/* Top padding for container (after clip) */
+.after-container-clip {
+    padding-top: 5vw;
+}
+
+/* ABOUT CONTAINER (FLEXBOX) */
+.about-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.about-container div:nth-child(odd) {
+    width: 40%;
+}
+.about-container div:nth-child(even) {
+    width: 60%;
+}
+@media (max-width: 991px){
+    .about-container div:nth-child(odd), .about-container div:nth-child(even) {
+        width: 100%;
+    }
+}
+
 /* TAGLINE: #BeyondInsight */
 .tagline {
-    line-height: 0.8
+    font-size: calc(1.575rem + 3.9vw);
+    font-weight: 800;
+    line-height: 0.8;
+    margin-bottom: 1rem;
 }
 .tagline p {
     margin: 0;
@@ -15,20 +110,63 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.tagline p:first-child::before{
-    content: "";
-}
 .tagline p::before{
     content: "#";
-}
-.tagline:not(.debug-show-before) p::before{
     visibility: hidden;
+    width: calc(0.1rem + 3.9vw);
 }
-.tagline.debug-show-before p::before{
-    -webkit-text-fill-color: white;
+.tagline p:first-child::before{
+    visibility: visible;
 }
+@media (max-width: 767px){
+    .post-tagline {
+        margin-left: calc(0.75rem + 3.9vw);
+    }
+}
+@media (min-width: 768px){
+    .tagline {
+        margin-left: calc(-0.1rem - 3.9vw);
+    }
+    .subtagline {
+        width: 350px;
+    }
+}
+
+/* */
+.runner-mobile {
+    width: 100%;
+    height: auto;
+}
+
+/* HIMSISFO and HIMTI Logo Container */
+.himsisfo-himti-container {
+    width: 380px;
+    height: 165px;
+    margin-bottom: 8vh;
+}
+.himsisfo-himti-container img {
+    height: 100%;
+}
+.himsisfo-himti-container img::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+@media (max-width: 575px){
+    .himsisfo-himti-container{
+        width: 100%;
+        height: auto;
+    }
+    .himsisfo-himti-container img:first-child {
+        width: 45%;
+    }
+    .himsisfo-himti-container img:nth-child(2) {
+        width: 40%;
+    }
+}
+
 /* PARTIAL UNDERLINE - Left Subheading */
-.partial-underline{
+.partial-underline {
     font-weight: 800;
 }
 .partial-underline:not(.custom)::after{
@@ -64,6 +202,49 @@ body {
 + Qanelas: 146px
 + Poppins: 150px
 */
+
+/* UTILITY FUNCTIONS */
+/* Backgrounds*/
+.bg-home-b {
+    background-image: url('/img/backgrounds/HomeBG-1a.png'), linear-gradient(77.5deg, rgba(50,70,133,1) -2.5%, rgba(38,55,107,1) 17.5%, rgba(12,22,49,1) 75%);
+    background-position: right -100px top -250px, left top;
+    background-size: 1000px, cover;
+    background-repeat: no-repeat;
+}
+@media (max-width: 1199px){
+    .bg-home-b {
+        background-position: right -200px top -150px, left top;
+        background-size: 750px, cover;
+    }
+}
+@media (max-width: 767px){
+    .bg-home-b {
+        background-image: url('/img/backgrounds/HomeBG-1b.png'), linear-gradient(77.5deg, rgba(50,70,133,1) -2.5%, rgba(38,55,107,1) 17.5%, rgba(12,22,49,1) 75%);
+        background-position: center center, left top;
+        background-size: cover, cover;
+    }
+}
+/* No margin */
+.margin-0 {
+    margin: 0;
+}
+/* Padding for top container (respecting safe areas)*/
+.content-top {
+    padding-top: calc(10px + env(safe-area-inset-top));
+}
+/* Wide content padding */
+.margin-2 {
+    margin-left: calc(10% + env(safe-area-inset-left));
+    margin-right: calc(10% + env(safe-area-inset-right));
+}
+
+/* Text colors */
+.blue-text {
+    color: #249ef2;
+}
+.teal-text {
+    color: #37e2bc;
+}
 
 /* @font-face declaration for Poppins */
 @font-face {
