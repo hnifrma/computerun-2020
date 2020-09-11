@@ -88,17 +88,6 @@
                         </p>
                     </div>
                 </div>
-                <div class="card image-card">
-                    <div>
-                        <img src="/img/icons/Events - E-Sport.png">
-                    </div>
-                    <div>
-                        <span class="h4 font-800">E-Sport</span>
-                        <p>
-                            Challenge your teamwork tactics in the online battle arena
-                        </p>
-                    </div>
-                </div>
             </div>
             <h1 class="full-underline content-divider">our partners</h1>
         </div>
