@@ -5,7 +5,7 @@
         @endcomponent
     </head>
     <body>
-        <div class="container-2 content-top bg-home-b">
+        <div class="container-2 content-top bg-home">
             <div class="margin-2">
                 <h1 class="tagline">
                     <p>BEYOND</p>
@@ -54,7 +54,7 @@
                 </div>
             </div>
             <h1 class="full-underline after-icons-container">events</h1>
-            <div class="card-container margin-1">
+            <div class="card-container margin-1 content-divider">
                 <div class="card image-card">
                     <div>
                         <img src="/img/icons/Events - Webinar.png">
@@ -90,6 +90,25 @@
                 </div>
             </div>
             <h1 class="full-underline content-divider">our partners</h1>
+            <h3 class="text-center">SPONSORS</h3>
+            <div class="content-divider-short text-center placeholder-sponsors margin-1">
+                There are currently no sponsors yet.
+            </div>
+            <h3 class="text-center">MEDIA PARTNERS</h3>
+            <div class="content-divider-short text-center placeholder-sponsors margin-1">
+                There are currently no sponsors yet.
+            </div>
+            <img class="container-clip for-footer" src="/img/backgrounds/7.png">
         </div>
+        <footer class="footer">
+            <div class="himsisfo-himti-container">
+                <img src="/img/icons/HIMSISFO Logo.png">
+                <img src="/img/icons/HIMTI Logo.png">
+            </div>
+            <div class="copyright">
+                HIMSISFO & HIMTI BINUS University<br>
+                &copy; 2020
+            </div>
+        </footer>
     </body>
 </html>
