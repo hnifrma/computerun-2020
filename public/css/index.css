@@ -39,6 +39,16 @@ h6, .h6 {
 .display-6 {
     font-size: calc(1.375rem + 1.5vw)
 }
+/* Hyperlinks */
+a {
+    color: #249ef2;
+    text-decoration: none;
+    border-bottom: 4px solid #249ef2;
+}
+a:hover {
+    color: #37e2bc;
+    border-bottom: 4px solid #37e2bc;
+}
 
 /* TOP-LEVEL COMPONENTS */
 /* CONTAINER */
@@ -49,7 +59,7 @@ h6, .h6 {
     color: #ffffff;
     background: linear-gradient(77.5deg, rgba(50,70,133,1) -2.5%, rgba(38,55,107,1) 25%, rgba(12,22,49,1) 75%);
     padding-top: 10px;
-    padding-bottom: 20px;
+    padding-bottom: 8vh;
 }
 .container-1 {
     width: 100%;
@@ -82,7 +92,19 @@ h6, .h6 {
 }
 /* Top padding for container (after clip) */
 .after-container-clip {
-    padding-top: 5vw;
+    padding-top: 2.5vw;
+}
+
+/* Container Notice */
+.container-2 .notice {
+    border: 1px solid #ffffff;
+    border-radius: 24px;
+    padding: 32px;
+}
+@media (max-width: 991px) {
+    .container-2 .notice {
+        padding: 16px;
+    }
 }
 
 /* ABOUT CONTAINER (FLEXBOX) */
@@ -144,7 +166,7 @@ h6, .h6 {
 .himsisfo-himti-container {
     width: 380px;
     height: 165px;
-    margin-bottom: 8vh;
+    margin-bottom: 4vh;
 }
 .himsisfo-himti-container img {
     height: 100%;
@@ -167,6 +189,12 @@ h6, .h6 {
     }
 }
 
+/* About Image */
+.about-image {
+    width: 100%;
+    max-width: 175px;
+}
+
 /* PARTIAL UNDERLINE - Left Subheading */
 .partial-underline {
     font-weight: 800;
@@ -186,6 +214,7 @@ h6, .h6 {
   .partial-underline.custom .guide span{
     visibility: hidden;
 }
+
 /* FULL UNDERLINE - Center Subheading */
 .full-underline{
     margin: auto;
@@ -244,7 +273,7 @@ h6, .h6 {
     text-align: center;
 }
 .icons-container div img {
-    width: 15vw;
+    width: 12.5vw;
 }
 .after-icons-container {
     padding-top: 20vw;
@@ -417,17 +446,39 @@ h6, .h6 {
 }
 
 /* Text colors */
+.red-text {
+    color: #ff0000;
+}
+.purple-text {
+    color: #662d91;
+}
+.dark-blue-text {
+    color: #1b75bc;
+}
 .blue-text {
     color: #249ef2;
 }
 .teal-text {
     color: #37e2bc;
 }
+.gradient-text {
+    color: transparent;
+    background: -webkit-linear-gradient(#3BF0B1, #2090FD);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
 .text-center {
     text-align: center;
 }
 
+.font-400 {
+    font-weight: 400;
+}
+.font-700 {
+    font-weight: 700;
+}
 .font-800 {
     font-weight: 800;
 }

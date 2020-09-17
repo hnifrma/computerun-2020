@@ -25,12 +25,12 @@
             <img class="container-clip" src="/img/backgrounds/2.png">
             <div class="about-container margin-2 after-container-clip">
                 <div>
-                    <h2 class="partial-underline custom">what is<br><span>COMPUTERUN?</span>
+                    <h1 class="partial-underline custom">what is<br><span>COMPUTERUN?</span>
                         <div class="guide"><span>COMPUTE</span></div>
-                    </h2>
+                    </h1>
                 </div>
                 <div>
-                    <p class="h5">
+                    <p class="h4">
                         COMPUTERUN is a brand new joint-venture event organized by HIMSISFO and HIMTI BINUS University.<br><br>
                         In our first edition, we aim to provide a place to think, create, and share ideas through the business IT insights.<br><br>
                         <b>Starts <span class="blue-text">online</span> in October - December 2020</b>
@@ -46,11 +46,11 @@
             <div class="icons-container items-2 after-container-clip">
                 <div>
                     <img src="/img/icons/Compute with intelligent.png"><br>
-                    <span class="h3">Compute with intelligence</span>
+                    <span class="h2">Compute with intelligence</span>
                 </div>
                 <div>
                     <img src="/img/icons/Run with innovation.png"><br>
-                    <span class="h3">Run with innovation</span>
+                    <span class="h2">Run with innovation</span>
                 </div>
             </div>
             <h1 class="full-underline after-icons-container">events</h1>
@@ -92,13 +92,11 @@
             <h1 class="full-underline content-divider">our partners</h1>
             <h3 class="text-center">SPONSORS</h3>
             <div class="content-divider-short text-center placeholder-sponsors margin-1">
-                @component('components.sponsorship-invite-message', ['is_empty' => true, 'id' => rand(0,7)])
-                @endcomponent
+                There are currently no sponsors yet.
             </div>
             <h3 class="text-center">MEDIA PARTNERS</h3>
             <div class="content-divider-short text-center placeholder-sponsors margin-1">
-                @component('components.sponsorship-invite-message', ['is_empty' => true, 'id' => rand(0,7)])
-                @endcomponent
+                There are currently no sponsors yet.
             </div>
             <img class="container-clip for-footer" src="/img/backgrounds/7.png">
         </div>
