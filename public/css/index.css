@@ -252,7 +252,7 @@ a:hover {
 /* Icons Container (2 or 3 icons) */
 .icons-container {
     position: absolute;
-    margin-top: -12.5vw;
+    margin-top: -8.75vw;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
