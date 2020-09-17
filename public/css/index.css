@@ -386,7 +386,11 @@ a:hover {
     margin-bottom: 0;
 }
 .footer .copyright {
-    width: fit-content;
+    width: 50%;
+    max-width: 275px;
+}
+.footer .copyright img {
+    width: 100%
 }
 @media screen and (max-width: 575px){
     .footer {
