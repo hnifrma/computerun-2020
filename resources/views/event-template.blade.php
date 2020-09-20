@@ -8,7 +8,7 @@
         <div class="container-2 content-top bg-event">
             <div class="margin-2 text-center content-divider">
                 <span class="h4 font-700">COMPETITION</span><br>
-                <span class="h1 font-800 gradient-text">Example Event</span>
+                <p class="h1 font-800 gradient-text">Example Event</p>
             </div>
         </div>
         <div class="container-1">
