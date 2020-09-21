@@ -25,8 +25,10 @@
                         Informasi yang akan disampaikan berikut merupakan proposal untuk kegiatan <b>Sponsorship</b>. Jika Anda ingin melihat informasi seputar pelaksanaan kegiatan <b>COMPUTERUN</b>, silakan kunjungi laman <b><a href="/">Homepage</a>.</b>
                     </p>
                     <p>
-                        <b>Proposal Sponsorship</b> ini juga dapat tersedia dalam format dokumen <b><a href="/public/docs/COMPUTERUN Sponsorship Proposal.pdf">PDF</a></b> (Updated 16 September 2020).
+                        <b>Proposal Sponsorship</b> ini juga dapat tersedia dalam format dokumen PDF (Updated 16 September 2020).
                     </p>
+                    <a href="#pricing" class="button button-gradient">DAFTAR PAKET &amp; HARGA &gt;</a>
+                    <a href="/public/docs/COMPUTERUN Sponsorship Proposal.pdf" class="button button-white">DOWNLOAD PDF</a>
                 </div>
             </div>
         </div>
@@ -95,7 +97,7 @@
                     </p>
                 </div>
             </div>
-            <div class="with-computerun-background">
+            <div class="with-computerun-background" id="pricing">
                 <h1>Jenis dan Paket<br>Sponsorship</h1>
             </div>
         </div>
