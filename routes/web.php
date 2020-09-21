@@ -14,5 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
+});
+Route::get('/uses', function () {
+    return view('uses');
+});
+Route::get('/sponsor-us', function () {
+    return view('sponsor-us');
+});
+Route::get('/event-template', function () {
+    return view('event-template');
 });
