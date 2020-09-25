@@ -25,3 +25,6 @@ Route::get('/sponsor-us', function () {
 Route::get('/event-template', function () {
     return view('event-template');
 });
+Route::get('/contact', function () {
+    return view('contact');
+});
