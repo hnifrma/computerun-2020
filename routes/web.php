@@ -28,3 +28,11 @@ Route::get('/event-template', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+Route::get('/regist', function () {
+    return view('registration');
+});
+Route::get('/regist-competition', function () {
+    return view('registration-comp');
+});
+Route::view('userview', "registration");
+Route::post('postcontroller', 'PostController@formSubmit');

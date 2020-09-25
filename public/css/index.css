@@ -428,6 +428,11 @@ a:not(.button):hover {
     background: -webkit-linear-gradient(115deg, #37e2bc, #249ef2);
     color: #ffffff;
 }
+.button-gradient-2 {
+    background: -webkit-linear-gradient(35deg, #304481, #0c1631);
+    color: #ffffff;
+    width: 15%;
+}
 .button:not(:only-child):not(:last-child) {
     margin-right: 6px;
 }
