@@ -14,7 +14,6 @@
 @endif
 
 <!-- Primary Meta Tags -->
-<meta name="title" content="{{$title ?? ''}}Computerun 2020: INSIGHT">
 <meta name="description" content="Organized by HIMTI and HIMSISFO BINUS UNIVERSITY">
 
 <!-- Open Graph / Facebook -->

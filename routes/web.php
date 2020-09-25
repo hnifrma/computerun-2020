@@ -40,3 +40,8 @@ Route::get('/webinar-digital', function () {
 Route::get('/webinar-mobile', function () {
     return view('webinar-mobile');
 });
+
+
+Route::get('/login', function () {
+    return view('login');
+});

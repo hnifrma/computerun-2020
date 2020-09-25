@@ -53,7 +53,9 @@
                     <span class="h3">Run with innovation</span>
                 </div>
             </div>
-            <h1 class="full-underline after-icons-container">events</h1>
+
+
+            {{-- <h1 class="full-underline after-icons-container">events</h1>
             <div class="card-container margin-1 content-divider">
                 <div class="card image-card">
                     <div>
@@ -86,6 +88,135 @@
                         <p>
                             A competition where you can develop an application for a mobile platform
                         </p>
+                    </div>
+                </div>
+            </div> --}}
+
+            <h1 class="full-underline after-icons-container">events</h1>
+            <div class="about-container margin-2 content-divider">
+                <div>
+                    <h2 class="partial-underline custom">
+                        <img src="/img/icons/Events - Business-IT Case.png" class="about-image"><br>
+                        Business-IT Competitions.</span>
+                        <div class="guide"><span>BusinessIT&#45;</span></div>
+                    </h2>
+                </div>
+                <div>
+                    <div class="card-container items-2">
+                        <div class="card image-card">
+                            <div>
+                                <img src="/img/icons/Events - Business-IT Case.png">
+                            </div>
+                            <div>
+                                <span class="h4 font-800">Business-IT Case</span>
+                                <p>
+                                    Solve real-life business cases and provide solutions for a better business.
+                                </p>
+                                <a href="/bcase" class="button button-gradient">MORE INFO</a>
+                            </div>
+                        </div>
+                        <div class="card image-card">
+                            <div>
+                                <img src="/img/icons/Events - Mobile Apps.png">
+                            </div>
+                            <div>
+                                <span class="h4 font-800">Mobile Application Development</span>
+                                <p>
+                                    Create and develop mobile applications as fast as possible.
+                                </p>
+                                <a href="/moapps" class="button button-gradient">MORE INFO</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="partial-underline custom">
+                        <img src="/img/icons/Events - E-Sport.png" class="about-image"><br>
+                        E-Sports Competitions.</span>
+                        <div class="guide"><span>E-Sports</span></div>
+                    </h2>
+                </div>
+                <div>
+                    <div class="card-container">
+                        <div class="card image-card">
+                            <div>
+                                <img src="/img/icons/Mobile Legends Logo.png">
+                            </div>
+                            <div>
+                                <span class="h4 font-800">Mobile Legends: Bang Bang</span>
+                                <p>Up to 2 slots/team</p>
+                                <a href="https://esport.computerun.id/pages/ml.html" class="button button-gradient">MORE INFO</a>
+                            </div>
+                        </div>
+                        <div class="card image-card">
+                            <div>
+                                <img src="/img/icons/PUBG Mobile Logo.png">
+                            </div>
+                            <div>
+                                <span class="h4 font-800">PUBG Mobile</span>
+                                <p>
+                                    Erangel TPP + Miramar TPP + Vikendi TPP + Sanhok TPP<br><br>Up to 2 slots/team
+                                </p>
+                                <a href="https://esport.computerun.id/pages/pubg.html" class="button button-gradient">MORE INFO</a>
+                            </div>
+                        </div>
+                        <div class="card image-card">
+                            <div>
+                                <img src="/img/icons/Valorant Logo.png">
+                            </div>
+                            <div>
+                                <span class="h4 font-800">Valorant</span>
+                                <p>Random Map, up to 2 slots/team</p>
+                                <a href="https://esport.computerun.id/pages/valorant.html" class="button button-gradient">MORE INFO</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="partial-underline custom">
+                        <img src="/img/icons/Events - Webinar.png" class="about-image"><br>
+                        Webinars.</span>
+                        <div class="guide"><span>Webinars</span></div>
+                    </h2>
+                </div>
+                <div>
+                    <div class="card-container">
+                        <div class="card image-card">
+                            <div>
+                                <img src="/img/icons/Events - Webinar.png">
+                            </div>
+                            <div>
+                                <span class="h5 font-800">How business can survive the COVID 19 pandemic?</span>
+                                <p>
+                                    Coming Soon
+                                </p>
+                                <a href="/webinar-covid" class="button button-gradient">MORE INFO</a>
+                            </div>
+                        </div>
+                        <div class="card image-card">
+                            <div>
+                                <img src="/img/icons/Events - Webinar.png">
+                            </div>
+                            <div>
+                                <span class="h5 font-800">Digital Startup: How to create your own masterpiece</span>
+                                <p>
+                                    Coming Soon
+                                </p>
+                                <a href="/webinar-digital" class="button button-gradient">MORE INFO</a>
+                            </div>
+                        </div>
+                        <div class="card image-card">
+                            <div>
+                                <img src="/img/icons/Events - Webinar.png">
+                            </div>
+                            <div>
+                                <span class="h5 font-800">How mobile apps can meet and even exceed the user's expectation</span>
+                                <p>
+                                    Coming Soon
+                                </p>
+                                <a href="/webinar-mobile" class="button button-gradient">MORE INFO</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
