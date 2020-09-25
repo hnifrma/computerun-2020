@@ -25,3 +25,18 @@ Route::get('/sponsor-us', function () {
 Route::get('/event-template', function () {
     return view('event-template');
 });
+Route::get('/bcase', function () {
+    return view('bcase');
+});
+Route::get('/moapps', function () {
+    return view('moapps');
+});
+Route::get('/webinar-covid', function () {
+    return view('webinar-covid');
+});
+Route::get('/webinar-digital', function () {
+    return view('webinar-digital');
+});
+Route::get('/webinar-mobile', function () {
+    return view('webinar-mobile');
+});
