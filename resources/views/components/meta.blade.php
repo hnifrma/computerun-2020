@@ -32,7 +32,8 @@
 <!-- CSS -->
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
-<link href="/css/index.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+<link href="/css/index.css" type="text/css" rel="stylesheet"/>
+<link href="/fonts/fonts.css" type="text/css" rel="stylesheet"/>
 
 <!-- Web Manifest, Icons, and PWA -->
 <link rel="manifest" href="/manifest.json">
