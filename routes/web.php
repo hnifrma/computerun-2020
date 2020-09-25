@@ -25,6 +25,7 @@ Route::get('/sponsor-us', function () {
 Route::get('/event-template', function () {
     return view('event-template');
 });
+
 Route::get('/bcase', function () {
     return view('bcase');
 });
@@ -45,3 +46,14 @@ Route::get('/webinar-mobile', function () {
 Route::get('/login', function () {
     return view('login');
 });
+Route::get('/contact', function () {
+    return view('contact');
+});
+Route::get('/regist', function () {
+    return view('registration');
+});
+Route::get('/regist-competition', function () {
+    return view('registration-comp');
+});
+Route::view('userview', "registration");
+Route::post('postcontroller', 'PostController@formSubmit');
