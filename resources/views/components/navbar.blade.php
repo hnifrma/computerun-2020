@@ -1,4 +1,4 @@
-<div class="navbar-container">
+<nav class="navbar-container">
     <div class="navbar-display">
         <div class="navbar-left">
             <ul class="h5">
@@ -26,4 +26,4 @@
             <a href="https://twitter.com/Computerun2020" class="navbar-link"><img src="img/icons/Twitter.png"></a>
         </div>
     </div>
-</div>
+</nav>
