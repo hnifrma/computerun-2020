@@ -1,5 +1,5 @@
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 @if (isset($title))
   <title>{{$title}} - Computerun 2020: INSIGHT</title>
@@ -28,12 +28,6 @@
 <meta property="twitter:description" content="Organized by HIMTI and HIMSISFO BINUS UNIVERSITY">
 <meta property="twitter:image" content="">
 
-<!-- CSS -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap" rel="stylesheet">
-<link href="/css/index.css" type="text/css" rel="stylesheet"/>
-<link href="/fonts/fonts.css" type="text/css" rel="stylesheet"/>
-
 <!-- Web Manifest, Icons, and PWA -->
 <link rel="manifest" href="/manifest.json">
 
@@ -53,24 +47,3 @@
 
 <!-- Prevent phone number linking in iOS -->
 <meta name="format-detection" content="telephone=no">
-
-<!-- Add support for custom external CSS files -->
-@if (isset($custom_css) && is_array($custom_css))
-    @foreach ($custom_css as $stylesheet)
-        <link href="{{$stylesheet->url}}" type="text/css" rel="stylesheet"
-            @if (isset($stylesheet->integrity))
-                integrity="{{$stylesheet->integrity}}"
-            @endif
-            @if (isset($stylesheet->media))
-                media="{{$stylesheet->media}}"
-            @endif
-        >
-    @endforeach
-@endif
-
-<!-- Add support for custom external JS files -->
-@if (isset($custom_js) && is_array($custom_js))
-    @foreach ($custom_js as $script)
-        <script src="{{$script->url}}"></script>
-    @endforeach
-@endif

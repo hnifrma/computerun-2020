@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-        @component("components.meta")
+        @component("components.meta", ['title' => 'Registration'])
         @endcomponent
     </head>
     <body>
         <div class="container-2 content-top bg-event">
-            @component("components.navbar")
-            @endcomponent
             <div class="margin-2 text-center content-divider">
-                <span class="h4 font-700">COMPETITION</span><br>
-                <p class="h1 font-800 gradient-text">Example Event</p>
+                <span class="h4 font-700">Registration</span><br>
+                <p class="h1 font-800 gradient-text">
+                    <select name="cars" id="cars">
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="mercedes">Mercedes</option>
+                        <option value="audi">Audi</option>
+                    </select>
+                </p>
             </div>
         </div>
         <div class="container-1">

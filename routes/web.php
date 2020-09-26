@@ -25,6 +25,27 @@ Route::get('/sponsor-us', function () {
 Route::get('/event-template', function () {
     return view('event-template');
 });
+
+Route::get('/bcase', function () {
+    return view('bcase');
+});
+Route::get('/moapps', function () {
+    return view('moapps');
+});
+Route::get('/webinar-covid', function () {
+    return view('webinar-covid');
+});
+Route::get('/webinar-digital', function () {
+    return view('webinar-digital');
+});
+Route::get('/webinar-mobile', function () {
+    return view('webinar-mobile');
+});
+
+Route::get('/regist-new', function () {
+    return view('registration.main');
+});
+
 Route::get('/contact', function () {
     return view('contact');
 });
@@ -36,3 +57,7 @@ Route::get('/regist-competition', function () {
 });
 Route::view('userview', "registration");
 Route::post('postcontroller', 'PostController@formSubmit');
+
+
+// Login Views
+Route::resource('/login', 'TicketStatusController');
