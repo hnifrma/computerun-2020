@@ -132,8 +132,8 @@
                 <div>
                     <h2 class="partial-underline custom">
                         <img src="/img/icons/Events - E-Sport.png" class="about-image"><br>
-                        E-Sports Competitions.</span>
-                        <div class="guide"><span>E-Sports</span></div>
+                        Mini E-Sports Competitions.</span>
+                        <div class="guide"><span>MiniESports-&nbsp;</span></div>
                     </h2>
                 </div>
                 <div>

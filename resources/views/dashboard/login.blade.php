@@ -9,9 +9,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/regis-custom.css">
 
-    <!-- Prevent phone number linking in iOS -->
-    <meta name="format-detection" content="telephone=no">
-
     @component('components.meta', ['title' => 'Login'])
     @endcomponent
   </head>
@@ -20,7 +17,7 @@
         <div class="jumbotron regis-header">
             <h1 class="display-4 full-underline">login</h1>
             @if ($message ?? '' != null && $message ?? '' != "")
-            <p class="center-text h3">{{$message ?? ''  }}</p>
+            <p class="text-center h3 content-divider-short">{{$message ?? ''  }}</p>
             @endif
         </div>
         <div class="container">
@@ -58,7 +55,10 @@
                                     <input type="number" class="form-control" id="event-token" name="event-token" pattern="[0-9]{6,10}" required>
                                 </div>
                             @endif
-                            <button type="submit" class="button button-gradient text-center">Log In</button>
+                            <button type="submit" class="button button-gradient text-center">Log In
+                                @component('components.bootstrap-icons', ['icon' => 'box-arrow-in-right', 'size' => 28])
+                                @endcomponent
+                            </button>
                             {{-- @if (isset($action) && $action == "/login")
                                 <a href="/register" class="btn btn-dark">Register for new account</a>
                             @elseif ($action == "/seminar2")

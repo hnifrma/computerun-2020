@@ -51,6 +51,9 @@
 <link rel="icon" type="image/png" sizes="192x192" href="/img/main-192.png">
 <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="/img/main-192.png">
 
+<!-- Prevent phone number linking in iOS -->
+<meta name="format-detection" content="telephone=no">
+
 <!-- Add support for custom external CSS files -->
 @if (isset($custom_css) && is_array($custom_css))
     @foreach ($custom_css as $stylesheet)
