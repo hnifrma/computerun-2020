@@ -73,5 +73,6 @@ Route::view('userview', "registration");
 Route::post('postcontroller', 'PostController@formSubmit');
 
 
-// Login Views
+// Login / User Dashboard
 Route::resource('/login', 'TicketStatusController');
+Route::get('/logout', 'TicketStatusController@logout');

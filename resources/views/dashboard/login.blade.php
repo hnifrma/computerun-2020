@@ -12,8 +12,10 @@
     @component('components.meta', ['title' => 'Login'])
     @endcomponent
   </head>
-  <body>
-    <div class="container-2 padding-0">
+  <body class="is-bootstrap">
+    @component('components.navbar-mobile', ['template' => 'login-page'])
+    @endcomponent
+    <div class="container-2 padding-0 content-top">
         <div class="jumbotron regis-header">
             <h1 class="display-4 full-underline">login</h1>
             @if ($message ?? '' != null && $message ?? '' != "")
