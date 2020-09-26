@@ -46,6 +46,9 @@ Route::get('/valorant', function () {
 });
 
 /* Webinars */
+Route::get('/webinar-bchain', function () {
+    return view('webinar-bchain');
+});
 Route::get('/webinar-covid', function () {
     return view('webinar-covid');
 });
