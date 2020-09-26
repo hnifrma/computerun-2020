@@ -5,7 +5,37 @@
         @endcomponent
     </head>
     <body>
-        <div class="container-2 content-top bg-home">
+        <!-- bg-home == ini gua matiin dulu soalnya nabrak dia hart ama navbar. -->
+        <div class="container-2 content-top ">
+            <div class="navbar-container">
+                <div class="navbar-display">
+                    <div class="navbar-left">
+                        <ul class="h5">
+                            <li><a href="">home</a></li>
+                            <li><a href="#">events</a></li>
+                            <!-- <li><a href="#">webinar</a></li> -->
+                            <li><a href="#">contact us</a></li>
+                            <li><a href="#">login</a></li>
+                        </ul>
+                    </div>
+                    <div class="navbar-center">
+                        <img src="/img/icons/Computerun 2020 Insight Logo.png">
+                    </div>
+                    <div class="navbar-right h5">
+                        follow us on
+                        <!-- <img src="img/icons/Instagram.png">
+                        <img src="img/icons/Instagram.png">
+                        <img src="img/icons/Instagram.png">
+                        <img src="img/icons/Instagram.png">
+                        <img src="img/icons/Instagram.png"> -->
+                        <a href="https://www.instagram.com/computerun"><img src="img/icons/Instagram.png"></a>
+                        <a href="https://computerun.id/line"><img src="img/icons/Line.png"></a>
+                        <a href="https://computerun.id/youtube"><img src="img/icons/Youtube.png"></a>
+                        <a href="https://www.facebook.com/computerun.computerun.9"><img src="img/icons/Facebook.png"></a>
+                        <a href="https://twitter.com/Computerun2020"><img src="img/icons/Twitter.png"></a>
+                    </div>
+                </div>
+            </div>
             <div class="margin-2">
                 <h1 class="tagline">
                     <p>BEYOND</p>
@@ -54,7 +84,6 @@
                 </div>
             </div>
 
-
             {{-- <h1 class="full-underline after-icons-container">events</h1>
             <div class="card-container margin-1 content-divider">
                 <div class="card image-card">
@@ -91,7 +120,6 @@
                     </div>
                 </div>
             </div> --}}
-
             <h1 class="full-underline after-icons-container">events</h1>
             <div class="about-container margin-2 content-divider">
                 <div>
