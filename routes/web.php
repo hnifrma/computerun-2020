@@ -42,10 +42,10 @@ Route::get('/webinar-mobile', function () {
     return view('webinar-mobile');
 });
 
-
-Route::get('/login', function () {
-    return view('login');
+Route::get('/regist-new', function () {
+    return view('registration.main');
 });
+
 Route::get('/contact', function () {
     return view('contact');
 });
@@ -57,3 +57,7 @@ Route::get('/regist-competition', function () {
 });
 Route::view('userview', "registration");
 Route::post('postcontroller', 'PostController@formSubmit');
+
+
+// Login Views
+Route::resource('/login', 'TicketStatusController');

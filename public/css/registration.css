@@ -1,11 +1,11 @@
 body{
     position:relative;
-    background-color: #101537; 
+    background-color: #101537;
     font-family: Qanelas, Poppins, sans-serif;
 }
 input[type=text],select{
     width: 500px;
-    height: 35px; 
+    height: 35px;
     color: #3c4700;
     font-size: 20pt;
     font-family: Qanelas, Poppins, sans-serif;
