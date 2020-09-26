@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        @component("components.meta", ["title" => "HOME"])
+        @component("components.meta", ["title" => "Home"])
         @endcomponent
     </head>
     <body>
@@ -148,7 +148,7 @@
                             <div>
                                 <span class="h4 font-800">Mobile Legends: Bang Bang</span>
                                 <p>Up to 2 slots/team</p>
-                                <a href="https://esport.computerun.id/pages/ml.html" class="button button-gradient">MORE INFO</a>
+                                <a href="/ml" class="button button-gradient">MORE INFO</a>
                             </div>
                         </div>
                         <div class="card image-card">
@@ -160,7 +160,7 @@
                                 <p>
                                     Erangel TPP + Miramar TPP + Vikendi TPP + Sanhok TPP<br><br>Up to 2 slots/team
                                 </p>
-                                <a href="https://esport.computerun.id/pages/pubg.html" class="button button-gradient">MORE INFO</a>
+                                <a href="/pubg" class="button button-gradient">MORE INFO</a>
                             </div>
                         </div>
                         <div class="card image-card">
@@ -170,7 +170,7 @@
                             <div>
                                 <span class="h4 font-800">Valorant</span>
                                 <p>Random Map, up to 2 slots/team</p>
-                                <a href="https://esport.computerun.id/pages/valorant.html" class="button button-gradient">MORE INFO</a>
+                                <a href="/valorant" class="button button-gradient">MORE INFO</a>
                             </div>
                         </div>
                     </div>

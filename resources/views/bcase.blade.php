@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        @component("components.meta")
+        @component("components.meta", ["title" => "Business-IT Case"])
         @endcomponent
     </head>
     <body>
