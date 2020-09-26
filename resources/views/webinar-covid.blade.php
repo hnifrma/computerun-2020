@@ -6,6 +6,8 @@
     </head>
     <body>
         <div class="container-2 content-top bg-event">
+            @component("components.navbar")
+            @endcomponent
             <div class="margin-2 text-center content-divider">
                 <span class="h4 font-700">WEBINAR</span><br>
 
@@ -63,7 +65,7 @@
                         <u>Coming Soon</u>
                     </p>
                 </div>
-               
+
             </div>
             <!-- <h1 class="full-underline after-icons-container">general FAQ</h1>
             <div class="margin-2 h5">

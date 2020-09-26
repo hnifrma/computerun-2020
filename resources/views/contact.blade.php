@@ -6,6 +6,8 @@
     </head>
     <body>
         <div class="container-2 content-top bg-event">
+            @component("components.navbar")
+            @endcomponent
             <div class="margin-2 text-center content-divider">
                 <span class="h4 font-700">KEEP IN TOUCH WITH US</span><br>
                 <p class="h1 font-800 gradient-text">Contact Person</p>

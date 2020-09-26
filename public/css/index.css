@@ -49,6 +49,14 @@ a:not(.button):not(.btn):hover {
     color: #37e2bc;
     border-bottom: 2px solid #37e2bc;
 }
+a.navbar-link {
+    border: none !important;
+    color: #ffffff !important;
+    font-weight: 800;
+}
+a.navbar-link:hover {
+    color: #37e2bc !important;
+}
 
 /* TOP-LEVEL COMPONENTS */
 /* CONTAINER */
@@ -534,7 +542,7 @@ a:not(.button):not(.btn):hover {
 /* Backgrounds*/
 .bg-home {
     background-image: url('/img/backgrounds/HomeBG-1a.png'), linear-gradient(77.5deg, rgba(50,70,133,1) -2.5%, rgba(38,55,107,1) 22.5%, rgba(12,22,49,1) 75%);
-    background-position: right -100px top -250px, left top;
+    background-position: right -100px top -100px, left top;
     background-size: 1000px, cover;
     background-repeat: no-repeat;
 }
@@ -546,7 +554,7 @@ a:not(.button):not(.btn):hover {
 }
 @media (max-width: 1199px){
     .bg-home {
-        background-position: right -200px top -150px, left top;
+        background-position: right -150px top -50px, left top;
         background-size: 750px, cover;
     }
 }
