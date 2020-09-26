@@ -220,6 +220,18 @@
                                 <a href="/webinar-mobile" class="button button-gradient">MORE INFO</a>
                             </div>
                         </div>
+                        <div class="card image-card">
+                            <div>
+                                <img src="/img/icons/Events - Webinar.png">
+                            </div>
+                            <div>
+                                <span class="h5 font-800">Blockchain: The Next Digital Revolution in Every Industry</span>
+                                <p>
+                                    Coming Soon
+                                </p>
+                                <a href="/webinar-bchain" class="button button-gradient">MORE INFO</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
