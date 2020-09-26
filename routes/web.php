@@ -26,12 +26,26 @@ Route::get('/event-template', function () {
     return view('event-template');
 });
 
+/* Business-IT Competitions */
 Route::get('/bcase', function () {
     return view('bcase');
 });
 Route::get('/moapps', function () {
     return view('moapps');
 });
+
+/* Mini E-Sports Competitions */
+Route::get('/ml', function () {
+    return view('ml');
+});
+Route::get('/pubg', function () {
+    return view('pubg');
+});
+Route::get('/valorant', function () {
+    return view('valorant');
+});
+
+/* Webinars */
 Route::get('/webinar-covid', function () {
     return view('webinar-covid');
 });
