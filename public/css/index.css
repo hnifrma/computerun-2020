@@ -80,7 +80,9 @@ a:not(.button):hover {
 }
 .container-clip.for-footer {
     position: static;
-    margin-bottom: -7.016px;
+}
+.container-clip.for-footer:not(.is-bootstrap){
+    margin-bottom: -4px;
 }
 .container-1 .container-clip:not(.for-footer), .container-2 .container-clip:not(.for-footer) {
     margin-top: -10px;
@@ -113,17 +115,18 @@ a:not(.button):hover {
     flex-direction: row;
     flex-wrap: wrap;
 }
-.about-container div:nth-child(odd) {
-    width: 40%;
+.about-container > div:nth-child(odd) {
+    width: 30%;
 }
-.about-container div:nth-child(even) {
-    width: 60%;
+.about-container > div:nth-child(even) {
+    width: 70%;
 }
 @media (max-width: 991px){
     .about-container div:nth-child(odd), .about-container div:nth-child(even) {
         width: 100%;
     }
 }
+
 
 /* TAGLINE: #BeyondInsight */
 .tagline {
@@ -300,6 +303,10 @@ a:not(.button):hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-around;
+}
+.card-container.items-2 .card {
+    width: calc(50% - 50px);
 }
 .card-container .card {
     width: calc(33.3% - 50px);
@@ -318,7 +325,7 @@ a:not(.button):hover {
     }
 } */
 @media (max-width: 991px){
-    .card-container .card {
+    .card-container .card, .card-container.items-2 .card {
         width: 100%;
     }
 }
@@ -328,6 +335,9 @@ a:not(.button):hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+.image-card div:nth-child(odd){
+    height: min-content;
 }
 .image-card div:nth-child(even){
     text-align: center;
@@ -410,7 +420,7 @@ a:not(.button):hover {
 .button {
     display: inline-block;
     min-width: 120px;
-    border-radius: 20px;
+    border-radius: 24px;
     padding: 8px 12px;
     text-align: center;
     vertical-align: middle;
@@ -428,8 +438,16 @@ a:not(.button):hover {
     background: -webkit-linear-gradient(115deg, #37e2bc, #249ef2);
     color: #ffffff;
 }
+.button-gradient-2 {
+    background: -webkit-linear-gradient(35deg, #304481, #0c1631);
+    color: #ffffff;
+    width: 15%;
+}
 .button:not(:only-child):not(:last-child) {
     margin-right: 6px;
+}
+button.button {
+    border: none;
 }
 
 /* UTILITY FUNCTIONS */
@@ -463,6 +481,9 @@ a:not(.button):hover {
 .margin-0 {
     margin: 0;
 }
+.padding-0 {
+    padding: 0;
+}
 /* Padding for top container (respecting safe areas)*/
 .content-top {
     padding-top: calc(10px + env(safe-area-inset-top));
@@ -481,6 +502,11 @@ a:not(.button):hover {
 .margin-1 {
     margin-left: calc(5% + env(safe-area-inset-left));
     margin-right: calc(5% + env(safe-area-inset-right));
+}
+
+/* 100% width */
+.width-100 {
+    width: 100%;
 }
 
 /* Text colors */
