@@ -33,22 +33,13 @@
                     <div class="card mb-2">
                         <div class="card-body">
                             <div class="form-group">
-                                <label for="ticketnumber">
-                                    @if (isset($type) && $type == "admin")
-                                        Event ID
-                                    @else
-                                        Ticket Number
-                                    @endif
+                                <label for="email">
+
                                 </label>
-                                <input type="text" class="form-control" id="ticketnumber" name="ticketnumber" required>
+                                <input type="text" class="form-control" id="email" name="email" required>
                             </div>
                             <div class="form-group">
                                 <label for="nim">
-                                    @if (isset($type) && $type == "admin")
-                                        Password
-                                    @else
-                                        NIM
-                                    @endif</label>
                                 <input type="number" class="form-control" id="nim" name="nim" pattern="[0-9]{6,10}" required>
                             </div>
                             @if (isset($type) && $type == "attendance")

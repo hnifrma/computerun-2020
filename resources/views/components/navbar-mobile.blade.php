@@ -115,8 +115,14 @@
             @endif
         </div>
         <div>
-            @if (Session::get('ticket_number') != null && Session::get('ticket_number') != '')
-                @if (app('request')->path() == 'login')
+            @guest
+                <a href="/home" class="navbar-link">
+                    @component ('components.bootstrap-icons', ['icon' => 'box-arrow-in-right', 'size' => 32, 'optical' => 'right'])
+                    @endcomponent
+                    <br>Login
+                </a>
+            @else
+                @if (app('request')->path() == 'home')
                     <a class="navbar-link selected">
                         @component ('components.bootstrap-icons', ['icon' => 'person-badge-fill', 'size' => 32])
                         @endcomponent
@@ -129,13 +135,7 @@
                         <br>Profile
                     </a>
                 @endif
-            @else
-                <a href="/login" class="navbar-link">
-                    @component ('components.bootstrap-icons', ['icon' => 'box-arrow-in-right', 'size' => 32, 'optical' => 'right'])
-                    @endcomponent
-                    <br>Login
-                </a>
-            @endif
+            @endguest
         </div>
     @endif
 </nav>

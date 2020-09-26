@@ -170,6 +170,11 @@ body:not(.is-bootstrap) .container-clip.for-footer{
     width: 30px;
 }
 
+body.is-bootstrap .navbar-right img {
+    padding-left: 1rem;
+    width: 46px;
+}
+
 .navbar-right a, .navbar-right a:hover {
     border-bottom: none;
 }
@@ -280,7 +285,6 @@ body:not(.is-bootstrap) .container-clip.for-footer{
         display: block;
         height: 64px;
         padding-bottom: env(safe-area-inset-bottom);
-        background: #0c1631;
     }
 
     body.is-bootstrap::after {
@@ -647,6 +651,12 @@ body:not(.is-bootstrap) .card-container .card img {
 /* Tables */
 .table td, .table th {
     vertical-align: middle;
+}
+
+/* Navbar (Bootstrap) */
+body.is-bootstrap .navbar a {
+    color: inherit;
+    border: inherit;
 }
 
 /* Modals (Bootstrap) */

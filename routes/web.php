@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('index');
 });
 Route::get('/uses', function () {
     return view('uses');
@@ -76,3 +76,7 @@ Route::post('postcontroller', 'PostController@formSubmit');
 // Login / User Dashboard
 Route::resource('/login', 'TicketStatusController');
 Route::get('/logout', 'TicketStatusController@logout');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('dashboard.home');
