@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        @component("components.meta")
+        @component("components.meta", ["title" => "Sponsor Our Event"])
         @endcomponent
     </head>
     <body>
         <div class="container-2 content-top bg-home">
+            @component("components.navbar")
+            @endcomponent
             <div class="margin-2">
                 <h1 class="tagline">
                     <p>BEYOND</p>

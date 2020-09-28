@@ -9,14 +9,15 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link rel="stylesheet" href="/css/regis-custom.css">
 
-        @component('components.meta', ['title' => 'Login'])
-        @endcomponent
+        <script src="/js/registration.js"></script>
 
-    @component('components.meta', ['title' => 'Your Tickets'])
-    @endcomponent
+        @component('components.meta', ['title' => 'Your Tickets'])
+        @endcomponent
     </head>
-    <body>
-    <div class="container-2 bg-event">
+    <body class="is-bootstrap">
+    <div class="container-2 bg-event content-top">
+        @component('components.navbar-mobile')
+        @endcomponent
         <div class="margin-1 jumbotron regis-header">
             <div class="row">
                 <div class="col-12 col-md-6">
@@ -134,8 +135,8 @@
                             <h5 class="card-header"><span class="badge badge-info">2</span> Contact</h5>
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="action-change-phone">Change Phone Number</label>
-                                    <input type="tel" class="form-control" name="action-change-phone" id="action-change-phone" autocomplete="tel" placeholder="{{$account_details["contact"]["phone"]}}">
+                                    <label for="phone">Change Phone Number</label>
+                                    <input type="tel" class="form-control" name="action-change-phone" id="phone" autocomplete="tel" placeholder="{{$account_details["contact"]["phone"]}}">
                                 </div>
                                 <div class="form-group">
                                     <label for="action-change-email">Change Email</label>
@@ -149,7 +150,7 @@
                                 <div class="form-group">
                                     <label for="action-change-line">Change LINE contact (ID or Phone Number, Optional)</label>
                                     <div class="input-group mb-3">
-                                    <input type="number" class="form-control" name="action-change-line" id="action-change-line" autocomplete="tel" placeholder="{{$account_details["contact"]["line"]}}">
+                                    <input type="text" class="form-control" name="action-change-line" id="action-change-line" autocomplete="tel" placeholder="{{$account_details["contact"]["line"]}}">
                                         <div class="input-group-append">
                                             <a onClick="phoneNumberAutofill('action-change-line')" class="btn btn-success text-white">Copy from Phone</a>
                                         </div>

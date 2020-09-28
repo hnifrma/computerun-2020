@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        @component("components.meta")
+        @component("components.meta", ["title" => "Webinar"])
         @endcomponent
     </head>
     <body>
         <div class="container-2 content-top bg-event">
+            @component("components.navbar")
+            @endcomponent
+            @component("components.navbar-mobile", ['template' => 'event-details'])
+            @endcomponent
             <div class="margin-2 text-center content-divider">
                 <span class="h4 font-700">WEBINAR</span><br>
 
@@ -63,7 +67,7 @@
                         <u>Coming Soon</u>
                     </p>
                 </div>
-               
+
             </div>
             <!-- <h1 class="full-underline after-icons-container">general FAQ</h1>
             <div class="margin-2 h5">

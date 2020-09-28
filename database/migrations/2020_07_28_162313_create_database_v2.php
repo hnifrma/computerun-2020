@@ -19,20 +19,30 @@ class CreateDatabaseV2 extends Migration
             $table->increments('id');
             $table->text('name');
         });
-        // Create 'tickets' table
-        if (!Schema::hasTable('tickets')) Schema::create('tickets', function (Blueprint $table) {
-            $table->increments('id');
-            $table->text('email')->unique();
-            $table->text('password');
-            $table->text('name');
-            $table->unsignedInteger('university_id');
+        // Update the Laravel's 'users' table
+        if (Schema::hasTable('users')) Schema::table('users', function (Blueprint $table) {
+            $table->unsignedInteger('university_id')->nullable();
             $table->foreign('university_id')->references('id')->on('universities');
             $table->boolean('binusian')->default(false);
-            $table->bigInteger('nim');
-            $table->text('phone');
+            $table->bigInteger('nim')->nullable();
+            $table->text('phone')->nullable();
             $table->text('line')->nullable();
             $table->text('whatsapp')->nullable();
         });
+        // Create 'tickets' table
+        // if (!Schema::hasTable('tickets')) Schema::create('tickets', function (Blueprint $table) {
+        //     $table->increments('id');
+        //     $table->text('email')->unique();
+        //     $table->text('password');
+        //     $table->text('name');
+        //     $table->unsignedInteger('university_id');
+        //     $table->foreign('university_id')->references('id')->on('universities');
+        //     $table->boolean('binusian')->default(false);
+        //     $table->bigInteger('nim');
+        //     $table->text('phone');
+        //     $table->text('line')->nullable();
+        //     $table->text('whatsapp')->nullable();
+        // });
         // Create 'events' table
         if (!Schema::hasTable('events')) Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
@@ -58,8 +68,8 @@ class CreateDatabaseV2 extends Migration
         // Create 'registration' table
         if (!Schema::hasTable('registration')) Schema::create('registration', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('ticket_id');
-            $table->foreign('ticket_id')->references('id')->on('tickets');
+            $table->unsignedBigInteger('ticket_id');
+            $table->foreign('ticket_id')->references('id')->on('users');
             $table->unsignedInteger('event_id');
             $table->foreign('event_id')->references('id')->on('events');
             $table->unsignedInteger('team_id')->nullable();
@@ -88,8 +98,16 @@ class CreateDatabaseV2 extends Migration
     {
         Schema::dropIfExists('attendance');
         Schema::dropIfExists('registration');
-        Schema::dropIfExists('tickets');
+        Schema::dropIfExists('teams');
+        // Schema::dropIfExists('tickets');
+        if (Schema::hasTable('users')){
+            Schema::table('users', function (Blueprint $table) {
+                $table->dropForeign(['university_id']);
+            });
+            Schema::table('users', function (Blueprint $table) {
+                $table->dropColumn(['university_id', 'binusian', 'nim', 'phone', 'line', 'whatsapp']);
+            });
+        }
         Schema::dropIfExists('events');
-        Schema::dropIfExists('universities');
     }
 }

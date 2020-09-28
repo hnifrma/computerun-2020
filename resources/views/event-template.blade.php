@@ -6,6 +6,10 @@
     </head>
     <body>
         <div class="container-2 content-top bg-event">
+            @component("components.navbar")
+            @endcomponent
+            @component("components.navbar-mobile", ['template' => 'event-details'])
+            @endcomponent
             <div class="margin-2 text-center content-divider">
                 <span class="h4 font-700">COMPETITION</span><br>
                 <p class="h1 font-800 gradient-text">Example Event</p>
