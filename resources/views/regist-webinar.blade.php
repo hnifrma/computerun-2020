@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    @component("components.meta", ["title" => "REGISTRATION"])
+    @component("components.meta", ["title" => "Webinar Registration"])
     @endcomponent
     <style>
         <?php include 'css/registration.css'; ?>
@@ -12,7 +12,7 @@
 <body>
     <div class="container-2 content-top bg-event">
         <div class="margin-2 text-center content-divider">
-            <p class="h1 font-800 gradient-text">REGISTRATION</p>
+            <p class="h1 font-800 gradient-text">WEBINAR REGISTRATION</p>
             <span class="h4 font-400">Quickly register by filling up this form below</span>
         </div>
     </div>
@@ -79,9 +79,6 @@
                             Webinar 2: How to Create a Startup </option>
                         <option required value="Webinar 3">
                             Webinar 3: How to Create Apps that Meets Customer’s Expectations </option>
-                        <option required value="Mobile Apps Competition"> Mobile Application Competition </option>
-                        <option required value="Bussiness-IT Case Competition"> Business-IT Case Competition </option>
-                        <option required value="E-Sport Competition"> E-Sport Competition </option>
                     </select>
                     <span>
                         @error('Event')

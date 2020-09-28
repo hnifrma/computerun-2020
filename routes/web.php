@@ -67,11 +67,11 @@ Route::get('/regist-new', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
-Route::get('/regist', function () {
-    return view('registration');
+Route::get('/regist-webinar', function () {
+    return view('regist-webinar');
 });
 Route::get('/regist-competition', function () {
-    return view('registration-comp');
+    return view('regist-competition');
 });
 Route::view('userview', "registration");
 Route::post('postcontroller', 'PostController@formSubmit');
