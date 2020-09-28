@@ -1,49 +1,19 @@
-body{
-    position:relative;
-    background-color: #101537;
-    font-family: Qanelas, Poppins, sans-serif;
-}
-input[type=text],select{
-    width: 500px;
-    height: 35px;
+input[type=text], input[type=email], select{
+    width: 40%;
     color: #3c4700;
     font-size: 20pt;
     font-family: Qanelas, Poppins, sans-serif;
 }
-input, select, textarea{
-    color: #3c4700;
-}
-
-textarea:focus, input:focus {
-    color: #3c4700;
-}
-.title{
-    color: #2de5fa;
-    font-size: 72pt;
-    font-weight: bold;
-}
-input[type=checkbox],select{
-    top: 10px;
-    size: 200%;
-    margin-left: 40px;
-}
 .inputField{
-    font-size:15pt;
-    width:40%;
     border-radius: 5px;
     padding-left: 50px;
     width:45%;
 }
 #event{
-    font-size:15pt;
+    font-size:20pt;
     text-align: center;
     padding-left: 5px;
     width:55%;
-}
-#checkBox{
-    margin-left:20px;
-    width: 30px;
-    height: 30px;
 }
 #register{
     width: 120px;
