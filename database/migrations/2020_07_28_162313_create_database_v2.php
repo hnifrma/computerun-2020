@@ -19,9 +19,11 @@ class CreateDatabaseV2 extends Migration
             $table->increments('id');
             $table->text('name');
         });
+        // Add "Uncategorized
+        DB::table('universities')->insert(['name' => 'Uncategorized']);
         // Update the Laravel's 'users' table
         if (Schema::hasTable('users')) Schema::table('users', function (Blueprint $table) {
-            $table->unsignedInteger('university_id')->nullable();
+            $table->unsignedInteger('university_id')->default(1);
             $table->foreign('university_id')->references('id')->on('universities');
             $table->boolean('binusian')->default(false);
             $table->bigInteger('nim')->nullable();
@@ -85,6 +87,9 @@ class CreateDatabaseV2 extends Migration
             $table->foreign('registration_id')->references('id')->on('registration');
             $table->text('type');
         });
+        // Add ADMIN and Committee
+        DB::table('universities')->insert(['name' => 'COMPUTERUN 2020 System Administrator']);
+        DB::table('universities')->insert(['name' => 'COMPUTERUN 2020 Official Committee']);
         // Add BINUS
         DB::table('universities')->insert(['name' => 'BINUS University']);
     }
@@ -109,5 +114,6 @@ class CreateDatabaseV2 extends Migration
             });
         }
         Schema::dropIfExists('events');
+        Schema::dropIfExists('universities');
     }
 }

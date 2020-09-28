@@ -62,7 +62,7 @@ var majorList = [
 ]
 
 function phoneNumberAutofill(id){
-    document.getElementById(id).value = (document.getElementById("phone").value == "") ? document.getElementById("phone").placeholder : document.getElementById("phone").value;
+    document.getElementById(id).value = (document.getElementById("action-change-phone").value == "") ? document.getElementById("action-change-phone").placeholder : document.getElementById("action-change-phone").value;
 }
 
 function updateCart(){

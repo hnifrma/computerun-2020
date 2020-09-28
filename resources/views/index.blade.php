@@ -220,7 +220,7 @@
                                 <a href="/webinar-mobile" class="button button-gradient">MORE INFO</a>
                             </div>
                         </div>
-                        <div class="card image-card">
+                        {{-- <div class="card image-card">
                             <div>
                                 <img src="/img/icons/Events - Webinar.png">
                             </div>
@@ -231,7 +231,7 @@
                                 </p>
                                 <a href="/webinar-bchain" class="button button-gradient">MORE INFO</a>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

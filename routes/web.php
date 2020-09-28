@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,9 +47,9 @@ Route::get('/valorant', function () {
 });
 
 /* Webinars */
-Route::get('/webinar-bchain', function () {
-    return view('webinar-bchain');
-});
+// Route::get('/webinar-bchain', function () {
+//     return view('webinar-bchain');
+// });
 Route::get('/webinar-covid', function () {
     return view('webinar-covid');
 });
@@ -77,9 +78,10 @@ Route::post('postcontroller', 'PostController@formSubmit');
 
 
 // Login / User Dashboard
-Route::resource('/login', 'TicketStatusController');
-Route::get('/logout', 'TicketStatusController@logout');
+// Route::resource('/login', 'TicketStatusController');
+// Route::get('/logout', 'TicketStatusController@logout');
 
 Auth::routes();
+Route::post('changeaccountdetails', 'UserSettingsController@updateContacts');
 
 Route::get('/home', 'HomeController@index')->name('dashboard.home');
