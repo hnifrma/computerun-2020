@@ -185,6 +185,9 @@ body.is-bootstrap .navbar-right img {
     justify-content: space-around;
 }
 
+.contact-us img {
+    width: 50px;
+}
 @media (max-width: 991px){
     .navbar-container {
         display: none;
