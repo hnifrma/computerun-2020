@@ -46,12 +46,12 @@
                 <div>
                     <img src="/img/icons/1st.png"><br>
                     <span class="h5">Winner</span><br>
-                    <span class="h3">IDR 3.500.000</span>
+                    <span class="h3">IDR 5.000.000</span>
                 </div>
                 <div>
                     <img src="/img/icons/2nd.png"><br>
                     <span class="h5">First Runner Up</span><br>
-                    <span class="h3">IDR 2.500.000</span>
+                    <span class="h3">IDR 3.000.000</span>
                 </div>
                 <div>
                     <img src="/img/icons/3rd.png"><br>
