@@ -101,14 +101,14 @@
             @endif
         </div>
         <div>
-            @if (app('request')->path() == 'events')
+            @if (app('request')->path() == '/#events')
                 <a class="navbar-link selected">
                     @component ('components.bootstrap-icons', ['icon' => 'calendar-date-fill', 'size' => 32])
                     @endcomponent
                     <br>Events
                 </a>
             @else
-                <a href="/events" class="navbar-link">
+                <a href="/#events" class="navbar-link">
                     @component ('components.bootstrap-icons', ['icon' => 'calendar-date', 'size' => 32])
                     @endcomponent
                     <br>Events

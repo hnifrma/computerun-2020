@@ -95,7 +95,7 @@
                     </div>
                 </div>
             </div> --}}
-            <h1 class="full-underline after-icons-container">events</h1>
+            <h1 class="full-underline after-icons-container" id="events">events</h1>
             <div class="about-container margin-2 content-divider">
                 <div>
                     <h2 class="partial-underline custom">
