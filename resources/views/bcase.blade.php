@@ -12,7 +12,7 @@
             @endcomponent
             <div class="margin-2 text-center content-divider">
                 <h3>COMPETITION</h3>
-                <h1 class="gradient-text display-2 font-800">Mobile Application Development</h1>
+                <h1 class="gradient-text display-2 font-800">Business-IT Case</h1>
                 <a class="button button-gradient" href="/register/1">REGISTER</a>
                 <a class="button button-white" href="#rules">RULES</a>
             </div>
