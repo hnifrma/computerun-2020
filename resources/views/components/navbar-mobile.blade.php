@@ -146,7 +146,7 @@
         <div>
             @guest
                 <a href="/home" class="navbar-link">
-                    @component ('components.bootstrap-icons', ['icon' => 'box-arrow-in-right', 'size' => 32, 'optical' => 'right'])
+                    @component ('components.bootstrap-icons', ['icon' => 'box-arrow-in-right', 'size' => 32, 'optical' => 'left'])
                     @endcomponent
                     <br>Login
                 </a>
