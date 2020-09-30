@@ -266,20 +266,39 @@ body.is-bootstrap .navbar-right img {
         margin-right: auto;
     }
 
+    /* Adjustments to navigation buttons for optical correction */
+    .navbar-mobile .bi.optical-left {
+        margin-left: calc(50% - 18px);
+        margin-right: calc(50% - 14px);
+    }
+    .navbar-mobile .bi.optical-right {
+        margin-left: calc(50% - 14px);
+        margin-right: calc(50% - 18px);
+    }
+    .navbar-mobile .bi.optical-top {
+        margin-top: -3px;
+    }
+    .navbar-mobile .bi.optical-down {
+        margin-bottom: -2px;
+    }
     /* Adjustments to .action-primary buttons for optical correction */
     .navbar-mobile .action-primary .bi.optical-left {
+        margin: 0;
         padding-left: 15px;
         padding-right: 21px;
     }
     .navbar-mobile .action-primary .bi.optical-right {
+        margin: 0;
         padding-left: 21px;
         padding-right: 15px;
     }
     .navbar-mobile .action-primary .bi.optical-top {
+        margin: 0;
         padding-top: 15px;
         padding-bottom: 21px;
     }
     .navbar-mobile .action-primary .bi.optical-down {
+        margin: 0;
         padding-top: 21px;
         padding-bottom: 15px;
     }

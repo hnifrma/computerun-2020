@@ -118,10 +118,6 @@
                                                  document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
                                 </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
                             </li>
                         @endguest
                     </ul>
@@ -140,6 +136,10 @@
             @yield('content')
         </main>
         <img class="container-clip for-footer is-bootstrap" src="/img/backgrounds/7.png">
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+        </form>
     </div>
     @component('components.footer')
     @endcomponent

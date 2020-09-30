@@ -16,7 +16,7 @@
         @else
             <div class="action-global">
                 <a href="/" class="navbar-link">
-                    @component ('components.bootstrap-icons', ['icon' => 'house-door', 'size' => 32])
+                    @component ('components.computerun-icon', ['size' => 32])
                     @endcomponent
                     <br>Home
                 </a>

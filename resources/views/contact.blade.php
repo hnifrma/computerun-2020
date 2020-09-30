@@ -46,6 +46,8 @@
                     <b>LINE ID: vonnymelindaa</b>
                 </p>
             </div>
+            @component ('components.sponsors')
+            @endcomponent
             <img class="container-clip for-footer" src="/img/backgrounds/7.png">
         </div>
         @component('components.footer')

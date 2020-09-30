@@ -357,12 +357,16 @@
         isMemberValid = [];
         isReserveMemberValid = [];
 
-        if (Number.isInteger(Number(selected)) && selected > 0 && eventDetails[selected - 1] != null && eventDetails[selected - 1].opened == 1){
-            var j;
-            for (j = 0; j < eventDetails.length; j++){
-                if (eventDetails[j].id == selected) selected = eventDetails[j];
+        var j;
+        for (j = 0; j < eventDetails.length; j++){
+            if (eventDetails[j].id == selected){
+                selected = eventDetails[j];
+                break;
             }
-            console.log(selected);
+        }
+
+        if (j < eventDetails.length && selected.opened == 1){
+            // console.log(selected);
             if (selected.name.match(/Mobile Legends/gi)){
                 requiresAccount = {
                     namespace: "mobile_legends",

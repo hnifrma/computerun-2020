@@ -63,11 +63,11 @@ class AddEventData extends Migration
         DB::table('universities')->insert(['name' => 'UK Petra - Universitas Kristen Petra']);
 
         // Add Event List
-        DB::table('events')->insert(['name' => 'Business-IT Case Competition', 'price' => 300000, 'opened' => 1, 'date' => '2020-12-02 23:59:59', 'team_members' => 2]);
-        DB::table('events')->insert(['name' => 'Mobile Application Development Competition', 'price' => 350000, 'opened' => 1, 'date' => '2020-12-02 23:59:59', 'team_members' => 2]);
-        DB::table('events')->insert(['name' => 'Mini E-Sport: Mobile Legends', 'price' => 50000, 'opened' => 0, 'date' => '2020-10-03 00:00:00', 'team_members' => 5, 'team_members_reserve' => 1, 'slots' => 2]);
-        DB::table('events')->insert(['name' => 'Mini E-Sport: PUBG Mobile', 'price' => 20000, 'opened' => 0, 'date' => '2020-10-03 00:00:00', 'team_members' => 5, 'team_members_reserve' => 1, 'slots' => 2]);
-        DB::table('events')->insert(['name' => 'Mini E-Sport: Valorant', 'price' => 35000, 'opened' => 0, 'date' => '2020-10-03 00:00:00', 'team_members' => 5, 'team_members_reserve' => 1, 'slots' => 2]);
+        DB::table('events')->insert(['name' => 'Business-IT Case Competition', 'price' => 300000, 'opened' => 1, 'date' => '2020-12-02 23:59:59', 'team_members' => 2, 'totp_key' => rand(100000, 999999)]);
+        DB::table('events')->insert(['name' => 'Mobile Application Development Competition', 'price' => 300000, 'opened' => 1, 'date' => '2020-12-02 23:59:59', 'team_members' => 2, 'totp_key' => rand(100000, 999999)]);
+        DB::table('events')->insert(['name' => 'Mini E-Sport: Mobile Legends', 'price' => 50000, 'opened' => 0, 'date' => '2020-10-03 00:00:00', 'team_members' => 5, 'team_members_reserve' => 1, 'slots' => 2, 'totp_key' => rand(100000, 999999)]);
+        DB::table('events')->insert(['name' => 'Mini E-Sport: PUBG Mobile', 'price' => 20000, 'opened' => 0, 'date' => '2020-10-03 00:00:00', 'team_members' => 5, 'team_members_reserve' => 1, 'slots' => 2, 'totp_key' => rand(100000, 999999)]);
+        DB::table('events')->insert(['name' => 'Mini E-Sport: Valorant', 'price' => 35000, 'opened' => 0, 'date' => '2020-10-03 00:00:00', 'team_members' => 5, 'team_members_reserve' => 1, 'slots' => 2, 'totp_key' => rand(100000, 999999)]);
     }
 
     /**

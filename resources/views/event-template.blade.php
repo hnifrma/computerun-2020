@@ -67,16 +67,11 @@
                 </p>
             </div>
             <h1 class="full-underline content-divider">for more details</h1>
-            <h3 class="text-center">SPONSORS</h3>
-            <div class="content-divider-short text-center placeholder-sponsors margin-1">
-                @component('components.sponsorship-invite-message', ['is_empty' => true, 'id' => rand(0,7)])
-                @endcomponent
+            <div class="margin-1 content-divider h5 text-center">
+                Please contact us via our LINE Official Account: <a class="font-800" href="https://line.me/R/ti/p/@995bowex" target="_blank">@995bowex</a>
             </div>
-            <h3 class="text-center">MEDIA PARTNERS</h3>
-            <div class="content-divider-short text-center placeholder-sponsors margin-1">
-                @component('components.sponsorship-invite-message', ['is_empty' => true, 'id' => rand(0,7)])
-                @endcomponent
-            </div>
+            @component ('components.sponsors')
+            @endcomponent
             <img class="container-clip for-footer" src="/img/backgrounds/7.png">
         </div>
         @component('components.footer')

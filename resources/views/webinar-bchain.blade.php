@@ -50,7 +50,7 @@
                     <span class="h3">Speaker 1 Name</span><br>
                     <span class="h5">Speaker 1 Title</span><br><br>
                     <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque blanditiis, fugiat similique quibusdam quaerat hic dignissimos magnam velit accusantium corporis deserunt, aperiam temporibus provident veritatis earum! Quod laboriosam ratione magnam?</span>
-                    
+
                 </div>
                 <div>
                     <img src="/img/icons/Speaker 2 unnamed.png"><br>
@@ -58,19 +58,10 @@
                     <span class="h5">Speaker 2 Title</span><br><br>
                     <span>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque blanditiis, fugiat similique quibusdam quaerat hic dignissimos magnam velit accusantium corporis deserunt, aperiam temporibus provident veritatis earum! Quod laboriosam ratione magnam?</span>
                 </div>
-                
+
             </div>
-            <h1 class="full-underline  after-icons-container">for more details</h1>
-            <h3 class="text-center">SPONSORS</h3>
-            <div class="content-divider-short text-center placeholder-sponsors margin-1">
-                @component('components.sponsorship-invite-message', ['is_empty' => true, 'id' => rand(0,7)])
-                @endcomponent
-            </div>
-            <h3 class="text-center">MEDIA PARTNERS</h3>
-            <div class="content-divider-short text-center placeholder-sponsors margin-1">
-                @component('components.sponsorship-invite-message', ['is_empty' => true, 'id' => rand(0,7)])
-                @endcomponent
-            </div>
+            @component ('components.sponsors')
+            @endcomponent
             <img class="container-clip for-footer" src="/img/backgrounds/7.png">
         </div>
         @component('components.footer')
