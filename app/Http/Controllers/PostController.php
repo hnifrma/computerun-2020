@@ -5,19 +5,20 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 class PostController extends Controller{
-   
+   /*
+        Validate the data entered into the form
+   */
     public function formSubmit(Request $request){
         $request->validate([
             // regex:/^([a-zA-Z]+)(\s[a-zA-Z]+)*$/
             'Name' => "required|regex:/^([a-zA-Z]+)(\s[a-zA-Z]+)*$/",
             'University' => "required|string",
             'Email' => "required|email|",
-            // 'Email' => "required|email|unique:users",
+            // 'Email' => "required|email|unique:users", --> haven't had the database
             'LineID' => "required|string",
             'PhoneNumber' =>"required|min:10|max:13",
             'Event' => "required",
             'Confirm' => "required",
-            
         ],[
         'Name.required' => 'Name cannot be empty',
         'Name.regex' => 'Name must be alphabetical',
@@ -30,7 +31,7 @@ class PostController extends Controller{
         'Event.required'=> 'Event cannot be empty',
         'Confirm.required' => 'Please check the box to confirm'
         ]);
-      
+
         // print_r($message->input());
     }
 

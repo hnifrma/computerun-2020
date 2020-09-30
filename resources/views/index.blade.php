@@ -95,7 +95,7 @@
                     </div>
                 </div>
             </div> --}}
-            <h1 class="full-underline after-icons-container">events</h1>
+            <h1 class="full-underline after-icons-container" id="events">events</h1>
             <div class="about-container margin-2 content-divider">
                 <div>
                     <h2 class="partial-underline custom">
@@ -190,10 +190,7 @@
                             </div>
                             <div>
                                 <span class="h5 font-800">How business can survive the COVID 19 pandemic?</span>
-                                <p>
-                                    Coming Soon
-                                </p>
-                                <a href="/webinar-covid" class="button button-gradient">MORE INFO</a>
+                                <a href="#" class="button button-gradient-2">COMING SOON</a>
                             </div>
                         </div>
                         <div class="card image-card">
@@ -202,10 +199,7 @@
                             </div>
                             <div>
                                 <span class="h5 font-800">Digital Startup: How to create your own masterpiece</span>
-                                <p>
-                                    Coming Soon
-                                </p>
-                                <a href="/webinar-digital" class="button button-gradient">MORE INFO</a>
+                                <a href="#" class="button button-gradient-2">COMING SOON</a>
                             </div>
                         </div>
                         <div class="card image-card">
@@ -214,13 +208,10 @@
                             </div>
                             <div>
                                 <span class="h5 font-800">How mobile apps can meet and even exceed the user's expectation</span>
-                                <p>
-                                    Coming Soon
-                                </p>
-                                <a href="/webinar-mobile" class="button button-gradient">MORE INFO</a>
+                                <a href="#" class="button button-gradient-2">COMING SOON</a>
                             </div>
                         </div>
-                        <div class="card image-card">
+                        {{-- <div class="card image-card">
                             <div>
                                 <img src="/img/icons/Events - Webinar.png">
                             </div>
@@ -231,7 +222,7 @@
                                 </p>
                                 <a href="/webinar-bchain" class="button button-gradient">MORE INFO</a>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

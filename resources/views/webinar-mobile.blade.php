@@ -87,17 +87,8 @@
                     <b>A: Setelah mendaftar, kamu akan menerima e-mail resmi dari Computerun dan akan mendapat seluruh informasi mengenai kompetisi melalui e-mail.</b>
                 </p>
             </div> -->
-            <h1 class="full-underline after-icons-container">for more details</h1>
-            <h3 class="text-center">SPONSORS</h3>
-            <div class="content-divider-short text-center placeholder-sponsors margin-1">
-                @component('components.sponsorship-invite-message', ['is_empty' => true, 'id' => rand(0,7)])
-                @endcomponent
-            </div>
-            <h3 class="text-center">MEDIA PARTNERS</h3>
-            <div class="content-divider-short text-center placeholder-sponsors margin-1">
-                @component('components.sponsorship-invite-message', ['is_empty' => true, 'id' => rand(0,7)])
-                @endcomponent
-            </div>
+            @component ('components.sponsors')
+            @endcomponent
             <img class="container-clip for-footer" src="/img/backgrounds/7.png">
         </div>
         @component('components.footer')

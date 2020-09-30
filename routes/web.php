@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,9 +47,9 @@ Route::get('/valorant', function () {
 });
 
 /* Webinars */
-Route::get('/webinar-bchain', function () {
-    return view('webinar-bchain');
-});
+// Route::get('/webinar-bchain', function () {
+//     return view('webinar-bchain');
+// });
 Route::get('/webinar-covid', function () {
     return view('webinar-covid');
 });
@@ -66,20 +67,26 @@ Route::get('/regist-new', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
-Route::get('/regist', function () {
-    return view('registration');
+Route::get('/regist-webinar', function () {
+    return view('regist-webinar');
 });
 Route::get('/regist-competition', function () {
-    return view('registration-comp');
+    return view('regist-competition');
 });
 Route::view('userview', "registration");
 Route::post('postcontroller', 'PostController@formSubmit');
 
 
 // Login / User Dashboard
-Route::resource('/login', 'TicketStatusController');
-Route::get('/logout', 'TicketStatusController@logout');
+// Route::resource('/login', 'TicketStatusController');
+// Route::get('/logout', 'TicketStatusController@logout');
 
 Auth::routes();
+Route::post('/changeaccountdetails', 'UserSettingsController@updateContacts');
+
+// Get user details (for registration)
+Route::post('/getuserdetails', 'UserSettingsController@getUserDetails');
+Route::get('/register/{id}', 'UserSettingsController@registrationRedirectHandler');
+Route::post('/registerevent', 'UserSettingsController@registerEvent');
 
 Route::get('/home', 'HomeController@index')->name('dashboard.home');

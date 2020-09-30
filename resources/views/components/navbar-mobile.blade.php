@@ -16,7 +16,7 @@
         @else
             <div class="action-global">
                 <a href="/" class="navbar-link">
-                    @component ('components.bootstrap-icons', ['icon' => 'house-door', 'size' => 32])
+                    @component ('components.computerun-icon', ['size' => 32])
                     @endcomponent
                     <br>Home
                 </a>
@@ -46,9 +46,34 @@
                 </div>
                 <div>
                     <a href="#contact" class="navbar-link">
-                        @component ('components.bootstrap-icons', ['icon' => 'chat-left-quote', 'size' => 32, 'optical' => 'right'])
+                        @component ('components.bootstrap-icons', ['icon' => 'chat-left-quote', 'size' => 32])
                         @endcomponent
                         <br>Contact
+                    </a>
+                </div>
+                @break
+            @case ("sponsor-us")
+                <div>
+                    <a href="/docs/COMPUTERUN Sponsorship Proposal.pdf" target="_blank" class="navbar-link">
+                        <div class="action-primary">
+                            @component ('components.bootstrap-icons', ['icon' => 'cloud-download-fill', 'size' => 36])
+                            @endcomponent
+                            Download
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    <a href="#pricing" class="navbar-link">
+                        @component ('components.bootstrap-icons', ['icon' => 'gift', 'size' => 32])
+                        @endcomponent
+                        <br>Paket
+                    </a>
+                </div>
+                <div>
+                    <a href="#contact" class="navbar-link">
+                        @component ('components.bootstrap-icons', ['icon' => 'patch-exclamation', 'size' => 32])
+                        @endcomponent
+                        <br>Kontak
                     </a>
                 </div>
                 @break
@@ -76,14 +101,14 @@
             @endif
         </div>
         <div>
-            @if (app('request')->path() == 'events')
+            @if (app('request')->path() == '/#events')
                 <a class="navbar-link selected">
                     @component ('components.bootstrap-icons', ['icon' => 'calendar-date-fill', 'size' => 32])
                     @endcomponent
                     <br>Events
                 </a>
             @else
-                <a href="/events" class="navbar-link">
+                <a href="/#events" class="navbar-link">
                     @component ('components.bootstrap-icons', ['icon' => 'calendar-date', 'size' => 32])
                     @endcomponent
                     <br>Events
@@ -91,7 +116,11 @@
             @endif
         </div>
         <div>
-            <a href="/regist" class="navbar-link">
+            @if (Auth::check() && app('request')->path() == 'home')
+            <a class="navbar-link" data-toggle="modal" href="#" data-target="#register" role="button">
+            @else
+            <a href="/register/0" class="navbar-link">
+            @endif
                 <div class="action-primary">
                     @component ('components.bootstrap-icons', ['icon' => 'person-plus-fill', 'size' => 36, 'optical' => 'right'])
                     @endcomponent
@@ -117,7 +146,7 @@
         <div>
             @guest
                 <a href="/home" class="navbar-link">
-                    @component ('components.bootstrap-icons', ['icon' => 'box-arrow-in-right', 'size' => 32, 'optical' => 'right'])
+                    @component ('components.bootstrap-icons', ['icon' => 'box-arrow-in-right', 'size' => 32, 'optical' => 'left'])
                     @endcomponent
                     <br>Login
                 </a>

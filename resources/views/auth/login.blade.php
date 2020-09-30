@@ -53,7 +53,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="button button-gradient-2">
                                     {{ __('Login') }}
                                 </button>
 
@@ -64,6 +64,16 @@
                                 @endif
                             </div>
                         </div>
+
+                        @if (Route::has('register'))
+                            <div class="form-group row mb-0">
+                                <div class="col-md-8 offset-md-4">
+                                    <a class="btn button button-gradient" href="{{ route('register') }}">
+                                        {{ __('Register for a new account') }}
+                                    </a>
+                                </div>
+                            </div>
+                        @endif
                     </form>
                 </div>
             </div>

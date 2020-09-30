@@ -8,11 +8,13 @@
         <div class="container-2 content-top bg-event">
             @component("components.navbar")
             @endcomponent
-            @component("components.navbar-mobile", ['event' => ['register' => '/regist-competition'], 'template' => 'event-details'])
+            @component("components.navbar-mobile", ['event' => ['register' => '/register/2'], 'template' => 'event-details'])
             @endcomponent
             <div class="margin-2 text-center content-divider">
-                <span class="h4 font-700">COMPETITION</span><br>
-                <span class="h1 font-800 gradient-text">Mobile Apps</span>
+                <h3>COMPETITION</h3>
+                <h1 class="gradient-text display-2 font-800">Mobile Application Development</h1>
+                <a class="button button-gradient" href="/register/2">REGISTER</a>
+                <a class="button button-white" href="#rules">RULES</a>
             </div>
         </div>
         <div class="container-1">
@@ -44,12 +46,12 @@
                 <div>
                     <img src="/img/icons/1st.png"><br>
                     <span class="h5">Winner</span><br>
-                    <span class="h3">IDR 3.500.000</span>
+                    <span class="h3">IDR 5.000.000</span>
                 </div>
                 <div>
                     <img src="/img/icons/2nd.png"><br>
                     <span class="h5">First Runner Up</span><br>
-                    <span class="h3">IDR 2.500.000</span>
+                    <span class="h3">IDR 3.000.000</span>
                 </div>
                 <div>
                     <img src="/img/icons/3rd.png"><br>
@@ -76,16 +78,11 @@
                 </p>
             </div>
             <h1 class="full-underline content-divider">for more details</h1>
-            <h3 class="text-center">SPONSORS</h3>
-            <div class="content-divider-short text-center placeholder-sponsors margin-1">
-                @component('components.sponsorship-invite-message', ['is_empty' => true, 'id' => rand(0,7)])
-                @endcomponent
+            <div class="margin-1 content-divider h5 text-center">
+                Please contact us via our LINE Official Account: <a class="font-800" href="https://line.me/R/ti/p/@995bowex" target="_blank">@995bowex</a>
             </div>
-            <h3 class="text-center">MEDIA PARTNERS</h3>
-            <div class="content-divider-short text-center placeholder-sponsors margin-1">
-                @component('components.sponsorship-invite-message', ['is_empty' => true, 'id' => rand(0,7)])
-                @endcomponent
-            </div>
+            @component ('components.sponsors')
+            @endcomponent
             <img class="container-clip for-footer" src="/img/backgrounds/7.png">
         </div>
         @component('components.footer')

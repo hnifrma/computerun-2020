@@ -21,35 +21,64 @@
     @endcomponent
 </head>
 <body class="is-bootstrap">
+    @if (app('request')->path() == 'home' && Auth::check())
+    <div class="container-2 content-top bg-home">
+    @else
     <div class="container-2 content-top bg-event">
+    @endif
         @component("components.navbar")
         @endcomponent
-        @component("components.navbar-mobile")
-        @endcomponent
-        <div class="margin-2 text-center content-divider">
-            <span class="display-4 font-800 gradient-text">
-                @switch (app('request')->path())
-                    @case ('register')
-                        Create Account
-                        @break
-                    @case ('password/reset')
-                        Reset Password
-                        @break
-                    @default
-                        @guest
-                            Login
-                        @else
-                            Your Tickets
-                        @endguest
-                @endswitch
+        @if (app('request')->path() == 'home')
+            @component("components.navbar-mobile")
+            @endcomponent
+        @else
+            @component("components.navbar-mobile", ["template" => "login-page"])
+            @endcomponent
+        @endif
+        <div class="margin-2 content-divider">
+            @switch (app('request')->path())
+                @case ('register')
+                    <p class="display-4 text-center font-800 gradient-text">Create Account</p>
+                    @break
+                @case ('password/reset')
+                    <p class="display-4 text-center font-800 gradient-text">Reset Password</p>
+                    @break
+                @default
+                    @guest
+                    <p class="display-4 text-center font-800 gradient-text">Login</p>
+                    @else
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <h5 class="font-800">WELCOME,</h5>
+                                <h1 class="font-800">{{Auth::user()->name}}</h3>
+                                <h3>{{DB::table('universities')->where('id', Auth::user()->university_id)->first()->name}}</h3>
+                                @if (Auth::user()->university_id >= 2 && Auth::user()->university_id <= 4)
+                                    <h5 class="font-700">NIM: {{Auth::user()->nim}}</h5>
+                                @endif
+                            </div>
+                            <div class="col-12 col-md-6">
+                                {{-- <h4 class="font-800">CONTACT DETAILS</h4>
+                                <h1 class="display-4">{{Auth::user()->email}}</h1> --}}
+                            </div>
+                        </div>
+                        <p class="lead">Welcome! Manage your tickets here.</p>
+                        {{-- <a class="btn btn-primary" href="/register" role="button">Register</a> --}}
+                        <a class="btn button button-dark" data-toggle="modal" href="" data-target="#accountSettings" role="button">Profile Settings</a>
+                        <a class="btn button button-white" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                      document.getElementById('logout-form').submit();">
+                         {{ __('Logout') }}</a>
+                    @endguest
+            @endswitch
             </span>
         </div>
     </div>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        @if (Auth::check() && (Auth::user()->university_id == 2 || Auth::user()->university_id == 3))
+        <nav class="navbar navbar-expand-md navbar-light shadow-sm font-800" style="background: -webkit-linear-gradient(115deg, #37e2bc, #249ef2); color: #22365f;">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <a class="navbar-brand" href="#">
+                    Admin Menu
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -62,7 +91,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto font-700">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -76,31 +105,43 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                                    Profile
                                 </a>
-
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
+                                    <a class="dropdown-item" href="/home#tickets">Your Tickets</a>
+                                    <a class="dropdown-item" href="/home#teams">Your Teams</a>
                                 </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
                             </li>
                         @endguest
                     </ul>
                 </div>
             </div>
-        </nav>  
+        </nav>
+        @endif
+        <img class="container-clip" src="/img/backgrounds/2.png">
 
 
-        <main class="py-4">
+        @if (Auth::check() && (Auth::user()->university_id == 2 || Auth::user()->university_id == 3))
+        <main class="margin-1 after-container-clip content-divider">
+        @else
+        <main class="margin-1 after-container-clip">
+        @endif
             @yield('content')
         </main>
+        <img class="container-clip for-footer is-bootstrap" src="/img/backgrounds/7.png">
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+        </form>
     </div>
+    @component('components.footer')
+    @endcomponent
 </body>
 </html>
