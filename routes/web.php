@@ -82,6 +82,11 @@ Route::post('postcontroller', 'PostController@formSubmit');
 // Route::get('/logout', 'TicketStatusController@logout');
 
 Auth::routes();
-Route::post('changeaccountdetails', 'UserSettingsController@updateContacts');
+Route::post('/changeaccountdetails', 'UserSettingsController@updateContacts');
+
+// Get user details (for registration)
+Route::post('/getuserdetails', 'UserSettingsController@getUserDetails');
+Route::get('/register/{id}', 'UserSettingsController@registrationRedirectHandler');
+Route::post('/registerevent', 'UserSettingsController@registerEvent');
 
 Route::get('/home', 'HomeController@index')->name('dashboard.home');

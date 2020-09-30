@@ -52,7 +52,7 @@
                                 <h5 class="font-800">WELCOME,</h5>
                                 <h1 class="font-800">{{Auth::user()->name}}</h3>
                                 <h3>{{DB::table('universities')->where('id', Auth::user()->university_id)->first()->name}}</h3>
-                                @if (Auth::user()->binusian == 1)
+                                @if (Auth::user()->university_id >= 2 && Auth::user()->university_id <= 4)
                                     <h5 class="font-700">NIM: {{Auth::user()->nim}}</h5>
                                 @endif
                             </div>
@@ -63,7 +63,7 @@
                         </div>
                         <p class="lead">Welcome! Manage your tickets here.</p>
                         {{-- <a class="btn btn-primary" href="/register" role="button">Register</a> --}}
-                        <a class="btn button button-dark" data-toggle="modal" href="" data-target="#accountSettings" role="button">Contact Settings</a>
+                        <a class="btn button button-dark" data-toggle="modal" href="" data-target="#accountSettings" role="button">Profile Settings</a>
                         <a class="btn button button-white" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                                       document.getElementById('logout-form').submit();">
@@ -74,10 +74,11 @@
         </div>
     </div>
     <div id="app">
+        @if (Auth::check() && (Auth::user()->university_id == 2 || Auth::user()->university_id == 3))
         <nav class="navbar navbar-expand-md navbar-light shadow-sm font-800" style="background: -webkit-linear-gradient(115deg, #37e2bc, #249ef2); color: #22365f;">
             <div class="container">
                 <a class="navbar-brand" href="#">
-                    Account Menu
+                    Admin Menu
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -127,9 +128,15 @@
                 </div>
             </div>
         </nav>
+        @endif
         <img class="container-clip" src="/img/backgrounds/2.png">
 
+
+        @if (Auth::check() && (Auth::user()->university_id == 2 || Auth::user()->university_id == 3))
         <main class="margin-1 after-container-clip content-divider">
+        @else
+        <main class="margin-1 after-container-clip">
+        @endif
             @yield('content')
         </main>
         <img class="container-clip for-footer is-bootstrap" src="/img/backgrounds/7.png">

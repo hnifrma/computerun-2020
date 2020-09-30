@@ -190,10 +190,7 @@
                             </div>
                             <div>
                                 <span class="h5 font-800">How business can survive the COVID 19 pandemic?</span>
-                                <p>
-                                    Coming Soon
-                                </p>
-                                <a href="/webinar-covid" class="button button-gradient">MORE INFO</a>
+                                <a href="#" class="button button-gradient-2">COMING SOON</a>
                             </div>
                         </div>
                         <div class="card image-card">
@@ -202,10 +199,7 @@
                             </div>
                             <div>
                                 <span class="h5 font-800">Digital Startup: How to create your own masterpiece</span>
-                                <p>
-                                    Coming Soon
-                                </p>
-                                <a href="/webinar-digital" class="button button-gradient">MORE INFO</a>
+                                <a href="#" class="button button-gradient-2">COMING SOON</a>
                             </div>
                         </div>
                         <div class="card image-card">
@@ -214,10 +208,7 @@
                             </div>
                             <div>
                                 <span class="h5 font-800">How mobile apps can meet and even exceed the user's expectation</span>
-                                <p>
-                                    Coming Soon
-                                </p>
-                                <a href="/webinar-mobile" class="button button-gradient">MORE INFO</a>
+                                <a href="#" class="button button-gradient-2">COMING SOON</a>
                             </div>
                         </div>
                         {{-- <div class="card image-card">

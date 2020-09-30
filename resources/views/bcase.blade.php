@@ -8,11 +8,13 @@
         <div class="container-2 content-top bg-event">
             @component("components.navbar")
             @endcomponent
-            @component("components.navbar-mobile", ['event' => ['register' => '/regist-competition'], 'template' => 'event-details'])
+            @component("components.navbar-mobile", ['event' => ['register' => '/register/1'], 'template' => 'event-details'])
             @endcomponent
             <div class="margin-2 text-center content-divider">
-                <span class="h4 font-700">COMPETITION</span><br>
-                <span class="h1 font-800 gradient-text">Business-IT Case</span>
+                <h3>COMPETITION</h3>
+                <h1 class="gradient-text display-2 font-800">Mobile Application Development</h1>
+                <a class="button button-gradient" href="/register/1">REGISTER</a>
+                <a class="button button-white" href="#rules">RULES</a>
             </div>
         </div>
         <div class="container-1">
@@ -76,6 +78,10 @@
                 </p>
             </div>
             <h1 class="full-underline content-divider">for more details</h1>
+            <div class="margin-1 content-divider h5 text-center">
+                Please contact us via our LINE Official Account: <a class="font-800" href="https://line.me/R/ti/p/@995bowex" target="_blank">@995bowex</a>
+            </div>
+            <h1 class="full-underline content-divider">our sponsors</h1>
             <h3 class="text-center">SPONSORS</h3>
             <div class="content-divider-short text-center placeholder-sponsors margin-1">
                 @component('components.sponsorship-invite-message', ['is_empty' => true, 'id' => rand(0,7)])

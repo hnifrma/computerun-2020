@@ -20,7 +20,7 @@ class CreateDatabaseV2 extends Migration
             $table->text('name');
         });
         // Add "Uncategorized
-        DB::table('universities')->insert(['name' => 'Uncategorized']);
+        DB::table('universities')->insert(['name' => 'None / Uncategorized']);
         // Update the Laravel's 'users' table
         if (Schema::hasTable('users')) Schema::table('users', function (Blueprint $table) {
             $table->unsignedInteger('university_id')->default(1);
@@ -30,6 +30,9 @@ class CreateDatabaseV2 extends Migration
             $table->text('phone')->nullable();
             $table->text('line')->nullable();
             $table->text('whatsapp')->nullable();
+            $table->text('id_mobile_legends')->nullable();
+            $table->text('id_pubg_mobile')->nullable();
+            $table->text('id_valorant')->nullable();
         });
         // Create 'tickets' table
         // if (!Schema::hasTable('tickets')) Schema::create('tickets', function (Blueprint $table) {
@@ -51,12 +54,16 @@ class CreateDatabaseV2 extends Migration
             $table->text('name');
             $table->text('location')->default('Online');
             $table->dateTime('date', 0);
+            $table->unsignedInteger('price')->default(0);
             $table->boolean('opened')->default(false);
             $table->boolean('attendance_opened')->default(false);
             $table->boolean('attendance_is_exit')->default(false);
             $table->text('url_link')->nullable();
             $table->text('totp_key');
             $table->unsignedInteger('seats')->default(0);
+            $table->unsignedInteger('slots')->default(1);
+            $table->unsignedInteger('team_members')->default(0);
+            $table->unsignedInteger('team_members_reserve')->default(0);
         });
         // Create 'teams' table
         if (!Schema::hasTable('teams')) Schema::create('teams', function (Blueprint $table) {
@@ -64,8 +71,8 @@ class CreateDatabaseV2 extends Migration
             $table->text('name');
             $table->unsignedInteger('event_id');
             $table->foreign('event_id')->references('id')->on('events');
-            $table->integer('score');
-            $table->text('remarks');
+            $table->integer('score')->default(0);
+            $table->text('remarks')->nullable();
         });
         // Create 'registration' table
         if (!Schema::hasTable('registration')) Schema::create('registration', function (Blueprint $table) {
@@ -77,7 +84,8 @@ class CreateDatabaseV2 extends Migration
             $table->unsignedInteger('team_id')->nullable();
             $table->foreign('team_id')->references('id')->on('teams');
             $table->integer('status');
-            $table->text('remarks');
+            $table->text('remarks')->nullable();
+            $table->text('payment_code')->nullable();
         });
         // Create 'attendance' table
         if (!Schema::hasTable('attendance')) Schema::create('attendance', function (Blueprint $table) {
@@ -91,7 +99,7 @@ class CreateDatabaseV2 extends Migration
         DB::table('universities')->insert(['name' => 'COMPUTERUN 2020 System Administrator']);
         DB::table('universities')->insert(['name' => 'COMPUTERUN 2020 Official Committee']);
         // Add BINUS
-        DB::table('universities')->insert(['name' => 'BINUS University']);
+        DB::table('universities')->insert(['name' => 'BINUS University - Universitas Bina Nusantara']);
     }
 
     /**
@@ -110,7 +118,7 @@ class CreateDatabaseV2 extends Migration
                 $table->dropForeign(['university_id']);
             });
             Schema::table('users', function (Blueprint $table) {
-                $table->dropColumn(['university_id', 'binusian', 'nim', 'phone', 'line', 'whatsapp']);
+                $table->dropColumn(['university_id', 'binusian', 'nim', 'phone', 'line', 'whatsapp', 'id_mobile_legends', 'id_pubg_mobile', 'id_valorant']);
             });
         }
         Schema::dropIfExists('events');

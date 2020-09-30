@@ -8,6 +8,8 @@
         <div class="container-2 content-top bg-home">
             @component("components.navbar")
             @endcomponent
+            @component("components.navbar-mobile", ["template" => "sponsor-us"])
+            @endcomponent
             <div class="margin-2">
                 <h1 class="tagline">
                     <p>BEYOND</p>
@@ -30,7 +32,7 @@
                         <b>Proposal Sponsorship</b> ini juga dapat tersedia dalam format dokumen PDF (Updated 16 September 2020).
                     </p>
                     <a href="#pricing" class="button button-gradient">DAFTAR PAKET &amp; HARGA &gt;</a>
-                    <a href="/public/docs/COMPUTERUN Sponsorship Proposal.pdf" class="button button-white">DOWNLOAD PDF</a>
+                    <a href="/docs/COMPUTERUN Sponsorship Proposal.pdf" class="button button-white">DOWNLOAD PDF</a>
                 </div>
             </div>
         </div>
@@ -193,14 +195,23 @@
                     </ul>
                 </div>
             </div>
-            <h1 class="full-underline content-divider">Hubungi Kami</h1>
-            <h3 class="text-center">CONTACT PERSON - SPONSORSHIP</h3>
-            <div class="content-divider-short text-center placeholder-sponsors margin-1">
-                There are currently no sponsors yet.
-            </div>
-            <h3 class="text-center">MEDIA SOSIAL</h3>
-            <div class="content-divider-short text-center placeholder-sponsors margin-1">
-                There are currently no sponsors yet.
+            <h1 class="full-underline content-divider" id="contact">Hubungi Kami</h1>
+            <div class="content-divider-short text-center margin-1">
+                <p>SPONSORSHIP INQUIRIES</p>
+                <p>
+                    <h3>David</h3>
+                    <b>E-mail: <a href="mailto:davidyohaness14@gmail.com" target="_blank">davidyohaness14@gmail.com</a></b><br>
+                    <b>WhatsApp: +62-812-8634-9820</b><br>
+                    <b>LINE ID: davidsetyawann</b>
+                </p>
+                <br>
+                <p>MEDIA AND PROMOTION</p>
+                <p>
+                    <h3>Vonny</h3>
+                    <b>E-mail: <a href="mailto:vonnymelinda01@gmail.com" target="_blank">vonnymelinda01@gmail.com</a></b><br>
+                    <b>WhatsApp: +62-812-8737-8769</b><br>
+                    <b>LINE ID: vonnymelindaa</b>
+                </p>
             </div>
             <img class="container-clip for-footer" src="/img/backgrounds/7.png">
         </div>

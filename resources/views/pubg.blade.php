@@ -12,7 +12,7 @@
             @endcomponent
             <div class="margin-2 text-center">
                 <h3>ONLINE GAME TOURNAMENT</h3>
-                <h1 class="gradient-text display-2">PUBG Mobile</h1>
+                <h1 class="gradient-text display-2 font-800">PUBG Mobile</h1>
                 <a class="button button-gradient" href="https://form.computerun.id/pubg">REGISTER</a>
                 <a class="button button-white" href="#rules">RULES</a><br>
                 <p class="text-center h5">
@@ -104,18 +104,20 @@
             <div class="margin-1 content-divider h5 text-center">
                 Please contact us via our LINE Official Account: <a class="font-800" href="https://line.me/R/ti/p/@995bowex" target="_blank">@995bowex</a>
             </div>
-            <img class="container-clip for-footer" src="../img/backgrounds/7.png">
+            <h1 class="full-underline content-divider">our sponsors</h1>
+            <h3 class="text-center">SPONSORS</h3>
+            <div class="content-divider-short text-center placeholder-sponsors margin-1">
+                @component('components.sponsorship-invite-message', ['is_empty' => true, 'id' => rand(0,7)])
+                @endcomponent
+            </div>
+            <h3 class="text-center">MEDIA PARTNERS</h3>
+            <div class="content-divider-short text-center placeholder-sponsors margin-1">
+                @component('components.sponsorship-invite-message', ['is_empty' => true, 'id' => rand(0,7)])
+                @endcomponent
+            </div>
+            <img class="container-clip for-footer" src="/img/backgrounds/7.png">
         </div>
-        <footer class="footer">
-            <div class="himsisfo-himti-container">
-                <img src="../img/icons/HIMSISFO Logo.png">
-                <img src="../img/icons/HIMTI Logo.png">
-            </div>
-            <div class="copyright">
-                <img src="../img/icons/Computerun 2020 Insight Logo.png"><br>
-                HIMSISFO & HIMTI BINUS University<br>
-                &copy; 2020
-            </div>
-        </footer>
+        @component('components.footer')
+        @endcomponent
     </body>
 </html>
