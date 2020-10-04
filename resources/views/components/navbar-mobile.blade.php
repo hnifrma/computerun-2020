@@ -36,7 +36,7 @@
                 <div>
                     <a href="#participants" class="navbar-link">
                         <div class="action-primary">
-                            @component ('components.bootstrap-icons', ['icon' => 'person', 'size' => 36])
+                            @component ('components.bootstrap-icons', ['icon' => 'person-fill', 'size' => 36])
                             @endcomponent
                             Participants
                         </div>
