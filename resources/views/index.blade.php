@@ -189,7 +189,7 @@
                                 <img src="/img/icons/Events - Webinar.png">
                             </div>
                             <div>
-                                <span class="h5 font-800">How business can survive the COVID 19 pandemic?</span>
+                                <span class="h5 font-800">How business can survive the COVID 19 pandemic?</span><br>
                                 <a href="#" class="button button-gradient-2">COMING SOON</a>
                             </div>
                         </div>
@@ -198,7 +198,7 @@
                                 <img src="/img/icons/Events - Webinar.png">
                             </div>
                             <div>
-                                <span class="h5 font-800">Digital Startup: How to create your own masterpiece</span>
+                                <span class="h5 font-800">Digital Startup: How to create your own masterpiece</span><br>
                                 <a href="#" class="button button-gradient-2">COMING SOON</a>
                             </div>
                         </div>
@@ -207,7 +207,7 @@
                                 <img src="/img/icons/Events - Webinar.png">
                             </div>
                             <div>
-                                <span class="h5 font-800">How mobile apps can meet and even exceed the user's expectation</span>
+                                <span class="h5 font-800">How mobile apps can meet and even exceed the user's expectation</span><br>
                                 <a href="#" class="button button-gradient-2">COMING SOON</a>
                             </div>
                         </div>
@@ -226,17 +226,8 @@
                     </div>
                 </div>
             </div>
-            <h1 class="full-underline content-divider">our partners</h1>
-            <h3 class="text-center">SPONSORS</h3>
-            <div class="content-divider-short text-center placeholder-sponsors margin-1">
-                @component('components.sponsorship-invite-message', ['is_empty' => true, 'id' => rand(0,7)])
-                @endcomponent
-            </div>
-            <h3 class="text-center">MEDIA PARTNERS</h3>
-            <div class="content-divider-short text-center placeholder-sponsors margin-1">
-                @component('components.sponsorship-invite-message', ['is_empty' => true, 'id' => rand(0,7)])
-                @endcomponent
-            </div>
+            @component('components.sponsors')
+            @endcomponent
             <img class="container-clip for-footer" src="/img/backgrounds/7.png">
         </div>
         @component('components.footer')
