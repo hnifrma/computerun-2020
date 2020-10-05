@@ -31,7 +31,7 @@
     <h1 class="full-underline {{session('status') ? 'content-divider' : ''}}">Your Tickets</h1>
     <?php
         $tickets = DB::table('registration')->where('ticket_id', Auth::user()->id)->get();
-        $events = DB::table('events')->orderBy('name', 'asc')->get();
+        $events = DB::table('events')->get();
         for ($i = 0; $i < count($tickets); $i++){
             $tickets[$i]->event_name = $events[$tickets[$i]->event_id - 1]->name;
             $tickets[$i]->totp_key = $events[$tickets[$i]->event_id - 1]->totp_key;
