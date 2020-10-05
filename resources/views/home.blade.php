@@ -31,13 +31,14 @@
     <h1 class="full-underline {{session('status') ? 'content-divider' : ''}}">Your Tickets</h1>
     <?php
         $tickets = DB::table('registration')->where('ticket_id', Auth::user()->id)->get();
-        $events = DB::table('events')->get();
+        $events = DB::table('events')->orderBy('name', 'asc')->get();
+        $events_original = DB::table('events')->orderBy('id', 'asc')->get();
         for ($i = 0; $i < count($tickets); $i++){
-            $tickets[$i]->event_name = $events[$tickets[$i]->event_id - 1]->name;
-            $tickets[$i]->totp_key = $events[$tickets[$i]->event_id - 1]->totp_key;
-            $tickets[$i]->attendance_opened = $events[$tickets[$i]->event_id - 1]->attendance_opened;
-            $tickets[$i]->attendance_is_exit = $events[$tickets[$i]->event_id - 1]->attendance_is_exit;
-            $tickets[$i]->url_link = $events[$tickets[$i]->event_id - 1]->url_link;
+            $tickets[$i]->event_name = $events_original[$tickets[$i]->event_id - 1]->name;
+            $tickets[$i]->totp_key = $events_original[$tickets[$i]->event_id - 1]->totp_key;
+            $tickets[$i]->attendance_opened = $events_original[$tickets[$i]->event_id - 1]->attendance_opened;
+            $tickets[$i]->attendance_is_exit = $events_original[$tickets[$i]->event_id - 1]->attendance_is_exit;
+            $tickets[$i]->url_link = $events_original[$tickets[$i]->event_id - 1]->url_link;
         }
     ?>
     @if (count($tickets) > 0)

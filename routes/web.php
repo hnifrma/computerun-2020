@@ -86,7 +86,19 @@ Route::post('/changeaccountdetails', 'UserSettingsController@updateContacts');
 
 // Get user details (for registration)
 Route::post('/getuserdetails', 'UserSettingsController@getUserDetails');
+
+// Handle registration
 Route::get('/register/{id}', 'UserSettingsController@registrationRedirectHandler');
 Route::post('/registerevent', 'UserSettingsController@registerEvent');
 
+// User Dashboard
 Route::get('/home', 'HomeController@index')->name('dashboard.home');
+
+// Administration Panel
+Route::get('/admin', function () {
+    return redirect('/home');
+});
+// Route::get('/admin/{path}', 'AdminController@index');
+Route::get('/admin/events', 'AdminController@getEventsList');
+Route::get('/admin/event/{event_id}', 'AdminController@getEventParticipants');
+Route::post('/admin/event/{event_id}', 'AdminController@postEventParticipants');

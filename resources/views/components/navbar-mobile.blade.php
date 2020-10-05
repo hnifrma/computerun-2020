@@ -22,10 +22,44 @@
                 </a>
             </div>
         @endif
-        <div>
-        </div>
         @switch ($template)
+            @case ("admin-event-details")
+                <div>
+                    @if (Auth::user()->university_id == 2)
+                        <a href="#eventsettings" class="navbar-link">
+                            @component ('components.bootstrap-icons', ['icon' => 'gear-wide-connected', 'size' => 32])
+                            @endcomponent
+                            <br>Settings
+                        </a>
+                    @endif
+                </div>
+                <div>
+                    <a href="#participants" class="navbar-link">
+                        <div class="action-primary">
+                            @component ('components.bootstrap-icons', ['icon' => 'person-fill', 'size' => 36])
+                            @endcomponent
+                            Participants
+                        </div>
+                    </a>
+                </div>
+                <div>
+                    <a href="#teams" class="navbar-link">
+                        @component ('components.bootstrap-icons', ['icon' => 'people-fill', 'size' => 32])
+                        @endcomponent
+                        <br>Teams
+                    </a>
+                </div>
+                <div>
+                    <a href="#committees" class="navbar-link">
+                        @component ('components.bootstrap-icons', ['icon' => 'person-badge', 'size' => 32])
+                        @endcomponent
+                        <br>Committees
+                    </a>
+                </div>
+                @break
             @case ("event-details")
+                <div>
+                </div>
                 <div>
                     @if (isset($event['register']))
                         <a href="{{$event['register']}}" class="navbar-link">
@@ -54,6 +88,8 @@
                 @break
             @case ("sponsor-us")
                 <div>
+                </div>
+                <div>
                     <a href="/docs/COMPUTERUN Sponsorship Proposal.pdf" target="_blank" class="navbar-link">
                         <div class="action-primary">
                             @component ('components.bootstrap-icons', ['icon' => 'cloud-download-fill', 'size' => 36])
@@ -78,6 +114,7 @@
                 </div>
                 @break
             @case ("login-page")
+                <div></div>
                 <div></div>
                 <div></div>
                 <div></div>
