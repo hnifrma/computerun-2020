@@ -11,7 +11,7 @@ class SendInvoice extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $data;
+    public $data, $message;
 
     /**
      * Create a new message instance.
@@ -21,6 +21,7 @@ class SendInvoice extends Mailable
     public function __construct($data)
     {
         $this->data = $data;
+        $this->message = $this;
         $this->subject('Your payment invoice for COMPUTERUN 2020 registration (' . $data["payment_code"] . ')');
     }
 
