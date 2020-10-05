@@ -692,6 +692,11 @@ body.is-bootstrap .modal {
 }
 
 /* UTILITY FUNCTIONS */
+/* code blocks */
+code {
+    background: #eee;
+    padding: 5px;
+  }
 /* Backgrounds*/
 .bg-home {
     background-image: url('/img/backgrounds/HomeBG-1a.png'), linear-gradient(77.5deg, rgba(50,70,133,1) -2.5%, rgba(38,55,107,1) 22.5%, rgba(12,22,49,1) 75%);
@@ -736,6 +741,16 @@ body.is-bootstrap .modal {
     margin-top: calc(40px - 1.25vh);
 }
 /* Wide content padding */
+.margin-3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+.margin-3 img {
+    width: 600px;
+}
+
 .margin-2 {
     margin-left: calc(10% + env(safe-area-inset-left));
     margin-right: calc(10% + env(safe-area-inset-right));
