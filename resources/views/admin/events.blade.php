@@ -48,18 +48,18 @@
                         <td>
                             <b>{{$list->name}}</b><br>
                             @if ($list->opened == 1)
-                                @component ('components.bootstrap-icons', ['icon' => 'unlock'])
+                                @component ('components.bootstrap-icons', ['icon' => 'unlock', 'size' => 24])
                                 @endcomponent
                             @else
-                                @component ('components.bootstrap-icons', ['icon' => 'lock-fill'])
+                                @component ('components.bootstrap-icons', ['icon' => 'lock-fill', 'size' => 24])
                                 @endcomponent
                             @endif
                             @if ($list->attendance_opened == 1)
                                 @if ($list->attendance_is_exit == 1)
-                                    @component ('components.bootstrap-icons', ['icon' => 'box-arrow-left'])
+                                    @component ('components.bootstrap-icons', ['icon' => 'box-arrow-left', 'size' => 24])
                                     @endcomponent
                                 @else
-                                    @component ('components.bootstrap-icons', ['icon' => 'box-arrow-in-right'])
+                                    @component ('components.bootstrap-icons', ['icon' => 'box-arrow-in-right', 'size' => 24])
                                     @endcomponent
                                 @endif
                             @endif

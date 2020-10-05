@@ -95,7 +95,12 @@
                             <div class="row">
                                 <div class="col-12 col-md-6">
                                     <h5 class="font-800">WELCOME,</h5>
-                                    <h1 class="font-800">{{Auth::user()->name}}</h3>
+                                    <h1 class="font-800">{{Auth::user()->name}}
+                                        @if (Auth::user()->verified == 1)
+                                            @component ("components.bootstrap-icons", ["icon" => "patch-check-fll"])
+                                            @endcomponent
+                                        @endif
+                                    </h3>
                                     <h3>{{DB::table('universities')->where('id', Auth::user()->university_id)->first()->name}}</h3>
                                     @if (Auth::user()->university_id >= 2 && Auth::user()->university_id <= 4)
                                         <h5 class="font-700">NIM: {{Auth::user()->nim}}</h5>

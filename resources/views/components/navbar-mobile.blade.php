@@ -117,7 +117,13 @@
                 <div></div>
                 <div></div>
                 <div></div>
-                <div></div>
+                <div>
+                    <a onclick="location.reload()" class="navbar-link">
+                        @component ('components.bootstrap-icons', ['icon' => 'arrow-clockwise', 'size' => 32])
+                        @endcomponent
+                        <br>Refresh
+                    </a>
+                </div>
                 @break
         @endswitch
     {{-- For others --}}
