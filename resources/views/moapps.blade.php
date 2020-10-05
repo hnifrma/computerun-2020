@@ -59,7 +59,129 @@
                     <span class="h3">IDR 1.500.000</span>
                 </div>
             </div>
-            <h1 class="full-underline after-icons-container">general FAQ</h1>
+            <div class="about-container margin-2 after-icons-container">
+                <div id="rules">
+                    <h2 class="partial-underline custom">Competition<br>Rules
+                        <div class="guide">Rules</div>
+                    </h2>
+                </div>
+                <div>
+                    <ol class="h6">
+                        <li>
+                            Peserta adalah pihak yang telah mengikuti mekanisme pendaftaran pada website resmi Computerun 2020 <b><a href="https://computerun.id/">computerun.id</a></b>.
+                        </li>
+                        <li>
+                            Setiap peserta harus merupakan <b>mahasiswa S1 atau D3</b>, <b>jurusan apapun diperbolehkan</b>.
+                        </li>
+                        <li>
+                            Setiap tim wajib terdiri dari <b>dua anggota dan satu ketua dalam satu grup</b>. Setiap anggota tim wajib berasal dari <b>satu universitas atau lembaga yang sama</b>.
+                        </li>
+                        <li>
+                            Setiap tim tidak diperkenankan menunjukkan <b>latar belakang institusi pendidikan</b> selama perlombaan dalam bentuk apapun.
+                        </li>
+                        <li>
+                            Setiap tim yang telah terdaftar <b>tidak dapat mengubah nama tim ataupun anggota kelompok</b> dengan alasan apapun.
+                        </li>
+                        <li>
+                            Setiap anggota tim wajib menggunakan <b>twibbon</b> yang telah disediakan <a href="https://drive.computerun.id/files">get it here!</a>.<br>
+                            Jangan lupa untuk <b>melampirkan bukti screenshot</b> tersebut, lalu mengirimkannya ke <b><a href="computerun.id/line">official line</a></b> computerun ya!
+                        </li>
+                    </ol>
+                </div>
+                <div>
+                    <h2 class="partial-underline custom">General<br>Rules
+                        <div class="guide">Rules</div>
+                    </h2>
+                </div>
+                <div>
+                    <ol class="h6">
+                        <li>
+                            Peserta akan membuat <b>presentasi</b> menggunakan <i>Powerpoint</i>.
+                            Presentasi tersebut harus berisikan <b>penjelasan singkat dan tampilan (<i>User Interface</i>)</b> tentang aplikasi yang akan dibuat.
+                        </li>
+                        <li>
+                            Peserta akan membuat <b>aplikasi berbasis <i>Android</i></b> sesuai dengan <b>tema dan ketentuan</b> yang diberikan.
+                            {{-- Selanjutnya peserta akan melakukan koding untuk membuat aplikasi seusai dengan tema dan ketentuan yang diberikan. --}}
+                        </li>
+                        <li>
+                            Segala bentuk referensi wajib dicantumkan didalam <b>presentasi</b> dan didalam <i><b>source code</b></i> aplikasi yang dibuat.
+                            {{-- Segala bentuk referensi harus di cantumkan di dalam sebuah note kemudian dikirimkan kepada panitia dan untuk referensi kodingan dapat di cantumkan di dalam kodingan. --}}
+                        </li>
+                        <li>
+                            Segala bentuk <b>pelanggaran hak cipta</b> atau <b>tindakan plagiarisme</b> akan membuat peserta secara <b>otomatis <span class="red-text">terdiskualifikasi.</span></b>
+                            {{-- Pelanggaran hak cipta atau plagiarisme akan membuat peserta secara otomatis didiskualifikasi --}}
+                        </li>
+                        <li>
+                            File yang telah dikumpulkan adalah <b>bersifat final</b> dan <b>tidak dapat diganti dengan alasan apapun</b>.
+                        </li>
+                        <li>
+                            Segala keputusan dari dewan juri dan panitia adalah <b>mutlak dan tidak dapat diganggu gugat</b>.
+                        </li>
+                        <li>
+                            Peserta yang lolos ke 10 besar akan <b>mempresentasikan aplikasi yang telah dibuat</b> kepada juri pada hari final lomba.
+                        </li>
+                    </ol>
+                    <a class="button button-white" href="https://drive.computerun.id/files">PDF</a>
+                    {{-- --<span class="red-text"> Not available until regist is close.</span>  --}}
+                </div>
+                {{-- <div>
+                    <h2 class="partial-underline custom">Product<br>Rules
+                        <div class="guide">Rules</div>
+                    </h2>
+                </div>
+                <div>
+                    <h3><u>Presentation Rules</u></h3>
+                    <ol class="h6">
+                        <li>
+                            Slide yang terdapat didalam presentasi <b>tidak boleh lebih dari 15</b>. Bagian-bagian yang wajib terdapat di dalam slide:
+                            <ul>
+                                <li>
+                                    Nama kelompok dan asal universitas.
+                                </li>
+                                <li>
+                                    Ide project.
+                                </li>
+                                <li>
+                                    Judul project.
+                                </li>
+                                <li>
+                                    Gambaran project.
+                                </li>
+                                <li>
+                                    Software dan spesifikasi sistem yang akan digunakan.
+                                </li>
+                            </ul>
+                            Tampilan slide juga akan menjadi penilaian oleh dewan juri.
+                            Slide ini termasuk nama kelompok dan asal universitas,ide project,judul project,gambaran project,software yang akan digunakan dan spesifikasi sistem agar aplikasi ini dapat dijalankan.
+Tampilan slide dalam powerpoint juga akan menjadi salah satu penilaian tersendiri
+                        </li>
+                        <li>
+                            Presentasi dibuat dalam <b>Bahasa Indonesia</b>.
+                        </li>
+                        <li>
+                            File dari presentasi yang telah dikerjakan wajib menggunakan <b>format <code>.pptx</code></b>
+                        </li>
+                    </ol>
+                    <h3><u>Apps Rules</u></h3>
+                    <ol class="h6">
+                        <li>
+                            Peserta dapat menggunakan bahasa pemograman apapun seperti <b><i>Java, Python, Kotlin,</i> etc</b>.
+                            Peserta berhak menggunakan aplikasi koding apapun seperti python , C++ dll dalam pembuatan aplikasinya
+                        </li>
+                        <li>
+                            File dari aplikasi yang telah dikerjakan wajib menggunakan <b>format <code>.apk</code></b>
+                        </li>
+                        <li>
+                            Peserta dapat membuat aplikasi baik dalam <b>bentuk jadi maupun prototype</b>.
+                        </li>
+                    </ol>
+                </div> --}}
+            </div>
+            <h2 class="full-underline content-divider">Timeline</h2>
+            <div class="margin-3 h5">
+                <img src="img/icons/timeline-moapps.png">
+            </div>
+            <h1 class="full-underline content-divider">general FAQ</h1>
             <div class="margin-2 h5">
                 <p>Q: Bagaimana cara untuk mengikuti kompetisi yang diadakan?<br>
                     <b>A: Setelah mengunjungi web <i><a href="/">www.computerun.id</a></i>, kamu dapat memilih menu "Register" yang terdapat di setiap laman cabang kompetisi yang ingin kamu ikuti.</b>
@@ -68,7 +190,7 @@
                     <b>A: Ya, tentu saja. Asalkan kamu tetap memenuhi persyaratan yang ada.</b>
                 </p>
                 <p>Q: Apa saja persyaratan yang dibutuhkan untuk mengikuti kompetisi Computerun?<br>
-                    <b>A: Silahkan unduh panduan syarat dan ketentuan kompetisi Computerun <a href="#">di sini</a>.</b>
+                    <b>A: Silahkan unduh panduan syarat dan ketentuan kompetisi Computerun <a href="#rules">di sini</a>.</b>
                 </p>
                 <p>Q: Keuntungan apa yang akan saya dapatkan apabila mengikuti kompetisi Computerun?<br>
                     <b>A: Partisipan akan mendapatkan e-sertifikat dan menambah pengalaman berkompetisi berskala nasional.</b>

@@ -59,7 +59,142 @@
                     <span class="h3">IDR 1.500.000</span>
                 </div>
             </div>
-            <h1 class="full-underline after-icons-container">general FAQ</h1>
+            <div class="about-container margin-2 after-icons-container">
+                <div id="rules">
+                    <h2 class="partial-underline custom">Competition<br>Rules
+                        <div class="guide">Rules</div>
+                    </h2>
+                </div>
+                <div>
+                    <ol class="h6">
+                        <li>
+                            Peserta adalah pihak yang telah mengikuti mekanisme pendaftaran pada website resmi Computerun 2020 <b><a href="https://computerun.id/">computerun.id</a></b>.
+                        </li>
+                        <li>
+                            Setiap peserta harus merupakan <b>mahasiswa S1 atau D3</b>, <b>jurusan apapun diperbolehkan</b>.
+                        </li>
+                        <li>
+                            Setiap tim wajib terdiri dari <b>dua anggota dan satu ketua dalam satu grup</b>. Setiap anggota tim wajib berasal dari <b>satu universitas atau lembaga yang sama</b>.
+                        </li>
+                        <li>
+                            Setiap tim tidak diperkenankan menunjukkan <b>latar belakang institusi pendidikan</b> selama perlombaan dalam bentuk apapun.
+                        </li>
+                        <li>
+                            Setiap tim yang telah terdaftar <b>tidak dapat mengubah nama tim ataupun anggota kelompok</b> dengan alasan apapun.
+                        </li>
+                        <li>
+                            Setiap anggota tim wajib menggunakan <b>twibbon</b> yang telah disediakan <a href="https://drive.computerun.id/files">get it here!</a>.<br>
+                            Jangan lupa untuk <b>melampirkan bukti screenshot</b> tersebut, lalu mengirimkannya ke <b><a href="computerun.id/line">official line</a></b> computerun ya!
+                        </li>
+                    </ol>
+                </div>
+                <div>
+                    <h2 class="partial-underline custom">General<br>Rules
+                        <div class="guide">Rules</div>
+                    </h2>
+                </div>
+                <div>
+                    <ol class="h6">
+                        <li>
+                            Peserta akan membuat <b>proposal</b> untuk menjawab tantangan business case.
+                        </li>
+                        <li>
+                            Segala bentuk referensi wajib dicantumkan didalam <b>proposal</b>.
+                            {{-- Segala bentuk referensi harus di cantumkan di dalam sebuah note kemudian dikirimkan kepada panitia dan untuk referensi kodingan dapat di cantumkan di dalam kodingan. --}}
+                        </li>
+                        <li>
+                            Segala bentuk <b>pelanggaran hak cipta</b> atau <b>tindakan plagiarisme</b> akan membuat peserta secara <b>otomatis <span class="red-text">terdiskualifikasi.</span></b>
+                            {{-- Pelanggaran hak cipta atau plagiarisme akan membuat peserta secara otomatis didiskualifikasi --}}
+                        </li>
+                        <li>
+                            File yang telah dikumpulkan adalah <b>bersifat final</b> dan <b>tidak dapat diganti dengan alasan apapun</b>.
+                        </li>
+                        <li>
+                            Segala keputusan dari dewan juri dan panitia adalah <b>mutlak dan tidak dapat diganggu gugat</b>.
+                        </li>
+                        <li>
+                            Peserta akan <b>mempresentasikan proposal yang telah dibuat</b> kepada juri pada hari final lomba.
+                        </li>
+                    </ol>
+                    <a class="button button-white" href="https://drive.computerun.id/files">PDF</a>
+                    {{-- --<span class="red-text"> Not available until regist is close.</span>  --}}
+                </div>
+                {{-- <div>
+                    <h2 class="partial-underline custom">Files<br>Rules
+                        <div class="guide">Rules</div>
+                    </h2>
+                </div>
+                <div>
+                    <h3><u>Proposal Rules</u></h3>
+                    <ol class="h6">
+                        <li>
+                            Halaman yang terdapat didalam proposal <b>tidak boleh lebih dari 15</b>. Bagian-bagian yang wajib terdapat di dalam slide:
+                            <ul>
+                                <li>
+                                    Cover.
+                                </li>
+                                <li>
+                                    Abstract atau summary.
+                                </li>
+                                <li>
+                                    Preface (Optional).
+                                </li>
+                                <li>
+                                    Referensi.
+                                </li>
+                                <li>
+                                    Lampiran.
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            Peserta dapat membawa ide cemerlang peserta dalam menulis konten (Company Profile, Supporting Data/Statistics, dan Problem and situation analysis).
+                        </li>
+                        <li>
+                            Proposal dibuat dengan <b>mengikuti format dalam menulis makalah ilmiah</b>.
+                            <ul>
+                                <li>
+                                    Title: Times New Roman 16pt <b>Bold</b>.
+                                </li>
+                                <li>
+                                    Body: Times New Roman 12pt.
+                                </li>
+                                <li>
+                                    Layout: Justify.
+                                </li>
+                                <li>
+                                    Line Spacing: 1.5 Lines
+                                </li>
+                                <li>
+                                    Margin: Normal (top&bottom: 2.5cm, left: 2cm, right: 1.5cm).
+                                </li>
+                                <li>
+                                    File Name: [TEAM NAME]_[3 FIRST WORD OF PAPER TITLE]
+                                </li>
+                                <li>
+                                    Header: [PAPER TITLE]---COMPUTERUN2020
+                                </li>
+                                <li>
+                                    Footer: [Page Number] (halaman satu dimulai setelah cover)
+                                </li>
+                            </ul>
+                        <li>
+                            Proposal dibuat dalam <b>Bahasa Indonesia</b>.
+                        </li>
+                        <li>
+                            File dari proposal yang telah dikerjakan wajib menggunakan <b>format <code>.pdf</code></b>
+                        </li>
+                        <li>
+                            Rules lengkapnya akan disampaikan <b>pada saat <i>technical meeting</i></b>.
+                        </li>
+                    </ol>
+                </div> --}}
+            </div>
+            <h2 class="full-underline content-divider">Timeline</h2>
+            <div class="margin-3 h5">
+                <img src="img/icons/bcase-timeline.png">
+            </div>
+            <h1 class="full-underline content-divider">general FAQ</h1>
             <div class="margin-2 h5">
                 <p>Q: Bagaimana cara untuk mengikuti kompetisi yang diadakan?<br>
                     <b>A: Setelah mengunjungi web <i><a href="/">www.computerun.id</a></i>, kamu dapat memilih menu "Register" yang terdapat di setiap laman cabang kompetisi yang ingin kamu ikuti.</b>
@@ -68,7 +203,7 @@
                     <b>A: Ya, tentu saja. Asalkan kamu tetap memenuhi persyaratan yang ada.</b>
                 </p>
                 <p>Q: Apa saja persyaratan yang dibutuhkan untuk mengikuti kompetisi Computerun?<br>
-                    <b>A: Silahkan unduh panduan syarat dan ketentuan kompetisi Computerun <a href="#">di sini</a>.</b>
+                    <b>A: Silahkan unduh panduan syarat dan ketentuan kompetisi Computerun <a href="#rules">di sini</a>.</b>
                 </p>
                 <p>Q: Keuntungan apa yang akan saya dapatkan apabila mengikuti kompetisi Computerun?<br>
                     <b>A: Partisipan akan mendapatkan e-sertifikat dan menambah pengalaman berkompetisi berskala nasional.</b>
