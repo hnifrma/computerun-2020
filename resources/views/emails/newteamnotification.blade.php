@@ -11,6 +11,14 @@ You are recently being added by **{{$data["team_leader_name"]}}** ({{$data["team
 
 If you think this is a mistake or an abuse, please let us know by replying to this message. Thank you for your attention.
 
+@component('mail::panel')
+### Notice
+
+If you are registering for **Business-IT Case** and/or **Mobile Application Development** competitions, you will be required to send a copy of **University Student ID Card (Kartu Tanda Mahasiswa / KTM)** for further verification.
+
+<img src="https://computerun.id/docs/Verifikasi KTM.jpg" alt="Instructions can be found on https://computerun.id/docs/Verifikasi%20KTM.jpg">
+@endcomponent
+
 Sincerely,
 COMPUTERUN 2020.
 @endcomponent
