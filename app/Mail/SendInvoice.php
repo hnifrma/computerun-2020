@@ -21,7 +21,6 @@ class SendInvoice extends Mailable
     public function __construct($data)
     {
         $this->data = $data;
-        $this->message = $this;
         $this->subject('Your payment invoice for COMPUTERUN 2020 registration (' . $data["payment_code"] . ')');
     }
 

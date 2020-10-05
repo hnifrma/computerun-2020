@@ -15,64 +15,60 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('static.index');
 });
-Route::get('/uses', function () {
-    return view('uses');
-});
+// Route::get('/uses', function () {
+//     return view('static.uses');
+// });
 Route::get('/sponsor-us', function () {
-    return view('sponsor-us');
+    return view('static.sponsor-us');
 });
 Route::get('/event-template', function () {
-    return view('event-template');
+    return view('static.event-template');
 });
 
 /* Business-IT Competitions */
 Route::get('/bcase', function () {
-    return view('bcase');
+    return view('static.bcase');
 });
 Route::get('/moapps', function () {
-    return view('moapps');
+    return view('static.moapps');
 });
 
 /* Mini E-Sports Competitions */
 Route::get('/ml', function () {
-    return view('ml');
+    return view('static.ml');
 });
 Route::get('/pubg', function () {
-    return view('pubg');
+    return view('static.pubg');
 });
 Route::get('/valorant', function () {
-    return view('valorant');
+    return view('static.valorant');
 });
 
 /* Webinars */
 // Route::get('/webinar-bchain', function () {
-//     return view('webinar-bchain');
+//     return view('static.webinar-bchain');
 // });
 Route::get('/webinar-covid', function () {
-    return view('webinar-covid');
+    return view('static.webinar-covid');
 });
 Route::get('/webinar-digital', function () {
-    return view('webinar-digital');
+    return view('static.webinar-digital');
 });
 Route::get('/webinar-mobile', function () {
-    return view('webinar-mobile');
-});
-
-Route::get('/regist-new', function () {
-    return view('registration.main');
+    return view('static.webinar-mobile');
 });
 
 Route::get('/contact', function () {
-    return view('contact');
+    return view('static.contact');
 });
-Route::get('/regist-webinar', function () {
-    return view('regist-webinar');
-});
-Route::get('/regist-competition', function () {
-    return view('regist-competition');
-});
+// Route::get('/regist-webinar', function () {
+//     return view('regist-webinar');
+// });
+// Route::get('/regist-competition', function () {
+//     return view('regist-competition');
+// });
 Route::view('userview', "registration");
 Route::post('postcontroller', 'PostController@formSubmit');
 
