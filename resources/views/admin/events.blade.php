@@ -76,9 +76,9 @@
             <h2 class="font-800">No Events Found.</h2>
         </div>
     @endif
-    <div class="text-center">
+    <!--div class="text-center">
         <a class="btn button button-gradient" data-toggle="modal" href="#" data-target="#register" role="button">Register</a>
-    </div>
+    </div-->
 </div>
 
 <script src="/js/registration.js"></script>

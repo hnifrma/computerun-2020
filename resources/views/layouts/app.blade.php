@@ -75,7 +75,9 @@
                 </div>
                 <p class="lead">Welcome! Manage your tickets here.</p>
                 {{-- <a class="btn btn-primary" href="/register" role="button">Register</a> --}}
-                <a class="btn button button-dark" data-toggle="modal" href="" data-target="#accountSettings" role="button">Profile Settings</a>
+                @if (app('request')->path() == 'home')
+                    <a class="btn button button-dark" data-toggle="modal" href="" data-target="#accountSettings" role="button">Profile Settings</a>
+                @endif
                 <a class="btn button button-white" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
@@ -169,6 +171,7 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="adminDropdown">
                                     <a class="dropdown-item" href="/admin/events">Manage Events</a>
+                                    <a class="dropdown-item" href="/admin/users">Manage Users</a>
                                 </div>
                             </li>
                             <li class="nav-item">

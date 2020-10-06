@@ -521,7 +521,7 @@
         } else if (emails.length > emailSet.size){
             document.getElementById("submit-validation").innerHTML = '<div class="alert alert-danger">Error: No duplicate emails allowed.</div>';
         } else {
-            document.getElementById("submit-validation").innerHTML = '<div class="text-center"><button type="submit" class="button button-gradient">Submit</button></div>';
+            document.getElementById("submit-validation").innerHTML = '<div class="text-center"><b class="red-text">By registering to this competition, you agree to our rules and regulations.<br></b><button type="submit" class="button button-gradient content-divider-short">Submit</button></div>';
         }
     }
 </script>

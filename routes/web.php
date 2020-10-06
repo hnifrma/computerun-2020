@@ -87,6 +87,10 @@ Route::post('/getuserdetails', 'UserSettingsController@getUserDetails');
 Route::get('/register/{id}', 'UserSettingsController@registrationRedirectHandler');
 Route::post('/registerevent', 'UserSettingsController@registerEvent');
 
+// Handle payments
+Route::get('/pay/{paymentcode}', 'UserSettingsController@paymentIndex');
+Route::post('/pay/{paymentcode}', 'UserSettingsController@paymentHandler');
+
 // User Dashboard
 Route::get('/home', 'HomeController@index')->name('dashboard.home');
 
@@ -95,6 +99,9 @@ Route::get('/admin', function () {
     return redirect('/home');
 });
 // Route::get('/admin/{path}', 'AdminController@index');
+Route::get('/admin/downloadFile/{file_id}', 'AdminController@downloadFromFileId');
 Route::get('/admin/events', 'AdminController@getEventsList');
 Route::get('/admin/event/{event_id}', 'AdminController@getEventParticipants');
 Route::post('/admin/event/{event_id}', 'AdminController@postEventParticipants');
+Route::get('/admin/users', 'AdminController@getAllUsers');
+Route::post('/admin/users', 'AdminController@postAllUsers');

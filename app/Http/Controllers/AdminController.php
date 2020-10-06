@@ -33,7 +33,7 @@ class AdminController extends Controller
         ->get();
     }
     public function index($path){
-        // Make usre that it's an Admin
+        // Make sure that it's an Admin
         if (!Auth::check() || (Auth::user()->university_id < 2 || Auth::user()->university_id > 3)){
             Session::put('error', 'Admin: Not Authorized');
             return redirect('login');
@@ -47,8 +47,38 @@ class AdminController extends Controller
         }
     }
 
+    public function getAllUsers(){
+        // Make sure that it's an Admin
+        if (!Auth::check() || (Auth::user()->university_id < 2 || Auth::user()->university_id > 3)){
+            Session::put('error', 'Admin: Not Authorized');
+            return redirect('login');
+        }
+        $users = DB::table('users')
+            ->select('users.id', 'users.name', 'users.university_id', DB::raw('universities.name AS university_name'), 'users.email', 'users.verified')
+            ->join('universities', 'university_id', 'universities.id')
+            ->get();
+        $universities = DB::table('universities')->get();
+        return view('admin.users', ['users' => $users, 'universities' => $universities]);
+    }
+
+    public function postAllUsers(Request $request){
+        // Make sure that it's an Admin (Higher Level)
+        if (!Auth::check() || (Auth::user()->university_id != 2)){
+            Session::put('error', 'Admin: Not Authorized');
+            return redirect('login');
+        }
+
+        foreach($request->all() as $key => $value) {
+            if (Str::startsWith($key, "status-") && $value >= 0){
+                $key = substr($key, 7);
+                if ($key != Auth::user()->id) DB::table('users')->where('id', $key)->update(['university_id' => $value]);
+            }
+        }
+        return redirect('/admin/users');
+    }
+
     public function getEventsList(){
-        // Make usre that it's an Admin
+        // Make sure that it's an Admin
         if (!Auth::check() || (Auth::user()->university_id < 2 || Auth::user()->university_id > 3)){
             Session::put('error', 'Admin: Not Authorized');
             return redirect('login');
@@ -57,7 +87,7 @@ class AdminController extends Controller
     }
 
     public function getEventParticipants($event_id){
-        // Make usre that it's an Admin
+        // Make sure that it's an Admin
         if (!Auth::check() || (Auth::user()->university_id < 2 || Auth::user()->university_id > 3)){
             Session::put('error', 'Admin: Not Authorized');
             return redirect('login');
@@ -82,8 +112,8 @@ class AdminController extends Controller
     }
 
     public function postEventParticipants(Request $request, $event_id){
-        // Make usre that it's an Admin
-        if (!Auth::check() || (Auth::user()->university_id < 2 || Auth::user()->university_id > 3)){
+        // Make sure that it's an Admin (Higher Level)
+        if (!Auth::check() || (Auth::user()->university_id != 2)){
             Session::put('error', 'Admin: Not Authorized');
             return redirect('login');
         }
@@ -127,12 +157,33 @@ class AdminController extends Controller
     }
 
     public function downloadEventParticipants($event_id){
-        // Make usre that it's an Admin
+        // Make sure that it's an Admin
         if (!Auth::check() || (Auth::user()->university_id < 2 || Auth::user()->university_id > 3)){
             Session::put('error', 'Admin: Not Authorized');
             return redirect('login');
         }
         $registration = $this->util_getParticipantsByEventId($event_id);
         // TODO: Save from database to CSV
+    }
+
+    // Module to download from File ID
+    public function downloadFromFileId($file_id){
+        // Make sure that it's an Admin
+        if (!Auth::check() || (Auth::user()->university_id < 2 || Auth::user()->university_id > 3)){
+            Session::put('error', 'Admin: Not Authorized');
+            return redirect('login');
+        }
+        $file = DB::table('files')->where('id', $file_id)->first();
+        if (!Auth::check() || (Auth::user()->university_id < 2 || Auth::user()->university_id > 3)){
+            Session::put('error', 'Admin: File ID not found');
+            return redirect('home');
+        }
+
+        try {
+            return response()->download(storage_path("app/" . $file->name));
+        } catch (\Exception $e){
+            Session::put('error', 'Admin: Internal Server Error:' . $e);
+            return redirect('home');
+        }
     }
 }
