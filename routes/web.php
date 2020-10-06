@@ -63,6 +63,11 @@ Route::get('/webinar-mobile', function () {
 Route::get('/contact', function () {
     return view('static.contact');
 });
+
+Route::get('/twibbon', function () {
+    return redirect('/docs/Twibbon-Computerun2020.png');
+});
+
 // Route::get('/regist-webinar', function () {
 //     return view('regist-webinar');
 // });

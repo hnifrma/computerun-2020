@@ -83,7 +83,7 @@
                             Setiap tim yang telah terdaftar <b>tidak dapat mengubah nama tim ataupun anggota kelompok</b> dengan alasan apapun.
                         </li>
                         <li>
-                            Setiap anggota tim wajib menggunakan <b>twibbon</b> yang telah disediakan <a href="https://drive.computerun.id/files">get it here!</a>.<br>
+                            Setiap anggota tim wajib menggunakan <b>twibbon</b> yang telah disediakan <b><a href="/twibbon">di sini</a></b>.<br>
                             Jangan lupa untuk <b>melampirkan bukti screenshot</b> tersebut, lalu mengirimkannya ke <b><a href="computerun.id/line">official line</a></b> computerun ya!
                         </li>
                     </ol>
