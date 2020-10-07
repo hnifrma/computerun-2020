@@ -84,7 +84,6 @@
                         </li>
                         <li>
                             Setiap anggota tim wajib menggunakan <b>twibbon</b> yang telah disediakan <b><a href="/twibbon">di sini</a></b>.<br>
-                            Jangan lupa untuk <b>melampirkan bukti screenshot</b> tersebut, lalu mengirimkannya ke <b><a href="computerun.id/line">official line</a></b> computerun ya!
                         </li>
                     </ol>
                 </div>
