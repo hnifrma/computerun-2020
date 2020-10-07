@@ -71,7 +71,7 @@ class AdminController extends Controller
         foreach($request->all() as $key => $value) {
             if (Str::startsWith($key, "status-") && $value >= 0){
                 $key = substr($key, 7);
-                if ($key != Auth::user()->id) DB::table('users')->where('id', $key)->update(['university_id' => $value]);
+                if ($value >= 0 && $value != '' && $key != Auth::user()->id) DB::table('users')->where('id', $key)->update(['university_id' => $value]);
             }
         }
         return redirect('/admin/users');

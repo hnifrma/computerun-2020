@@ -198,7 +198,7 @@
                                 <img src="/img/icons/Events - Webinar.png">
                             </div>
                             <div>
-                                <span class="h5 font-800">Digital Startup: How to create your own masterpiece</span><br>
+                                <span class="h5 font-800">Preparing for the Changing Nature of Work in the Digital Era</span><br>
                                 <a href="#" class="button button-gradient-2">COMING SOON</a>
                             </div>
                         </div>
