@@ -183,7 +183,7 @@
                     <h3>{{Auth::user()->name}}</h3>
                     <ul>
                         <li><b>Participant Type:</b>
-                            @if (Auth::user()->binusian != 1)
+                            @if (Auth::user()->university_id < 2 || Auth::user()->university_id > 4)
                                 Non
                             @endif
                             Binusian</li>
