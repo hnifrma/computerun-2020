@@ -90,6 +90,10 @@
                                 <br>
                                 <b>Payment Code:</b> {{$list->payment_code}}
                             @endif
+                            @if($list->file_id != null && $list->file_id != '')
+                                <br>
+                                <a href="/admin/downloadFile/{{$list->file_id}}" target="_blank">Download Supporting File</a>
+                            @endif
                         </td>
                         <td>
                             <b>{{$list->email}}</b>

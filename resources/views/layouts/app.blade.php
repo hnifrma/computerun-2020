@@ -75,7 +75,9 @@
                 </div>
                 <p class="lead">Welcome! Manage your tickets here.</p>
                 {{-- <a class="btn btn-primary" href="/register" role="button">Register</a> --}}
-                <a class="btn button button-dark" data-toggle="modal" href="" data-target="#accountSettings" role="button">Profile Settings</a>
+                @if (app('request')->path() == 'home')
+                    <a class="btn button button-dark" data-toggle="modal" href="" data-target="#accountSettings" role="button">Profile Settings</a>
+                @endif
                 <a class="btn button button-white" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
@@ -95,7 +97,12 @@
                             <div class="row">
                                 <div class="col-12 col-md-6">
                                     <h5 class="font-800">WELCOME,</h5>
-                                    <h1 class="font-800">{{Auth::user()->name}}</h3>
+                                    <h1 class="font-800">{{Auth::user()->name}}
+                                        @if (Auth::user()->verified == 1)
+                                            @component ("components.bootstrap-icons", ["icon" => "patch-check-fll"])
+                                            @endcomponent
+                                        @endif
+                                    </h3>
                                     <h3>{{DB::table('universities')->where('id', Auth::user()->university_id)->first()->name}}</h3>
                                     @if (Auth::user()->university_id >= 2 && Auth::user()->university_id <= 4)
                                         <h5 class="font-700">NIM: {{Auth::user()->nim}}</h5>
@@ -164,6 +171,7 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="adminDropdown">
                                     <a class="dropdown-item" href="/admin/events">Manage Events</a>
+                                    <a class="dropdown-item" href="/admin/users">Manage Users</a>
                                 </div>
                             </li>
                             <li class="nav-item">

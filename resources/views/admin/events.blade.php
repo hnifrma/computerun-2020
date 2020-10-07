@@ -48,18 +48,18 @@
                         <td>
                             <b>{{$list->name}}</b><br>
                             @if ($list->opened == 1)
-                                @component ('components.bootstrap-icons', ['icon' => 'unlock'])
+                                @component ('components.bootstrap-icons', ['icon' => 'unlock', 'size' => 24])
                                 @endcomponent
                             @else
-                                @component ('components.bootstrap-icons', ['icon' => 'lock-fill'])
+                                @component ('components.bootstrap-icons', ['icon' => 'lock-fill', 'size' => 24])
                                 @endcomponent
                             @endif
                             @if ($list->attendance_opened == 1)
                                 @if ($list->attendance_is_exit == 1)
-                                    @component ('components.bootstrap-icons', ['icon' => 'box-arrow-left'])
+                                    @component ('components.bootstrap-icons', ['icon' => 'box-arrow-left', 'size' => 24])
                                     @endcomponent
                                 @else
-                                    @component ('components.bootstrap-icons', ['icon' => 'box-arrow-in-right'])
+                                    @component ('components.bootstrap-icons', ['icon' => 'box-arrow-in-right', 'size' => 24])
                                     @endcomponent
                                 @endif
                             @endif
@@ -76,9 +76,9 @@
             <h2 class="font-800">No Events Found.</h2>
         </div>
     @endif
-    <div class="text-center">
+    <!--div class="text-center">
         <a class="btn button button-gradient" data-toggle="modal" href="#" data-target="#register" role="button">Register</a>
-    </div>
+    </div-->
 </div>
 
 <script src="/js/registration.js"></script>

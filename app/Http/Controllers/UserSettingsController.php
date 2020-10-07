@@ -42,6 +42,103 @@ class UserSettingsController extends Controller
         }
     }
 
+    // Module to generate payment page
+    public function paymentIndex(Request $request, $paymentcode){
+        if (!Auth::check()){
+            $request->session()->put('error', 'You will need to log in first');
+            return redirect("/home");
+        }
+
+        // Ensure that the payment code exists
+        $requests = DB::table("registration")
+            ->where("payment_code", $paymentcode)
+            ->where("status", 0)
+            ->join("events", "events.id", "=", "registration.event_id")
+            ->join("users", "users.id", "=", "registration.ticket_id")
+            ->select("registration.*", "events.price", DB::raw('events.name AS event_name'), DB::raw('users.name AS user_name'))
+            ->get();
+
+        if (count($requests) == 0){
+            $request->session()->put('error', 'Payment code not found');
+            return redirect("/home");
+        }
+
+        // Check whether the user is one of the participants
+        $currentId = Auth::user()->id;
+        $isAuthorized = false;
+        for ($i = 0; $i < count($requests); $i++){
+            if ($requests[$i]->ticket_id == $currentId){
+                $isAuthorized = true;
+                break;
+            }
+        }
+
+        if (!$isAuthorized){
+            $request->session()->put('error', 'Only the ticket holder can upload the registration document');
+            return redirect("/home");
+        }
+
+        return view("account.payment", ["requests" => $requests, "paymentcode" => $paymentcode]);
+    }
+
+    // Module to upload payment receipts
+    public function paymentHandler(Request $request, $paymentcode){
+        if (!Auth::check()){
+            $request->session()->put('error', 'You will need to log in first');
+            return redirect("/home");
+        }
+
+        // Ensure that the payment code exists
+        $requests = DB::table("registration")
+            ->where("payment_code", $paymentcode)
+            ->where("status", 0)
+            ->join("events", "events.id", "=", "registration.event_id")
+            ->join("users", "users.id", "=", "registration.ticket_id")
+            ->select("registration.*", "events.price", DB::raw('events.name AS event_name'), DB::raw('users.name AS user_name')) 
+            ->get();
+
+        if (count($requests) == 0){
+            $request->session()->put('error', 'Payment code not found');
+            return redirect("/home");
+        }
+
+        // Check whether the user is one of the participants
+        $currentId = Auth::user()->id;
+        $isAuthorized = false;
+        for ($i = 0; $i < count($requests); $i++){
+            if ($requests[$i]->ticket_id == $currentId){
+                $isAuthorized = true;
+                break;
+            }
+        }
+
+        if (!$isAuthorized){
+            $request->session()->put('error', 'Invalid Payment Code');
+            return redirect("/home");
+        }
+
+        // Validate the inputs
+        $request->validate([
+            'file' => 'mimes:jpeg,png,pdf,zip'
+        ]);
+
+        // Save to storage and add to Database
+        $path = $request->file('file')->store('uploads');
+
+        $fileId = DB::table('files')->insertGetId([
+            "name" => $path
+        ]);
+
+        DB::table("registration")
+            ->where("payment_code", $paymentcode)
+            ->where("status", 0)
+            ->update(["file_id" => $fileId]);
+
+        $request->session()->put('status', 'Your files have been uploaded');
+
+        return redirect('/home');
+    }
+
     // Module to register to certain events
     public function registerEvent(Request $request){
         if (!Auth::check()) return redirect("/home");

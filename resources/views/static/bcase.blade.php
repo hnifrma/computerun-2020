@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-        @component("components.meta", ["title" => "Mobile Application Development"])
+        @component("components.meta", ["title" => "Business-IT Case"])
         @endcomponent
     </head>
     <body>
         <div class="container-2 content-top bg-event">
             @component("components.navbar")
             @endcomponent
-            @component("components.navbar-mobile", ['event' => ['register' => '/register/2'], 'template' => 'event-details'])
+            @component("components.navbar-mobile", ['event' => ['register' => '/register/1'], 'template' => 'event-details'])
             @endcomponent
             <div class="margin-2 text-center content-divider">
                 <h3>COMPETITION</h3>
-                <h1 class="gradient-text display-2 font-800">Mobile Application Development</h1>
-                <a class="button button-gradient" href="/register/2">REGISTER</a>
+                <h1 class="gradient-text display-2 font-800">Business-IT Case</h1>
+                <a class="button button-gradient" href="/register/1">REGISTER</a>
                 <a class="button button-white" href="#rules">RULES</a>
             </div>
         </div>
@@ -22,14 +22,14 @@
             <div class="about-container margin-2 after-container-clip">
                 <div>
                     <h2 class="partial-underline custom">
-                        <img src="/img/icons/Events - Mobile Apps.png" class="about-image"><br>
+                        <img src="/img/icons/Events - Business-IT Case.png" class="about-image"><br>
                         about this<br><span>competition.</span>
                         <div class="guide"><span>competition</span></div>
                     </h2>
                 </div>
                 <div>
                     <p class="h5">
-                        Did you know, what is mobile application? So, mobile application is a type of application software designed to run on a mobile device, such as a smartphone or tablet computer. Which one of you can make a mobile app? Now, you can improve your skills in the mobile application development computer run competition 2020!
+                        Business-IT Case Competition COMPUTERUN merupakan ajang kompetisi Business Case berskala nasional yang diselenggarakan untuk seluruh mahasiswa S1 dari seluruh perguruan tinggi di Indonesia.
                     </p>
                     <p class="h5">
                         Lomba ini dapat mengasah kemampuan mahasiswa untuk berkerja dan bersinergi dalam satu tim dan menyelesaikan sebuah kasus nyata yang terjadi dalam sebuah perusahaan, dan juga untuk mengembangkan sikap solutif agar para mahasiswa terlatih untuk menghadapi masalah dalam dunia bisnis dan TI di masa mendatang serta dapat menciptakan solusi kreatif yang efektif secara bersama-sama sehingga masalah dapat terselesaikan dengan baik.
@@ -83,7 +83,7 @@
                             Setiap tim yang telah terdaftar <b>tidak dapat mengubah nama tim ataupun anggota kelompok</b> dengan alasan apapun.
                         </li>
                         <li>
-                            Setiap anggota tim wajib menggunakan <b>twibbon</b> yang telah disediakan <a href="https://drive.computerun.id/files">get it here!</a>.<br>
+                            Setiap anggota tim wajib menggunakan <b>twibbon</b> yang telah disediakan <b><a href="/twibbon">di sini</a></b>.<br>
                             Jangan lupa untuk <b>melampirkan bukti screenshot</b> tersebut, lalu mengirimkannya ke <b><a href="computerun.id/line">official line</a></b> computerun ya!
                         </li>
                     </ol>
@@ -96,15 +96,10 @@
                 <div>
                     <ol class="h6">
                         <li>
-                            Peserta akan membuat <b>presentasi</b> menggunakan <i>Powerpoint</i>.
-                            Presentasi tersebut harus berisikan <b>penjelasan singkat dan tampilan (<i>User Interface</i>)</b> tentang aplikasi yang akan dibuat.
+                            Peserta akan membuat <b>proposal</b> untuk menjawab tantangan business case.
                         </li>
                         <li>
-                            Peserta akan membuat <b>aplikasi berbasis <i>Android</i></b> sesuai dengan <b>tema dan ketentuan</b> yang diberikan.
-                            {{-- Selanjutnya peserta akan melakukan koding untuk membuat aplikasi seusai dengan tema dan ketentuan yang diberikan. --}}
-                        </li>
-                        <li>
-                            Segala bentuk referensi wajib dicantumkan didalam <b>presentasi</b> dan didalam <i><b>source code</b></i> aplikasi yang dibuat.
+                            Segala bentuk referensi wajib dicantumkan didalam <b>proposal</b>.
                             {{-- Segala bentuk referensi harus di cantumkan di dalam sebuah note kemudian dikirimkan kepada panitia dan untuk referensi kodingan dapat di cantumkan di dalam kodingan. --}}
                         </li>
                         <li>
@@ -118,68 +113,86 @@
                             Segala keputusan dari dewan juri dan panitia adalah <b>mutlak dan tidak dapat diganggu gugat</b>.
                         </li>
                         <li>
-                            Peserta yang lolos ke 10 besar akan <b>mempresentasikan aplikasi yang telah dibuat</b> kepada juri pada hari final lomba.
+                            Peserta akan <b>mempresentasikan proposal yang telah dibuat</b> kepada juri pada hari final lomba.
                         </li>
                     </ol>
                     <a class="button button-white" href="https://drive.computerun.id/files">PDF</a>
                     {{-- --<span class="red-text"> Not available until regist is close.</span>  --}}
                 </div>
                 {{-- <div>
-                    <h2 class="partial-underline custom">Product<br>Rules
+                    <h2 class="partial-underline custom">Files<br>Rules
                         <div class="guide">Rules</div>
                     </h2>
                 </div>
                 <div>
-                    <h3><u>Presentation Rules</u></h3>
+                    <h3><u>Proposal Rules</u></h3>
                     <ol class="h6">
                         <li>
-                            Slide yang terdapat didalam presentasi <b>tidak boleh lebih dari 15</b>. Bagian-bagian yang wajib terdapat di dalam slide:
+                            Halaman yang terdapat didalam proposal <b>tidak boleh lebih dari 15</b>. Bagian-bagian yang wajib terdapat di dalam slide:
                             <ul>
                                 <li>
-                                    Nama kelompok dan asal universitas.
+                                    Cover.
                                 </li>
                                 <li>
-                                    Ide project.
+                                    Abstract atau summary.
                                 </li>
                                 <li>
-                                    Judul project.
+                                    Preface (Optional).
                                 </li>
                                 <li>
-                                    Gambaran project.
+                                    Referensi.
                                 </li>
                                 <li>
-                                    Software dan spesifikasi sistem yang akan digunakan.
+                                    Lampiran.
                                 </li>
                             </ul>
-                            Tampilan slide juga akan menjadi penilaian oleh dewan juri.
-                            Slide ini termasuk nama kelompok dan asal universitas,ide project,judul project,gambaran project,software yang akan digunakan dan spesifikasi sistem agar aplikasi ini dapat dijalankan.
-Tampilan slide dalam powerpoint juga akan menjadi salah satu penilaian tersendiri
                         </li>
                         <li>
-                            Presentasi dibuat dalam <b>Bahasa Indonesia</b>.
+                            Peserta dapat membawa ide cemerlang peserta dalam menulis konten (Company Profile, Supporting Data/Statistics, dan Problem and situation analysis).
                         </li>
                         <li>
-                            File dari presentasi yang telah dikerjakan wajib menggunakan <b>format <code>.pptx</code></b>
-                        </li>
-                    </ol>
-                    <h3><u>Apps Rules</u></h3>
-                    <ol class="h6">
+                            Proposal dibuat dengan <b>mengikuti format dalam menulis makalah ilmiah</b>.
+                            <ul>
+                                <li>
+                                    Title: Times New Roman 16pt <b>Bold</b>.
+                                </li>
+                                <li>
+                                    Body: Times New Roman 12pt.
+                                </li>
+                                <li>
+                                    Layout: Justify.
+                                </li>
+                                <li>
+                                    Line Spacing: 1.5 Lines
+                                </li>
+                                <li>
+                                    Margin: Normal (top&bottom: 2.5cm, left: 2cm, right: 1.5cm).
+                                </li>
+                                <li>
+                                    File Name: [TEAM NAME]_[3 FIRST WORD OF PAPER TITLE]
+                                </li>
+                                <li>
+                                    Header: [PAPER TITLE]---COMPUTERUN2020
+                                </li>
+                                <li>
+                                    Footer: [Page Number] (halaman satu dimulai setelah cover)
+                                </li>
+                            </ul>
                         <li>
-                            Peserta dapat menggunakan bahasa pemograman apapun seperti <b><i>Java, Python, Kotlin,</i> etc</b>.
-                            Peserta berhak menggunakan aplikasi koding apapun seperti python , C++ dll dalam pembuatan aplikasinya
+                            Proposal dibuat dalam <b>Bahasa Indonesia</b>.
                         </li>
                         <li>
-                            File dari aplikasi yang telah dikerjakan wajib menggunakan <b>format <code>.apk</code></b>
+                            File dari proposal yang telah dikerjakan wajib menggunakan <b>format <code>.pdf</code></b>
                         </li>
                         <li>
-                            Peserta dapat membuat aplikasi baik dalam <b>bentuk jadi maupun prototype</b>.
+                            Rules lengkapnya akan disampaikan <b>pada saat <i>technical meeting</i></b>.
                         </li>
                     </ol>
                 </div> --}}
             </div>
             <h2 class="full-underline content-divider">Timeline</h2>
             <div class="margin-3 h5">
-                <img src="img/icons/timeline-moapps.png">
+                <img src="img/icons/bcase-timeline.png">
             </div>
             <h1 class="full-underline content-divider">general FAQ</h1>
             <div class="margin-2 h5">

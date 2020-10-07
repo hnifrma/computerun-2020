@@ -14,7 +14,7 @@ If you think this is a mistake or an abuse, please let us know by replying to th
 @component('mail::panel')
 ### Notice
 
-If you are registering for **Business-IT Case** and/or **Mobile Application Development** competitions, you will be required to send a copy of **University Student ID Card (Kartu Tanda Mahasiswa / KTM)** for further verification.
+If you are registering for **Business-IT Case** and/or **Mobile Application Development** competitions, you will be required to send a copy of **University Student ID Card (Kartu Tanda Mahasiswa / KTM)** and **Screenshot of Twibbon Upload on Instagram Feeds (all members)** for further verification. Please collect these documents to your team leaders for submission.
 
 <img src="https://computerun.id/docs/Verifikasi KTM.jpg" alt="Instructions can be found on https://computerun.id/docs/Verifikasi%20KTM.jpg">
 @endcomponent
