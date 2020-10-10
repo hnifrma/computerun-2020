@@ -1,15 +1,38 @@
 <h1 class="full-underline content-divider">our partners</h1>
 <h3 class="text-center">SPONSORS</h3>
-<div class="content-divider-short text-center placeholder-sponsors margin-1">
-    @component('components.sponsorship-invite-message', ['is_empty' => true, 'id' => rand(0,7)])
-    @endcomponent
+<div class="content-divider-short text-center margin-1">
+    <div class="sponsors-container">
+        @component ('components.sponsor-item', ['id' => 'indo-bangunan', 'name' => 'Indo Bangunan'])
+        @endcomponent
+        @component ('components.sponsor-item', ['id' => 'sandimas', 'name' => 'Sandimas Granite & Sanitary'])
+        @endcomponent
+    </div>
+    <p>Do you want to sponsor our event too? <b><a href="/sponsor-us">Run before it's too late!</a></b></p>
 </div>
+
 <h3 class="text-center">MEDIA PARTNERS</h3>
 <div class="content-divider-short text-center margin-1">
-    <picture class="width-100">
-        <source srcset="/docs/Media%20Partners.webp" type="image/webp">
-        <source srcset="/docs/Media%20Partners.jpg" type="image/jpeg">
-        <img src="/docs/Media Partners.jpg" alt="BINUS TV Club, BVoice Radio, Cyber Security Community BINUS University, File Magazine, Info Lomba Mahasiswa (Instagram: @infolomba.mhs), Kawan Kampus (Instagram: @kawankampus), Update Lomba (Instagram: @update.lomba), Radio Kampus ITB, Radio Universitas Tarumanagara" class="width-100">
-    </picture>
+    <div class="sponsors-container">
+        @component ('components.sponsor-item', ['id' => 'binus-tv-club', 'name' => 'BINUS TV Club'])
+        @endcomponent
+        @component ('components.sponsor-item', ['id' => 'bvoice-radio', 'name' => 'BVoice Radio'])
+        @endcomponent
+        @component ('components.sponsor-item', ['id' => 'cyber-security-community-binus', 'name' => 'Cyber Security Community, BINUS University'])
+        @endcomponent
+        @component ('components.sponsor-item', ['id' => 'filemagz', 'name' => 'FILE Magazine'])
+        @endcomponent
+        @component ('components.sponsor-item', ['id' => 'infolomba-mahasiswa', 'name' => 'Info Lomba Mahasiswa'])
+        @endcomponent
+        @component ('components.sponsor-item', ['id' => 'kabarkampus.com', 'name' => 'KabarKampus.com', 'baseline' => true])
+        @endcomponent
+        @component ('components.sponsor-item', ['id' => 'kampus-media-indonesia', 'name' => 'Kampus Media Indonesia'])
+        @endcomponent
+        @component ('components.sponsor-item', ['id' => 'kawankampus', 'name' => 'kawankampus'])
+        @endcomponent
+        @component ('components.sponsor-item', ['id' => 'radio-kampus-itb', 'name' => 'Radio Kampus ITB', 'baseline' => true])
+        @endcomponent
+        @component ('components.sponsor-item', ['id' => 'radio-universitas-tarumanagara', 'name' => 'Radio Universitas Tarumanagara'])
+        @endcomponent
+    </div>
     <p>Do you want to sponsor our event too? <b><a href="/sponsor-us">Run before it's too late!</a></b></p>
 </div>

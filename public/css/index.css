@@ -584,6 +584,44 @@ body:not(.is-bootstrap) .card-container .card img {
     padding: 32px;
 }
 
+/* Container for Sponsors & Media Partners */
+.sponsors-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+/* Default Size: Small */
+.sponsors-container picture, .sponsors-container picture {
+    margin: 1vw;
+}
+.sponsors-container picture, .sponsors-container picture img {
+    height: auto;
+    max-height: 15vw;
+    width: auto;
+    max-width: calc(15vw * 7/4);
+}
+.sponsors-container picture.baseline, .sponsors-container picture.baseline img {
+    height: auto;
+    max-height: 7.5vw;
+    width: auto;
+    max-width: calc(15vw * 7/2);
+}
+
+
+@media (min-width: 500px){
+    .sponsors-container picture, .sponsors-container picture img {
+        max-height: 75px;
+        max-width: calc(75px * 7/4);
+    }
+    .sponsors-container picture.baseline, .sponsors-container picture.baseline img {
+        max-height: 37.5px;
+        max-width: calc(75px * 7/2);
+    }
+}
+
 /* Footers */
 .footer {
     background-image: url('/img/backgrounds/8.png');
