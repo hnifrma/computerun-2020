@@ -5,9 +5,22 @@
     <?php
         $requireTwibbonUpload = false;
         for ($i = 0; $i < count($requests); $i++){
-            if ($requests[$i]->event_id == 1 || $requests[$i]->event_id == 2){
-                $requireTwibbonUpload = true;
-                break;
+            // if ($requests[$i]->event_id == 1 || $requests[$i]->event_id == 2 || $request[$i]->event_id == 6){
+            //     $requireTwibbonUpload = true;
+            //     break;
+            // }
+            switch ($requests[$i]->event_id) {
+                case '1':
+                    $requireTwibbonUpload = true;
+                    break;
+                case '2':
+                    $requireTwibbonUpload = true;
+                    break;
+                case '6':
+                    $requireTwibbonUpload = true;
+                    break;
+                default:
+                    break;
             }
         }
     ?>
@@ -64,8 +77,14 @@
                         <ul>
                             <li>Your Payment Receipt</li>
                             <li>Student ID Card of you and your team members (Verifikasi Kartu Tanda Mahasiswa)</li>
-                            <li>Screenshot of Twibbon Upload on Instagram Feeds (you and your team members)</li>
+                            <li>
+                                Screenshot of Twibbon Upload on Instagram Feeds (you and your team members)
+                                <br>
+                                Twibbon files can be found at <a href="https://drive.computerun.id/files">here</a>.<br>
+                                <p class="red-text">Please make sure to read the README.txt</p>
+                            </li>
                         </ul>
+                        If you had any questions feel free to chat us on <a href="https://computerun.id/line">LINE</a><br><br>
                         <img class="width-100" src="/docs/Verifikasi KTM.jpg">
                     @else
                         Please upload a picture/screenshot of your payment receipt
