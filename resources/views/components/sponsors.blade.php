@@ -19,7 +19,7 @@
         @endcomponent
         @component ('components.sponsor-item', ['id' => 'cyber-security-community-binus', 'name' => 'Cyber Security Community, BINUS University'])
         @endcomponent
-        @component ('components.sponsor-item', ['id' => 'filemagz-dark', 'name' => 'FILE Magazine'])
+        @component ('components.sponsor-item', ['id' => 'filemagz', 'name' => 'FILE Magazine'])
         @endcomponent
         @component ('components.sponsor-item', ['id' => 'infolomba-mahasiswa', 'name' => 'Info Lomba Mahasiswa'])
         @endcomponent
