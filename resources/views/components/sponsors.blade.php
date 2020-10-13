@@ -19,7 +19,7 @@
         @endcomponent
         @component ('components.sponsor-item', ['id' => 'cyber-security-community-binus', 'name' => 'Cyber Security Community, BINUS University'])
         @endcomponent
-        @component ('components.sponsor-item', ['id' => 'filemagz', 'name' => 'FILE Magazine'])
+        @component ('components.sponsor-item', ['id' => 'filemagz-dark', 'name' => 'FILE Magazine'])
         @endcomponent
         @component ('components.sponsor-item', ['id' => 'infolomba-mahasiswa', 'name' => 'Info Lomba Mahasiswa'])
         @endcomponent
@@ -32,6 +32,8 @@
         @component ('components.sponsor-item', ['id' => 'radio-kampus-itb', 'name' => 'Radio Kampus ITB', 'baseline' => true])
         @endcomponent
         @component ('components.sponsor-item', ['id' => 'radio-universitas-tarumanagara', 'name' => 'Radio Universitas Tarumanagara'])
+        @endcomponent
+        @component ('components.sponsor-item', ['id' => 'dpm-fti-untar', 'name' => 'DPM FTI UNTAR'])
         @endcomponent
     </div>
     <p>Do you want to sponsor our event too? <b><a href="/sponsor-us">Run before it's too late!</a></b></p>
