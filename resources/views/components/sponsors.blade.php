@@ -33,6 +33,8 @@
         @endcomponent
         @component ('components.sponsor-item', ['id' => 'radio-universitas-tarumanagara', 'name' => 'Radio Universitas Tarumanagara'])
         @endcomponent
+        @component ('components.sponsor-item', ['id' => 'dpm-fti-untar', 'name' => 'DPM FTI UNTAR'])
+        @endcomponent
     </div>
     <p>Do you want to sponsor our event too? <b><a href="/sponsor-us">Run before it's too late!</a></b></p>
 </div>
