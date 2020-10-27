@@ -597,28 +597,97 @@ body:not(.is-bootstrap) .card-container .card img {
 .sponsors-container picture, .sponsors-container picture {
     margin: 1vw;
 }
-.sponsors-container picture, .sponsors-container picture img {
+.sponsors-container.small picture, .sponsors-container picture img {
     height: auto;
     max-height: 15vw;
     width: auto;
     max-width: calc(15vw * 7/4);
 }
-.sponsors-container picture.baseline, .sponsors-container picture.baseline img {
+.sponsors-container.small picture.baseline, .sponsors-container picture.baseline img {
     height: auto;
     max-height: 7.5vw;
     width: auto;
     max-width: calc(15vw * 7/2);
 }
+/* Size: Medium */
+.sponsors-container.medium picture, .sponsors-container.medium picture {
+    margin: 1.25vw;
+}
+.sponsors-container.medium picture, .sponsors-container.medium picture img, .sponsors-container.small picture.square, .sponsors-container.small picture.square img {
+    height: auto;
+    max-height: 20vw;
+    width: auto;
+    max-width: calc(20vw * 7/4);
+}
+.sponsors-container.medium picture.baseline, .sponsors-container.medium picture.baseline img {
+    height: auto;
+    max-height: 10vw;
+    width: auto;
+    max-width: calc(20vw * 7/2);
+}
+.sponsors-container.medium picture.square, .sponsors-container.medium picture.square img {
+    height: auto;
+    max-height: 20vw;
+    width: auto;
+    max-width: calc(20vw * 7/4);
+}
+/* Size: Large */
+.sponsors-container.large picture, .sponsors-container.large picture {
+    margin: 1.5vw;
+}
+.sponsors-container.large picture, .sponsors-container.large picture img {
+    height: auto;
+    max-height: 25vw;
+    width: auto;
+    max-width: calc(25vw * 7/4);
+}
+.sponsors-container.large picture.baseline, .sponsors-container.large picture.baseline img {
+    height: auto;
+    max-height: 12.5vw;
+    width: auto;
+    max-width: calc(25vw * 7/2);
+}
+.sponsors-container.large picture.square, .sponsors-container.large picture.square img {
+    height: auto;
+    max-height: 27.5vw;
+    width: auto;
+    max-width: calc(27.5vw * 7/4);
+}
 
 
 @media (min-width: 500px){
-    .sponsors-container picture, .sponsors-container picture img {
+    /* Default Size: Small */
+    .sponsors-container.small picture, .sponsors-container picture img {
         max-height: 75px;
         max-width: calc(75px * 7/4);
     }
-    .sponsors-container picture.baseline, .sponsors-container picture.baseline img {
+    .sponsors-container.small picture.baseline, .sponsors-container picture.baseline img {
         max-height: 37.5px;
         max-width: calc(75px * 7/2);
+    }
+    /* Size: Medium */
+    .sponsors-container.medium picture, .sponsors-container.medium picture img, .sponsors-container.small picture.square, .sponsors-container.small picture.square img {
+        max-height: 100px;
+        max-width: calc(100px * 7/4);
+    }
+    .sponsors-container.medium picture.baseline, .sponsors-container.medium picture.baseline img {
+        max-height: 50px;
+        max-width: calc(100px * 7/2);
+    }
+    .sponsors-container.medium picture.square, .sponsors-container.medium picture.square img {
+        max-height: 125px;
+        max-width: calc(125px * 7/4);
+    }
+}
+@media (min-width: 750px){
+    /* Size: Large */
+    .sponsors-container.large picture, .sponsors-container.large picture img, .sponsors-container.large picture.square, .sponsors-container.large picture.square img {
+        max-height: 200px;
+        max-width: calc(200px * 7/4);
+    }
+    .sponsors-container.large picture.baseline, .sponsors-container.large picture.baseline img {
+        max-height: 100px;
+        max-width: calc(200px * 7/2);
     }
 }
 
