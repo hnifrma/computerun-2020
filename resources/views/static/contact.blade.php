@@ -8,7 +8,7 @@
         <div class="container-2 content-top bg-event">
             @component("components.navbar")
             @endcomponent
-            @component("components.navbar-mobile")
+            @component("components.navbar-mobile", ['template' => 'contact-us'])
             @endcomponent
             <div class="margin-2 text-center content-divider">
                 <span class="h4 font-700">KEEP IN TOUCH WITH US</span><br>

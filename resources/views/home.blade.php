@@ -180,7 +180,8 @@
             <h3 class="full-underline">Account Details</h3>
             <div class="card content-divider-short">
                 <div class="card-body">
-                    <h3>{{Auth::user()->name}}</h3>
+                    <h3><b>{{Auth::user()->name}}</b></h3>
+                    <h6>{{DB::table('universities')->where('id', Auth::user()->university_id)->first()->name}}</h6>
                     <ul>
                         <li><b>Participant Type:</b>
                             @if (Auth::user()->university_id < 2 || Auth::user()->university_id > 4)
@@ -188,13 +189,13 @@
                             @endif
                             Binusian</li>
                         <li><b>User ID:</b> {{Auth::user()->id}}</li>
-                        @if (Auth::user()->binusian == 1)
+                        @if (Auth::user()->university_id > 1 && Auth::user()->university_id < 5)
                             <li><b>NIM:</b> {{Auth::user()->nim}}</li>
                         @endif
                     </ul>
                     <div class="alert alert-warning" role="alert">
-                        Please reach our <a href="/#contact-us">Contact Person</a> if your name
-                        @if (Auth::user()->binusian)
+                        Please reach our <a href="/contact">Contact Person</a> if your name
+                        @if (Auth::user()->university_id > 1 && Auth::user()->university_id < 5)
                             and NIM
                         @endif
                         has been mistakenly inputted

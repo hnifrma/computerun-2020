@@ -6,6 +6,7 @@
                 <li><a href="/#events" class="navbar-link">events</a></li>
                 <!-- <li><a href="#">webinar</a></li> -->
                 <li><a href="/contact" class="navbar-link">contact us</a></li>
+                <li><a href="/faq" class="navbar-link">faq</a></li>
                 <li><a href="/home" class="navbar-link">
                     @guest
                         login

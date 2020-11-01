@@ -64,6 +64,10 @@ Route::get('/contact', function () {
     return view('static.contact');
 });
 
+Route::get('/faq', function () {
+    return view('static.faq');
+});
+
 Route::get('/twibbon', function () {
     return redirect('/docs/Twibbon-Computerun2020.png');
 });

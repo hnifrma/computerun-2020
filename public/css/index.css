@@ -1,5 +1,6 @@
 body {
-    font-family: Qanelas, Poppins, sans-serif;
+    /* font-family: Qanelas, Poppins, sans-serif; */
+    font-family: Poppins, sans-serif;
     margin: 0;
 }
 /* Responsive Typography, based on Bootstrap 5 */
@@ -201,7 +202,7 @@ body.is-bootstrap .navbar-right img {
         position: fixed;
         bottom: 0;
         width: calc(100% - env(safe-area-inset-left) - env(safe-area-inset-right));
-        height: calc(72px + env(safe-area-inset-bottom));
+        height: calc(50px + env(safe-area-inset-bottom));
         padding-left: env(safe-area-inset-left);
         padding-right: env(safe-area-inset-right);
         background-color: #22365f;
@@ -248,20 +249,20 @@ body.is-bootstrap .navbar-right img {
     .navbar-mobile .action-primary {
         background: -webkit-linear-gradient(115deg, #37e2bc, #249ef2);
         color: #ffffff;
-        width: 72px;
-        height: 72px;
-        border-radius: 36px;
+        width: 60px;
+        height: 60px;
+        border-radius: 30px;
         position: fixed;
         z-index: 98;
-        bottom: calc(32px + env(safe-area-inset-bottom));
+        bottom: calc(28px + env(safe-area-inset-bottom));
         left: 50%;
-        margin-left: -36px;
+        margin-left: -27px;
         padding: 0;
         box-shadow: 0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);
     }
 
     .navbar-mobile .action-primary .bi {
-        padding: 18px;
+        padding: 15px;
         margin-left: auto;
         margin-right: auto;
     }
@@ -295,7 +296,7 @@ body.is-bootstrap .navbar-right img {
     .navbar-mobile .action-primary .bi.optical-top {
         margin: 0;
         padding-top: 15px;
-        padding-bottom: 21px;
+        /* padding-bottom: 21px; */
     }
     .navbar-mobile .action-primary .bi.optical-down {
         margin: 0;
@@ -306,12 +307,12 @@ body.is-bootstrap .navbar-right img {
     body::after {
         content: "";
         display: block;
-        height: 64px;
+        height: 50px;
         padding-bottom: env(safe-area-inset-bottom);
     }
 
     body.is-bootstrap::after {
-        height: calc(64px + env(safe-area-inset-bottom));
+        height: calc(50px + env(safe-area-inset-bottom));
     }
 }
 
