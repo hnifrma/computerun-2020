@@ -99,6 +99,7 @@ Route::post('/registerevent', 'UserSettingsController@registerEvent');
 // Handle payments
 Route::get('/pay/{paymentcode}', 'UserSettingsController@paymentIndex');
 Route::post('/pay/{paymentcode}', 'UserSettingsController@paymentHandler');
+Route::get('/user/downloadFile/{paymentcode}/{fileid}', 'UserSettingsController@downloadFileUser');
 
 // User Dashboard
 Route::get('/home', 'HomeController@index')->name('dashboard.home');

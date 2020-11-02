@@ -169,12 +169,18 @@ class AdminController extends Controller
     // Module to download from File ID
     public function downloadFromFileId($file_id){
         // Make sure that it's an Admin
-        if (!Auth::check() || (Auth::user()->university_id < 2 || Auth::user()->university_id > 3)){
+        if(!Auth::check()){
+            Session::put('error', 'User: Please Login First');
+            return redirect('login');
+        }
+        
+        if (Auth::user()->university_id < 2 || Auth::user()->university_id > 3){
             Session::put('error', 'Admin: Not Authorized');
             return redirect('login');
         }
+
         $file = DB::table('files')->where('id', $file_id)->first();
-        if (!Auth::check() || (Auth::user()->university_id < 2 || Auth::user()->university_id > 3)){
+        if ($file == null){
             Session::put('error', 'Admin: File ID not found');
             return redirect('home');
         }
@@ -182,7 +188,7 @@ class AdminController extends Controller
         try {
             return response()->download(storage_path("app/" . $file->name));
         } catch (\Exception $e){
-            Session::put('error', 'Admin: Internal Server Error:' . $e);
+            Session::put('error', 'Admin: Internal Server Error');
             return redirect('home');
         }
     }

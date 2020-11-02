@@ -6,7 +6,7 @@ use App\Mail\SendInvoice;
 use App\Mail\SendNewTeamNotification;
 use Illuminate\Contracts\Session\Session;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\{Auth, DB, Mail};
+use Illuminate\Support\Facades\{Auth, DB, Mail, Session as facadeSession};
 
 class UserSettingsController extends Controller
 {
@@ -52,10 +52,9 @@ class UserSettingsController extends Controller
         // Ensure that the payment code exists
         $requests = DB::table("registration")
             ->where("payment_code", $paymentcode)
-            ->where("status", 0)
             ->join("events", "events.id", "=", "registration.event_id")
             ->join("users", "users.id", "=", "registration.ticket_id")
-            ->select("registration.*", "events.price", DB::raw('events.name AS event_name'), DB::raw('users.name AS user_name'))
+            ->select("registration.*", "events.price", DB::raw('events.name AS event_name'), DB::raw('users.name AS user_name'),"status","ticket_id")
             ->get();
 
         if (count($requests) == 0){
@@ -91,7 +90,6 @@ class UserSettingsController extends Controller
         // Ensure that the payment code exists
         $requests = DB::table("registration")
             ->where("payment_code", $paymentcode)
-            ->where("status", 0)
             ->join("events", "events.id", "=", "registration.event_id")
             ->join("users", "users.id", "=", "registration.ticket_id")
             ->select("registration.*", "events.price", DB::raw('events.name AS event_name'), DB::raw('users.name AS user_name')) 
@@ -303,5 +301,30 @@ class UserSettingsController extends Controller
         DB::table('users')->where('id', $userid)->update($draft);
         $request->session()->put('status', "Your Account Settings has been updated.");
         return redirect('/home');
+    }
+
+    public function downloadFileUser($paymentcode ,$fileid){
+        if(!Auth::check()){
+            facadeSession::put('error', 'User: Please Login First');
+            return redirect('login');
+        }
+
+        $check = DB::table("registration")
+            ->where("file_id", $fileid)
+            ->where("ticket_id", Auth::user()->id)
+            ->where("payment_code", $paymentcode)
+            ->join("files","files.id","=","registration.file_id")
+            ->first();
+        if($check == null){
+            facadeSession::put('error', 'User: Not Authorized or File ID not found');
+            return redirect('home');
+        }
+
+        try {
+            return response()->download(storage_path("app/" . $check->name));
+        } catch (\Exception $e){
+            facadeSession::put('error', 'Alert: Internal Server Error');
+            return redirect('home');
+        }
     }
 }

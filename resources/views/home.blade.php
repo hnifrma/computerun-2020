@@ -89,9 +89,16 @@
                                 @default
                                     Unknown
                             @endswitch
-                             ({{$list->status}})
+                             {{-- ({{$list->status}}) --}}
+                             <br>
+                             <b>Payment Code:</b><br>
+                             {{$list->payment_code}}
                         </td>
                         <td>
+                            <a class="btn no-minimum-width margin-0" href="/pay/{{$list->payment_code}}">
+                                @component('components.bootstrap-icons', ['icon' => 'cloud-arrow-up', 'size' => 30])
+                                @endcomponent
+                            </a>
                             @if ($list->attendance_opened && $list->status >= 2)
                                 @if ($list->attendance_is_exit)
                                     <a class="btn button no-minimum-width button-gradient button-small margin-0" data-toggle="modal" href="" data-target="#joinEvent" role="button" onClick="setEventModalData({{$list->event_id}},'{{$list->url_link}}')">Join Event</a>
@@ -105,6 +112,7 @@
                                     </form>
                                 @endif
                             @endif
+                            
                         </td>
                     </tr>
                 @endforeach
