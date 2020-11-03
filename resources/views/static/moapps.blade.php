@@ -178,9 +178,9 @@ Tampilan slide dalam powerpoint juga akan menjadi salah satu penilaian tersendir
             </div>
             <h2 class="full-underline content-divider">Timeline</h2>
             <div class="margin-3 h5">
-                <img src="img/icons/timeline-moapps.png">
+                <img src="img/icons/moapps-timeline.png">
             </div>
-            <h1 class="full-underline content-divider">general FAQ</h1>
+            {{-- <h1 class="full-underline content-divider">general FAQ</h1>
             <div class="margin-2 h5">
                 <p>Q: Bagaimana cara untuk mengikuti kompetisi yang diadakan?<br>
                     <b>A: Setelah mengunjungi web <i><a href="/">www.computerun.id</a></i>, kamu dapat memilih menu "Register" yang terdapat di setiap laman cabang kompetisi yang ingin kamu ikuti.</b>
@@ -197,7 +197,7 @@ Tampilan slide dalam powerpoint juga akan menjadi salah satu penilaian tersendir
                 <p>Q: Setelah mendaftar bagaimana saya mendapatkan informasi lebih lanjut untuk kompetisi?<br>
                     <b>A: Setelah mendaftar, kamu akan menerima e-mail resmi dari Computerun dan akan mendapat seluruh informasi mengenai kompetisi melalui e-mail.</b>
                 </p>
-            </div>
+            </div> --}}
             <h1 class="full-underline content-divider">for more details</h1>
             <div class="margin-1 content-divider h5 text-center">
                 Please contact us via our LINE Official Account: <a class="font-800" href="https://line.me/R/ti/p/@995bowex" target="_blank">@995bowex</a>

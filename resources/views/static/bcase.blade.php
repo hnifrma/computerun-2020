@@ -28,11 +28,11 @@
                     </h2>
                 </div>
                 <div>
+                    {{-- <p class="h5">
+                        Competition COMPUTERUN merupakan ajang kompetisi Business Case berskala nasional yang diselenggarakan untuk seluruh mahasiswa S1 dari seluruh perguruan tinggi di Indonesia.
+                    </p> --}}
                     <p class="h5">
-                        Business-IT Case Competition COMPUTERUN merupakan ajang kompetisi Business Case berskala nasional yang diselenggarakan untuk seluruh mahasiswa S1 dari seluruh perguruan tinggi di Indonesia.
-                    </p>
-                    <p class="h5">
-                        Lomba ini dapat mengasah kemampuan mahasiswa untuk berkerja dan bersinergi dalam satu tim dan menyelesaikan sebuah kasus nyata yang terjadi dalam sebuah perusahaan, dan juga untuk mengembangkan sikap solutif agar para mahasiswa terlatih untuk menghadapi masalah dalam dunia bisnis dan TI di masa mendatang serta dapat menciptakan solusi kreatif yang efektif secara bersama-sama sehingga masalah dapat terselesaikan dengan baik.
+                        Lomba Business-IT Case ini dapat mengasah kemampuan mahasiswa untuk berkerja dan bersinergi dalam satu tim dan menyelesaikan sebuah kasus nyata yang terjadi dalam sebuah perusahaan, dan juga untuk mengembangkan sikap solutif agar para mahasiswa terlatih untuk menghadapi masalah dalam dunia bisnis dan TI di masa mendatang serta dapat menciptakan solusi kreatif yang efektif secara bersama-sama sehingga masalah dapat terselesaikan dengan baik.
                     </p>
                 </div>
             </div>
@@ -193,7 +193,7 @@
             <div class="margin-3 h5">
                 <img src="img/icons/bcase-timeline.png">
             </div>
-            <h1 class="full-underline content-divider">general FAQ</h1>
+            {{-- <h1 class="full-underline content-divider">general FAQ</h1>
             <div class="margin-2 h5">
                 <p>Q: Bagaimana cara untuk mengikuti kompetisi yang diadakan?<br>
                     <b>A: Setelah mengunjungi web <i><a href="/">www.computerun.id</a></i>, kamu dapat memilih menu "Register" yang terdapat di setiap laman cabang kompetisi yang ingin kamu ikuti.</b>
@@ -210,7 +210,7 @@
                 <p>Q: Setelah mendaftar bagaimana saya mendapatkan informasi lebih lanjut untuk kompetisi?<br>
                     <b>A: Setelah mendaftar, kamu akan menerima e-mail resmi dari Computerun dan akan mendapat seluruh informasi mengenai kompetisi melalui e-mail.</b>
                 </p>
-            </div>
+            </div> --}}
             <h1 class="full-underline content-divider">for more details</h1>
             <div class="margin-1 content-divider h5 text-center">
                 Please contact us via our LINE Official Account: <a class="font-800" href="https://line.me/R/ti/p/@995bowex" target="_blank">@995bowex</a>

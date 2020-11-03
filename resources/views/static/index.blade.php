@@ -38,7 +38,7 @@
                     <p class="h5">
                         COMPUTERUN is a brand new joint-venture event organized by HIMSISFO and HIMTI BINUS University.<br><br>
                         In our first edition, we aim to provide a place to think, create, and share ideas through the business IT insights.<br><br>
-                        <b>Starts <span class="blue-text">online</span> in October - December 2020</b>
+                        <b>Starts <span class="blue-text">online</span> in October 2020 - January 2021</b>
                     </p>
                 </div>
             </div>
@@ -189,7 +189,7 @@
                                 <img src="/img/icons/Events - Webinar.png">
                             </div>
                             <div>
-                                <span class="h5 font-800">How business can survive the COVID 19 pandemic?</span><br>
+                                <span class="h5 font-800">How business can survive the Covid 19 Pandemic?</span><br>
                                 <a href="#" class="button button-gradient-2">COMING SOON</a>
                             </div>
                         </div>
@@ -198,7 +198,7 @@
                                 <img src="/img/icons/Events - Webinar.png">
                             </div>
                             <div>
-                                <span class="h5 font-800">Preparing for the Changing Nature of Work in the Digital Era</span><br>
+                                <span class="h5 font-800">Preparing to be a Professional Workforce in Industry 4.0</span><br>
                                 <a href="#" class="button button-gradient-2">COMING SOON</a>
                             </div>
                         </div>
@@ -207,7 +207,7 @@
                                 <img src="/img/icons/Events - Webinar.png">
                             </div>
                             <div>
-                                <span class="h5 font-800">How mobile apps can meet and even exceed the user's expectation</span><br>
+                                <span class="h5 font-800">How mobile apps can meet and even exceed user's expectation</span><br>
                                 <a href="#" class="button button-gradient-2">COMING SOON</a>
                             </div>
                         </div>

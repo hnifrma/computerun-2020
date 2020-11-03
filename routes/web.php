@@ -64,6 +64,10 @@ Route::get('/contact', function () {
     return view('static.contact');
 });
 
+Route::get('/faq', function () {
+    return view('static.faq');
+});
+
 Route::get('/twibbon', function () {
     return redirect('/docs/Twibbon-Computerun2020.png');
 });
@@ -95,6 +99,7 @@ Route::post('/registerevent', 'UserSettingsController@registerEvent');
 // Handle payments
 Route::get('/pay/{paymentcode}', 'UserSettingsController@paymentIndex');
 Route::post('/pay/{paymentcode}', 'UserSettingsController@paymentHandler');
+Route::get('/user/downloadFile/{paymentcode}/{fileid}', 'UserSettingsController@downloadFileUser');
 
 // User Dashboard
 Route::get('/home', 'HomeController@index')->name('dashboard.home');
