@@ -42,6 +42,56 @@ class UserSettingsController extends Controller
         }
     }
 
+    // Module to generate competition page
+    public function competitionIndex(Request $request, $teamid) {
+        if(!Auth::check()){
+            $request->session()->put('error','You will need to log in first');
+            return redirect("/home");
+        }
+
+        $requests = DB::table("registration")
+            ->join("events", "events.id", "=", "registration.event_id")
+            ->join("users", "users.id", "=", "registration.ticket_id")
+            ->join("teams","teams.id", "=", "registration.team_id")
+            ->where("team_id", $teamid)
+            ->where("attendance_opened",1)
+            ->select("registration.*", DB::raw('events.name AS event_name'), DB::raw('users.name AS user_name'), DB::raw('teams.name AS team_name'), DB::raw('events.attendance_opened AS event_opened'))
+            ->get();
+
+//         dd($requests);
+        if (count($requests) == 0){
+            $request->session()->put('error', 'Team ID not found');
+            return redirect("/home");
+        }
+//        dd($requests);
+//        dd(count($requests));
+
+        $currentId = Auth::user()->id;
+//        dd($request[]);
+        $isAuthorized = false;
+        for ($i = 0; $i < count($requests); $i++){
+            if ($requests[$i]->ticket_id == $currentId && $requests[$i]->status >= 2){
+                $isAuthorized = true;
+                break;
+            }
+        }
+
+        if (!$isAuthorized){
+            $request->session()->put('error', 'Only the approved team can access');
+            return redirect("/home");
+        }
+
+        return view("account.competition", ["requests" => $requests, "teamid" => $teamid]);
+    }
+
+    // Module to handle competition page
+    public function competitionHandler(Request $request) {
+        if(!Auth::check()){
+            $request->session()->put('error','You will need to log in first');
+            return redirect("/home");
+        }
+    }
+
     // Module to generate payment page
     public function paymentIndex(Request $request, $paymentcode){
         if (!Auth::check()){
@@ -303,6 +353,31 @@ class UserSettingsController extends Controller
         return redirect('/home');
     }
 
+    public function downloadFileCompetition($teamid){
+        if(!Auth::check()){
+            facadeSession::put('error', 'User: Please Login First');
+            return redirect('login');
+        }
+
+        $check = DB::table("registration")
+            ->join("events", "events.id", "=", "registration.event_id")
+            ->where("team_id", $teamid)
+            ->where("attendance_opened",1)
+            ->first();
+
+        if($check == null){
+            facadeSession::put('error', 'User: Not Authorized or File not found');
+            return redirect('home');
+        }
+        try {
+            if($check->event_id == 1 && $check->attendance_opened == 1) return response()->download(storage_path("app/competitions/BCase.pdf"));
+            else if($check->event_id == 2 && $check->attendance_opened == 1) return response()->download(storage_path("app/competitions/Moapps.pdf"));
+        } catch (\Exception $e){
+            facadeSession::put('error', 'Alert: Internal Server Error');
+            return redirect('home');
+        }
+    }
+
     public function downloadFileUser($paymentcode ,$fileid){
         if(!Auth::check()){
             facadeSession::put('error', 'User: Please Login First');
@@ -327,4 +402,5 @@ class UserSettingsController extends Controller
             return redirect('home');
         }
     }
+
 }

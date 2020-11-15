@@ -99,7 +99,14 @@ Route::post('/registerevent', 'UserSettingsController@registerEvent');
 // Handle payments
 Route::get('/pay/{paymentcode}', 'UserSettingsController@paymentIndex');
 Route::post('/pay/{paymentcode}', 'UserSettingsController@paymentHandler');
+
+// Handle User download file
+Route::get('/user/downloadFile/cp/{teamid}', 'UserSettingsController@downloadFileCompetition');
 Route::get('/user/downloadFile/{paymentcode}/{fileid}', 'UserSettingsController@downloadFileUser');
+
+// Handle competition
+Route::get('/cp/{teamid}', 'UserSettingsController@competitionIndex');
+Route::post('/cp/{teamid}', 'UserSettingsController@competitionHandler');
 
 // User Dashboard
 Route::get('/home', 'HomeController@index')->name('dashboard.home');
