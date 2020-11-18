@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -67,58 +66,3 @@ Route::get('/contact', function () {
 Route::get('/faq', function () {
     return view('static.faq');
 });
-
-Route::get('/twibbon', function () {
-    return redirect('/docs/Twibbon-Computerun2020.png');
-});
-
-// Route::get('/regist-webinar', function () {
-//     return view('regist-webinar');
-// });
-// Route::get('/regist-competition', function () {
-//     return view('regist-competition');
-// });
-Route::view('userview', "registration");
-Route::post('postcontroller', 'PostController@formSubmit');
-
-
-// Login / User Dashboard
-// Route::resource('/login', 'TicketStatusController');
-// Route::get('/logout', 'TicketStatusController@logout');
-
-Auth::routes();
-Route::post('/changeaccountdetails', 'UserSettingsController@updateContacts');
-
-// Get user details (for registration)
-Route::post('/getuserdetails', 'UserSettingsController@getUserDetails');
-
-// Handle registration
-Route::get('/register/{id}', 'UserSettingsController@registrationRedirectHandler');
-Route::post('/registerevent', 'UserSettingsController@registerEvent');
-
-// Handle payments
-Route::get('/pay/{paymentcode}', 'UserSettingsController@paymentIndex');
-Route::post('/pay/{paymentcode}', 'UserSettingsController@paymentHandler');
-
-// Handle User download file
-Route::get('/user/downloadFile/cp/{teamid}', 'UserSettingsController@downloadFileCompetition');
-Route::get('/user/downloadFile/{paymentcode}/{fileid}', 'UserSettingsController@downloadFileUser');
-
-// Handle competition
-Route::get('/cp/{teamid}', 'UserSettingsController@competitionIndex');
-Route::post('/cp/{teamid}', 'UserSettingsController@competitionHandler');
-
-// User Dashboard
-Route::get('/home', 'HomeController@index')->name('dashboard.home');
-
-// Administration Panel
-Route::get('/admin', function () {
-    return redirect('/home');
-});
-// Route::get('/admin/{path}', 'AdminController@index');
-Route::get('/admin/downloadFile/{file_id}', 'AdminController@downloadFromFileId');
-Route::get('/admin/events', 'AdminController@getEventsList');
-Route::get('/admin/event/{event_id}', 'AdminController@getEventParticipants');
-Route::post('/admin/event/{event_id}', 'AdminController@postEventParticipants');
-Route::get('/admin/users', 'AdminController@getAllUsers');
-Route::post('/admin/users', 'AdminController@postAllUsers');

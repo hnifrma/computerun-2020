@@ -21,6 +21,16 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->unsignedBigInteger('university_id')->default(1);
+            $table->foreign('university_id')->references('id')->on('universities');
+            $table->boolean('binusian')->default(false);
+            $table->bigInteger('nim')->nullable();
+            $table->text('phone')->nullable();
+            $table->text('line')->nullable();
+            $table->text('whatsapp')->nullable();
+            $table->text('id_mobile_legends')->nullable();
+            $table->text('id_pubg_mobile')->nullable();
+            $table->text('id_valorant')->nullable();
         });
     }
 
