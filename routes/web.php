@@ -66,3 +66,7 @@ Route::get('/contact', function () {
 Route::get('/faq', function () {
     return view('static.faq');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
