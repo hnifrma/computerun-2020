@@ -17,11 +17,17 @@ class CreateRolesTable extends Migration
             $table->id();
             $table->string('role_name');
         });
+
         DB::table('roles')->insert([
+            ['role_name'=>'COMPUTERUN 2020 Participants'],
             ['role_name'=>'COMPUTERUN 2020 Superuser'],
             ['role_name'=>'COMPUTERUN 2020 Official Agent'],
             ['role_name'=>'COMPUTERUN 2020 Official Committee']
         ]);
+
+        Schema::table('users', function (Blueprint $table) {
+            $table->foreign('role_id')->references('id')->on('roles')->nullOnDelete();
+        });
     }
 
     /**

@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class University extends Model
+class GameAccountDetail extends Model
 {
     public function users() {
-        return $this->hasMany(User::class);
+        return $this->belongsTo(User::class);
     }
 }

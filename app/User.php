@@ -36,4 +36,16 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function gameAccountDetails() {
+        return $this->hasOne(GameAccountDetail::class);
+    }
+
+    public function universities() {
+        return $this->belongsTo(University::class);
+    }
+
+    public function roles() {
+        return $this->belongsTo(Role::class);
+    }
 }
