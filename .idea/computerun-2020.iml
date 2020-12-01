@@ -5,6 +5,11 @@
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/app" isTestSource="false" packagePrefix="App\" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" packagePrefix="Tests\" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/app/competitions" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/app/uploads" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/34" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/framework/cache/data/5a" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/asm89/stack-cors" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />

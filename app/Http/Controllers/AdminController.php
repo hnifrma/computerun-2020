@@ -97,6 +97,11 @@ class AdminController extends Controller
         $committees = $this->util_getCommitteesByEventId($event_id);
         $event = DB::table('events')->where('id', $event_id)->first();
         $teams = DB::table('teams')->where('event_id', $event_id)->orderBy('score', 'desc')->get();
+        $file = null;
+        if(count($teams) != 0){
+            $temp = DB::table('registration')->where('team_id',$teams[0]->id)->first();
+            $file = DB::table('files')->where('id',$temp->file_id)->first();
+        }
 
         $registration_count = count($registration);
         $event->currentseats = 0;
@@ -108,7 +113,7 @@ class AdminController extends Controller
             if ($registration[$i]->status == 5) $event->lastattendance++;
         }
 
-        return view('admin.eventdetails', ['registration' => $registration, 'committees' => $committees, 'event' => $event, 'teams' => $teams]);
+        return view('admin.eventdetails', ['registration' => $registration, 'committees' => $committees, 'event' => $event, 'teams' => $teams, 'file' => $file]);
     }
 
     public function postEventParticipants(Request $request, $event_id){
@@ -167,7 +172,7 @@ class AdminController extends Controller
     }
 
     // Module to download from File ID
-    public function downloadFromFileId($file_id){
+    public function downloadFromFileId($type, $file_id){
         // Make sure that it's an Admin
         if(!Auth::check()){
             Session::put('error', 'User: Please Login First');
@@ -185,11 +190,20 @@ class AdminController extends Controller
             return redirect('home');
         }
 
-        try {
-            return response()->download(storage_path("app/" . $file->name));
-        } catch (\Exception $e){
-            Session::put('error', 'Admin: Internal Server Error');
-            return redirect('home');
+        if($type == 1){
+            try {
+                return response()->download(storage_path("app/" . $file->name));
+            } catch (\Exception $e){
+                Session::put('error', 'Admin: Internal Server Error');
+                return redirect('home');
+            }
+        }else if($type == 2){
+            try {
+                return response()->download(storage_path("app/" . $file->answer_path));
+            } catch (\Exception $e){
+                Session::put('error', 'Admin: Internal Server Error');
+                return redirect('home');
+            }
         }
     }
 }

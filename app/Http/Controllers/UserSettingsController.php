@@ -53,9 +53,10 @@ class UserSettingsController extends Controller
             ->join("events", "events.id", "=", "registration.event_id")
             ->join("users", "users.id", "=", "registration.ticket_id")
             ->join("teams","teams.id", "=", "registration.team_id")
+            ->join("files","files.id", "=", "registration.file_id")
             ->where("team_id", $teamid)
             ->where("attendance_opened",1)
-            ->select("registration.*", DB::raw('events.name AS event_name'), DB::raw('users.name AS user_name'), DB::raw('teams.name AS team_name'), DB::raw('events.attendance_opened AS event_opened'))
+            ->select("registration.*", "files.*", DB::raw('events.name AS event_name'), DB::raw('users.name AS user_name'), DB::raw('teams.name AS team_name'), DB::raw('events.attendance_opened AS event_opened'))
             ->get();
 
 //         dd($requests);
@@ -85,11 +86,39 @@ class UserSettingsController extends Controller
     }
 
     // Module to handle competition page
-    public function competitionHandler(Request $request) {
+    public function competitionHandler(Request $request, $teamid) {
         if(!Auth::check()){
             $request->session()->put('error','You will need to log in first');
             return redirect("/home");
         }
+
+        // Ensure that the payment code exists
+        $requests = DB::table("registration")
+            ->where("team_id", $teamid)
+            ->first();
+
+//        dd($requests);
+
+        if ($requests == null){
+            $request->session()->put('error', 'TeamID not found');
+            return redirect("/home");
+        }
+
+        // Validate the inputs
+        $request->validate([
+            'file' => 'mimes:jpeg,png,pdf,zip'
+        ]);
+
+        // Save to storage and add to Database
+        $path = $request->file('file')->store('competitions/answer');
+
+        DB::table('files')->where('id',$requests->file_id)->update([
+            "answer_path" => $path
+        ]);
+
+        $request->session()->put('status', 'Your files have been uploaded');
+
+        return redirect('/home');
     }
 
     // Module to generate payment page
@@ -179,7 +208,7 @@ class UserSettingsController extends Controller
 
         DB::table("registration")
             ->where("payment_code", $paymentcode)
-            ->where("status", 0)
+            ->where("status", '<=',2)
             ->update(["file_id" => $fileId]);
 
         $request->session()->put('status', 'Your files have been uploaded');
@@ -378,28 +407,44 @@ class UserSettingsController extends Controller
         }
     }
 
-    public function downloadFileUser($paymentcode ,$fileid){
+    public function downloadFileUser($type ,$paymentcode ,$fileid){
         if(!Auth::check()){
             facadeSession::put('error', 'User: Please Login First');
             return redirect('login');
         }
 
-        $check = DB::table("registration")
+        if($type == 0) $check = DB::table("registration")
             ->where("file_id", $fileid)
             ->where("ticket_id", Auth::user()->id)
             ->where("payment_code", $paymentcode)
             ->join("files","files.id","=","registration.file_id")
             ->first();
+        elseif($type == 1) $check = DB::table("registration")
+            ->where("file_id", $fileid)
+            ->where("ticket_id", Auth::user()->id)
+            ->where("team_id", $paymentcode)
+            ->join("files","files.id","=","registration.file_id")
+            ->first();
+
         if($check == null){
             facadeSession::put('error', 'User: Not Authorized or File ID not found');
             return redirect('home');
         }
 
-        try {
-            return response()->download(storage_path("app/" . $check->name));
-        } catch (\Exception $e){
-            facadeSession::put('error', 'Alert: Internal Server Error');
-            return redirect('home');
+        if ($type == 0) {
+            try {
+                return response()->download(storage_path("app/" . $check->name));
+            } catch (\Exception $e){
+                facadeSession::put('error', 'Alert: Internal Server Error');
+                return redirect('home');
+            }
+        }else if ($type == 1){
+            try {
+                return response()->download(storage_path("app/" . $check->answer_path));
+            } catch (\Exception $e){
+                facadeSession::put('error', 'Alert: Internal Server Error');
+                return redirect('home');
+            }
         }
     }
 

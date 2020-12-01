@@ -41,8 +41,8 @@
                         <h5>for <b>{{$request->user_name}}</b></h5>
                         <b>Role:</b> {{$request->remarks}}<br>
                         <b>Uploaded: </b>
-                        @if($request->file_id != null && $request->file_id != '')
-                            {{-- <a href="/user/downloadFile/{{$paymentcode}}/{{$request->file_id}}" target="_blank">Download File</a> --}}
+                        @if($request->file_id != null && $request->file_id != '' && $request->answer_path != null)
+                             <a href="/user/downloadFile/1/{{$requests[0]->team_id}}/{{$request->file_id}}" target="_blank">Download File</a>
                         @else
                             No Uploaded File
                         @endif
@@ -71,35 +71,34 @@
             <h1 class="full-underline content-divider-short">Upload Answer</h1>
             <div class="card content-divider-short">
                 <div class="card-body">
-                    <p class="red-text h5 text-center">Currently this feature's disabled</p>
-{{--                    <form method="POST" enctype="multipart/form-data">--}}
-{{--                        @csrf--}}
-{{--                        @foreach ($requests as $item)--}}
-{{--                            @if($item->ticket_id == Auth::user()->id)--}}
-{{--                                <div class="form-group row">--}}
-{{--                                    <label for="file" class="col-md-4 col-form-label text-md-right">File (JPG, PNG, PDF, or ZIP)</label>--}}
-{{--                                    <div class="col-md-6">--}}
-{{--                                        <input id="file" type="file" class="form-control @error('file') is-invalid @enderror" name="file" value="{{ old('file') }}" required accept="application/zip,image/*,application/pdf">--}}
+                    <form method="POST" enctype="multipart/form-data">
+                        @csrf
+                        @foreach ($requests as $item)
+                            @if($item->ticket_id == Auth::user()->id)
+                                <div class="form-group row">
+                                    <label for="file" class="col-md-4 col-form-label text-md-right">File (JPG, PNG, PDF, or ZIP)</label>
+                                    <div class="col-md-6">
+                                        <input id="file" type="file" class="form-control @error('file') is-invalid @enderror" name="file" value="{{ old('file') }}" required accept="application/zip,image/*,application/pdf">
 
-{{--                                        @error('file')--}}
-{{--                                            <span class="invalid-feedback" role="alert">--}}
-{{--                                                <strong>{{ $message }}</strong>--}}
-{{--                                            </span>--}}
-{{--                                        @enderror--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                                <p class="red-text h5 text-center">You will be able to upload files before the due date. If you wish to reupload, your previous uploads will be overriden!</p>--}}
+                                        @error('file')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <p class="red-text h5 text-center">You will be able to upload files before the due date. If you wish to reupload, your previous uploads will be overriden!</p>
 
-{{--                                <div class="form-group text-center">--}}
-{{--                                    <button type="submit" class="button button-gradient">--}}
-{{--                                        Upload--}}
-{{--                                    </button>--}}
-{{--                                </div>--}}
-{{--                            @elseif($item->status >= 2 && $item->ticket_id == Auth::user()->id)--}}
-{{--                                <p class="red-text h5 text-center">Your Team already Accepted</p>--}}
-{{--                            @endif--}}
-{{--                        @endforeach--}}
-{{--                    </form>--}}
+                                <div class="form-group text-center">
+                                    <button type="submit" class="button button-gradient">
+                                        Upload
+                                    </button>
+                                </div>
+                            @elseif($item->status >= 2 && $item->ticket_id == Auth::user()->id)
+                                <p class="red-text h5 text-center">Your Team already Accepted</p>
+                            @endif
+                        @endforeach
+                    </form>
                 </div>
             </div>
         </div>

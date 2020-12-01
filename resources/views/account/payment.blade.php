@@ -64,7 +64,7 @@
                         <b>Role:</b> {{$request->remarks}}<br>
                         <b>Uploaded: </b>
                         @if($request->file_id != null && $request->file_id != '')
-                            <a href="/user/downloadFile/{{$paymentcode}}/{{$request->file_id}}" target="_blank">Download File</a>
+                            <a href="/user/downloadFile/0/{{$paymentcode}}/{{$request->file_id}}" target="_blank">Download File</a>
                         @else
                             No Uploaded File
                         @endif

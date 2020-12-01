@@ -25,20 +25,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d6d2690-ed5c-4dd0-bf9b-26a10c6c21df" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/commandlinetools/Laravel_16_11_2020__02_00.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/commandlinetools/schemas/frameworkDescriptionVersion1.1.4.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/computerun-2020.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/discord.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/account/competition.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/computerun-2020.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/computerun-2020.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserSettingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserSettingsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/account/competition.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/account/competition.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/account/payment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/account/payment.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/eventdetails.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/eventdetails.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -47,7 +40,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -172,7 +165,6 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -197,7 +189,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605463129012</updated>
-      <workItem from="1605463130190" duration="4428000" />
+      <workItem from="1605463130190" duration="4970000" />
+      <workItem from="1605509568985" duration="536000" />
+      <workItem from="1605521274590" duration="3834000" />
+      <workItem from="1606823141534" duration="4443000" />
     </task>
     <servers />
   </component>
@@ -214,27 +209,32 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1398" height="240" key="GridCell.Tab.0.bottom" timestamp="1605464884569">
+    <state width="1398" height="240" key="GridCell.Tab.0.bottom" timestamp="1605468343704">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="240" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1605464884569" />
-    <state width="1398" height="240" key="GridCell.Tab.0.center" timestamp="1605464884567">
+    <state width="1398" height="240" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1605468343704" />
+    <state width="1398" height="240" key="GridCell.Tab.0.center" timestamp="1605468343703">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="240" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1605464884567" />
-    <state width="1398" height="240" key="GridCell.Tab.0.left" timestamp="1605464884566">
+    <state width="1398" height="240" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1605468343703" />
+    <state width="1398" height="240" key="GridCell.Tab.0.left" timestamp="1605468343701">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="240" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1605464884566" />
-    <state width="1398" height="240" key="GridCell.Tab.0.right" timestamp="1605464884568">
+    <state width="1398" height="240" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1605468343701" />
+    <state width="1398" height="240" key="GridCell.Tab.0.right" timestamp="1605468343704">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="240" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1605464884568" />
+    <state width="1398" height="240" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1605468343704" />
     <state x="385" y="210" key="run.anything.popup" timestamp="1605464879582">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="385" y="210" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1605464879582" />
+    <state x="385" y="196" key="search.everywhere.popup" timestamp="1605666143351">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="385" y="196" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1605666143351" />
   </component>
 </project>
