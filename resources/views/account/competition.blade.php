@@ -2,28 +2,6 @@
 
 @section('content')
 <div class="container">
-    <?php
-        $requireTwibbonUpload = false;
-        for ($i = 0; $i < count($requests); $i++){
-            // if ($requests[$i]->event_id == 1 || $requests[$i]->event_id == 2 || $request[$i]->event_id == 6){
-            //     $requireTwibbonUpload = true;
-            //     break;
-            // }
-            switch ($requests[$i]->event_id) {
-                case '1':
-                    $requireTwibbonUpload = true;
-                    break;
-                case '2':
-                    $requireTwibbonUpload = true;
-                    break;
-                case '6':
-                    $requireTwibbonUpload = true;
-                    break;
-                default:
-                    break;
-            }
-        }
-    ?>
     @if (session('status'))
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -48,8 +26,8 @@
             Session::forget('error');
         ?>
     @endif
-    <h1 class="full-underline">Upload Pages</h1><br><h5 style="text-align: center"><b>Your payment code:</b> {{$paymentcode}}</h5>
-    <p class="h4 text-center content-divider-short">Once the documents have been approved, you will eligible for participating in:</p>
+    <h1 class="full-underline">Competition Pages</h1><br><h5 style="text-align: center"><b>Your Team Name:</b> {{$requests[0]->team_name}} ({{$teamid}})</h5>
+    {{-- <p class="h4 text-center content-divider-short">Once the documents have been approved, you will eligible for participating in:</p> --}}
     <div class="row justify-content-center content-divider-short">
         <div class="col-md-8 p-0 row justify-content-center">
         @foreach ($requests as $request)
@@ -63,8 +41,8 @@
                         <h5>for <b>{{$request->user_name}}</b></h5>
                         <b>Role:</b> {{$request->remarks}}<br>
                         <b>Uploaded: </b>
-                        @if($request->file_id != null && $request->file_id != '')
-                            <a href="/user/downloadFile/0/{{$paymentcode}}/{{$request->file_id}}" target="_blank">Download File</a>
+                        @if($request->file_id != null && $request->file_id != '' && $request->answer_path != null)
+                             <a href="/user/downloadFile/1/{{$requests[0]->team_id}}/{{$request->file_id}}" target="_blank">Download File</a>
                         @else
                             No Uploaded File
                         @endif
@@ -77,33 +55,26 @@
         <div class="col-md-8">
             <h1 class="full-underline content-divider-short">Instructions</h1>
             <div class="card content-divider-short">
-                <div class="card-body">
-                    @if ($requireTwibbonUpload == true)
-                        If you are registering for <b>Business-IT Case</b> and <b>Mobile Application Development</b> Competitions, please attach the following in a ZIP file:
-                        <ul>
-                            <li>Your Payment Receipt</li>
-                            <li>Student ID Card of you and your team members (Verifikasi Kartu Tanda Mahasiswa)</li>
-                            <li>
-                                Screenshot of Twibbon Upload on Instagram Feeds (you and your team members)
-                                <br>
-                                Twibbon files can be found at <a href="https://drive.computerun.id/files">here</a>.<br>
-                                <p class="red-text">Please make sure to read the README.txt</p>
-                            </li>
-                        </ul>
-                        If you had any questions feel free to chat us on <a href="https://computerun.id/line">LINE</a><br><br>
-                        <img class="width-100" src="/docs/Verifikasi KTM.jpg">
-                    @else
-                        Please upload a picture/screenshot of your payment receipt
-                    @endif
+                <div class="text-center">
+                    @foreach ($requests as $item)
+                        @if ($item->event_id == 1 && $item->ticket_id == Auth::user()->id)
+                            <h1 class="m-2">Business-IT Case</h1>
+                            <a href="/user/downloadFile/cp/{{$teamid}}" class="btn btn-dark m-3">Downlaod PDF</a>
+                        @elseif ($item->event_id == 2 && $item->ticket_id == Auth::user()->id)
+                            <h1 class="m-2">Mobile Apps Development</h1>
+                            <a href="/user/downloadFile/cp/{{$teamid}}" class="btn btn-dark m-3">Downlaod PDF</a>
+                        @endif
+                    @endforeach
                 </div>
             </div>
-            <h1 class="full-underline content-divider-short">Upload Documents</h1>
+
+            <h1 class="full-underline content-divider-short">Upload Answer</h1>
             <div class="card content-divider-short">
                 <div class="card-body">
                     <form method="POST" enctype="multipart/form-data">
                         @csrf
                         @foreach ($requests as $item)
-                            @if($item->status < 2 && $item->ticket_id == Auth::user()->id)
+                            @if($item->ticket_id == Auth::user()->id)
                                 <div class="form-group row">
                                     <label for="file" class="col-md-4 col-form-label text-md-right">File (JPG, PNG, PDF, or ZIP)</label>
                                     <div class="col-md-6">
@@ -116,7 +87,7 @@
                                         @enderror
                                     </div>
                                 </div>
-                                <p class="red-text h5 text-center">You will be able to upload files before we have confirm and validated your registration. If you wish to reupload, your previous uploads will be overriden!</p>
+                                <p class="red-text h5 text-center">You will be able to upload files before the due date. If you wish to reupload, your previous uploads will be overriden!</p>
 
                                 <div class="form-group text-center">
                                     <button type="submit" class="button button-gradient">

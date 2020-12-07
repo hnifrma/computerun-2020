@@ -99,7 +99,14 @@ Route::post('/registerevent', 'UserSettingsController@registerEvent');
 // Handle payments
 Route::get('/pay/{paymentcode}', 'UserSettingsController@paymentIndex');
 Route::post('/pay/{paymentcode}', 'UserSettingsController@paymentHandler');
-Route::get('/user/downloadFile/{paymentcode}/{fileid}', 'UserSettingsController@downloadFileUser');
+
+// Handle User download file
+Route::get('/user/downloadFile/cp/{teamid}', 'UserSettingsController@downloadFileCompetition');
+Route::get('/user/downloadFile/{type}/{paymentcode}/{fileid}', 'UserSettingsController@downloadFileUser');
+
+// Handle competition
+Route::get('/cp/{teamid}', 'UserSettingsController@competitionIndex');
+Route::post('/cp/{teamid}', 'UserSettingsController@competitionHandler');
 
 // User Dashboard
 Route::get('/home', 'HomeController@index')->name('dashboard.home');
@@ -109,7 +116,7 @@ Route::get('/admin', function () {
     return redirect('/home');
 });
 // Route::get('/admin/{path}', 'AdminController@index');
-Route::get('/admin/downloadFile/{file_id}', 'AdminController@downloadFromFileId');
+Route::get('/admin/downloadFile/{type}/{file_id}', 'AdminController@downloadFromFileId');
 Route::get('/admin/events', 'AdminController@getEventsList');
 Route::get('/admin/event/{event_id}', 'AdminController@getEventParticipants');
 Route::post('/admin/event/{event_id}', 'AdminController@postEventParticipants');

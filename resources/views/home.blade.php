@@ -27,8 +27,6 @@
         ?>
     @endif
 
-    <!-- Your Tickets -->
-    <h1 class="full-underline {{session('status') ? 'content-divider' : ''}}">Your Tickets</h1>
     <?php
         $tickets = DB::table('registration')->where('ticket_id', Auth::user()->id)->get();
         $events = DB::table('events')->orderBy('name', 'asc')->get();
@@ -41,6 +39,8 @@
             $tickets[$i]->url_link = $events_original[$tickets[$i]->event_id - 1]->url_link;
         }
     ?>
+    <!-- Your Tickets -->
+    <h1 class="full-underline {{session('status') ? 'content-divider' : ''}}">Your Tickets</h1>
     @if (count($tickets) > 0)
         <table class="table margin-0 content-divider-short">
             <thead>
@@ -95,11 +95,19 @@
                              {{$list->payment_code}}
                         </td>
                         <td>
+                            @foreach ($events as $item)
+                                @if ($item->attendance_opened == 1 && $list->event_id == $item->id && $list->status > 1)
+                                    <a class="btn no-minimum-width margin-0" href="/cp/{{$list->team_id}}">
+                                        @component('components.bootstrap-icons', ['icon' => 'journal-text', 'size' => 30])
+                                        @endcomponent
+                                    </a>
+                                @endif
+                            @endforeach
                             <a class="btn no-minimum-width margin-0" href="/pay/{{$list->payment_code}}">
                                 @component('components.bootstrap-icons', ['icon' => 'cloud-arrow-up', 'size' => 30])
                                 @endcomponent
                             </a>
-                            @if ($list->attendance_opened && $list->status >= 2)
+                            {{-- @if ($list->attendance_opened && $list->status >= 2)
                                 @if ($list->attendance_is_exit)
                                     <a class="btn button no-minimum-width button-gradient button-small margin-0" data-toggle="modal" href="" data-target="#joinEvent" role="button" onClick="setEventModalData({{$list->event_id}},'{{$list->url_link}}')">Join Event</a>
                                 @else
@@ -111,7 +119,7 @@
                                         <button class="btn button no-minimum-width button-gradient button-small margin-0" action="submit">Join Event</button>
                                     </form>
                                 @endif
-                            @endif
+                            @endif --}}
                             
                         </td>
                     </tr>

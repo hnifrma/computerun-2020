@@ -90,9 +90,13 @@
                                 <br>
                                 <b>Payment Code:</b> {{$list->payment_code}}
                             @endif
-                            @if($list->file_id != null && $list->file_id != '')
+                            @if($list->file_id != null && $list->file_id != '' && $file->name != null)
                                 <br>
-                                <a href="/admin/downloadFile/{{$list->file_id}}" target="_blank">Download Supporting File</a>
+                                <a href="/admin/downloadFile/1/{{$list->file_id}}" target="_blank">Download Supporting File</a>
+                            @endif
+                            @if($list->file_id != null && $list->file_id != '' && $file->answer_path != null)
+                                <br>
+                                <a href="/admin/downloadFile/2/{{$list->file_id}}" target="_blank">Download Case Answer</a>
                             @endif
                         </td>
                         <td>
