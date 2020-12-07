@@ -59,10 +59,10 @@
                     @foreach ($requests as $item)
                         @if ($item->event_id == 1 && $item->ticket_id == Auth::user()->id)
                             <h1 class="m-2">Business-IT Case</h1>
-                            <a href="/user/downloadFile/cp/{{$teamid}}" class="btn btn-dark m-3">Downlaod PDF</a>
+                            <a href="/user/downloadFile/cp/{{$teamid}}" class="btn btn-dark m-3">download PDF</a>
                         @elseif ($item->event_id == 2 && $item->ticket_id == Auth::user()->id)
                             <h1 class="m-2">Mobile Apps Development</h1>
-                            <a href="/user/downloadFile/cp/{{$teamid}}" class="btn btn-dark m-3">Downlaod PDF</a>
+                            <a href="/user/downloadFile/cp/{{$teamid}}" class="btn btn-dark m-3">download PDF</a>
                         @endif
                     @endforeach
                 </div>
