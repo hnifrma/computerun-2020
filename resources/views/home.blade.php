@@ -356,7 +356,7 @@
 @endif
 <script>
     function setEventModalData(id, eventLink) {
-        document.getElementById("qrCanvas").innerHTML = "";
+        // document.getElementById("qrCanvas").innerHTML = "";
         document.getElementById("joinEvent").action = "/attendance/" + id;
         var link = document.getElementById("eventLink");
         link.href = link.innerHTML = eventLink;

@@ -18,7 +18,7 @@
                 <div class="notice">
                     <p class="h4 font-800">Your attendance has been recorded.</p>
                     <p>
-                        <b>IMPORTANT: Please take a screenshot of this card</b> as an evidence of your attendance.<br>
+                        <span class="h5"><b>IMPORTANT: Please take a screenshot of this card</b> as an evidence of your attendance.</span><br>
                         <ul>
                             <li><b>Attendance ID:</b> {{$attendance_id}}</li>
                             <li><b>Registration ID:</b> {{$registration_id}}</li>
@@ -26,7 +26,7 @@
                             <li><b>Account ID:</b> {{$account_id}}</li>
                             <li><b>Account Name:</b> {{$account_name}}</li>
                             <li><b>Attendance Type:</b> {{$attendance_type}}</li>
-                            <li><b>Attended at:</b> {{$attendance_timestamp}}</li>
+                            <li><b>Attended at:</b> {{$attendance_timestamp}} (WIB/ICT, UTC+7)</li>
                         </ul>
                     </p>
                     <a href="{{$url_link}}" target="_blank" class="button button-gradient">Continue to Zoom &gt;</a>

@@ -35,8 +35,8 @@ class NewAttendanceController extends Controller
     }
 
     private function handleAttendance($eventId, $user){
+        date_default_timezone_set('Asia/Jakarta');
         $eventSearch = DB::table('events')->where('id', $eventId)->get()[0];
-        $name = null;
 
         try {
             $isExit = true;
@@ -71,12 +71,12 @@ class NewAttendanceController extends Controller
                 'account_id' => $user->id,
                 'account_name' => $user->name,
                 'attendance_type' => $attendancePayload['type'],
-                'attendance_timestamp' => date_format($attendancePayload['time'],"Y-m-d H:i:s"),
+                'attendance_timestamp' => date_format($attendancePayload['timestamp'],"Y-m-d H:i:s"),
                 'event_name' => $eventSearch->name,
                 'url_link' => $eventSearch->url_link
             ];
     
-            return ($isExit) ? view("static.thankyou", $viewPayload) : view("static.webinar", $viewPayload);
+            return ($isExit) ? view("static.webinar-end", $viewPayload) : view("static.webinar-start", $viewPayload);
         } catch (Exception $e){
             Session::put('error', 'Attendance: No valid tickets found for this event.');
             return redirect('home');
