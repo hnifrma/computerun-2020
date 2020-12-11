@@ -103,11 +103,13 @@
                                     </a>
                                 @endif
                             @endforeach
+                            @if ($list->status < 2)
                             <a class="btn no-minimum-width margin-0" href="/pay/{{$list->payment_code}}">
                                 @component('components.bootstrap-icons', ['icon' => 'cloud-arrow-up', 'size' => 30])
                                 @endcomponent
                             </a>
-                            {{-- @if ($list->attendance_opened && $list->status >= 2)
+                            @endif
+                            @if ($list->attendance_opened && $list->status >= 2)
                                 @if ($list->attendance_is_exit)
                                     <a class="btn button no-minimum-width button-gradient button-small margin-0" data-toggle="modal" href="" data-target="#joinEvent" role="button" onClick="setEventModalData({{$list->event_id}},'{{$list->url_link}}')">Join Event</a>
                                 @else
@@ -119,7 +121,7 @@
                                         <button class="btn button no-minimum-width button-gradient button-small margin-0" action="submit">Join Event</button>
                                     </form>
                                 @endif
-                            @endif --}}
+                            @endif
                             
                         </td>
                     </tr>
@@ -314,28 +316,25 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">Join Event</h5>
+            <h5 class="modal-title">Exit Attendance</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
               <div class="card mb-3">
-                  <h5 class="card-header"><span class="badge badge-info">1</span> Enter the Event Token</h5>
                   <div class="card-body">
-                      <p>
-                          You will be given an <b>Event Token</b> during the event to record your attendance. Please enter the token below.
-                      </p>
+                      <p>Please enter the <b>Attendance Token</b> to record your attendance, as given during the event.</p>
+                      <p>Masukkan <b>Attendance Token</b> yang telah dibagikan panitia untuk mencatat kehadiran Anda.</p>
                       <div class="form-group">
-                          <label for="event-token">Event Token</label>
-                          <input type="tel" class="form-control" name="event-token" id="event-token">
+                          <input type="tel" class="form-control" name="event-token" id="event-token" placeholder="Attendance Token (e.g. 123456)">
                       </div>
                   </div>
               </div>
-          </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <div class="text-center">
+                <button type="submit" class="button btn button-gradient">Submit</button>
+                <!--button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button-->
+              </div>
           </div>
         </div>
       </div>
