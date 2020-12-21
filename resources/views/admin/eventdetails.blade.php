@@ -164,7 +164,7 @@
 
     <!-- Committees -->
     <h1 class="full-underline content-divider" id="committees">Committees</h1>
-    @if (count($teams) > 0)
+    @if (count($committees) > 0)
         <table class="table margin-0 content-divider-short">
             <thead>
                 <tr>
