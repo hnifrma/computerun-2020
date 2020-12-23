@@ -108,6 +108,24 @@ Route::get('/user/downloadFile/{type}/{paymentcode}/{fileid}', 'UserSettingsCont
 Route::get('/cp/{teamid}', 'UserSettingsController@competitionIndex');
 Route::post('/cp/{teamid}', 'UserSettingsController@competitionHandler');
 
+// Handle attendance
+Route::get('/attendance/{eventId}', ['uses' =>'NewAttendanceController@index']);
+Route::post('/attendance/{eventId}', ['uses' =>'NewAttendanceController@store']);
+// Route::get('/webinarTest', function () {
+//     $payload = [
+//         'attendance_id' => "1",
+//         'registration_id' => "2",
+//         'event_id' => "3",
+//         'account_id' => "4",
+//         'account_name' => "5",
+//         'attendance_type' => "6",
+//         'attendance_timestamp' => "7",
+//         'event_name' => "Lorem Ipsum",
+//         'url_link' => "https://gojek.com"
+//     ];
+//     return view('static.webinar-end', $payload);
+// });
+
 // User Dashboard
 Route::get('/home', 'HomeController@index')->name('dashboard.home');
 
