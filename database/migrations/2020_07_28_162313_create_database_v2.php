@@ -52,7 +52,7 @@ class CreateDatabaseV2 extends Migration
         if (!Schema::hasTable('events')) Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
             $table->text('name');
-            $table->text('location')->default('Online');
+            $table->text('location')->nullable();
             $table->dateTime('date', 0);
             $table->unsignedInteger('price')->default(0);
             $table->boolean('opened')->default(false);
@@ -64,6 +64,7 @@ class CreateDatabaseV2 extends Migration
             $table->unsignedInteger('slots')->default(1);
             $table->unsignedInteger('team_members')->default(0);
             $table->unsignedInteger('team_members_reserve')->default(0);
+            $table->integer('files')->default(0);
         });
         // Create 'teams' table
         if (!Schema::hasTable('teams')) Schema::create('teams', function (Blueprint $table) {

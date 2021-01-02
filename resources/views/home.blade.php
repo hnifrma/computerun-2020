@@ -28,7 +28,9 @@
     @endif
 
     <?php
-        $tickets = DB::table('registration')->where('ticket_id', Auth::user()->id)->get();
+        $tickets = DB::table('registration')
+            ->join("events", "events.id", "=", "registration.event_id")
+            ->where('registration.ticket_id', Auth::user()->id)->get();
         $events = DB::table('events')->orderBy('name', 'asc')->get();
         $events_original = DB::table('events')->orderBy('id', 'asc')->get();
         for ($i = 0; $i < count($tickets); $i++){
@@ -96,14 +98,14 @@
                         </td>
                         <td>
                             @foreach ($events as $item)
-                                @if ($item->attendance_opened == 1 && $list->event_id == $item->id && $list->status > 1)
+                                @if ($item->attendance_opened == 1 && $list->event_id == $item->id && $list->status > 1 && $list->event_id < 6)
                                     <a class="btn no-minimum-width margin-0" href="/cp/{{$list->team_id}}">
                                         @component('components.bootstrap-icons', ['icon' => 'journal-text', 'size' => 30])
                                         @endcomponent
                                     </a>
                                 @endif
                             @endforeach
-                            @if ($list->status < 2)
+                            @if ($list->status < 2 && $list->files != 0)
                             <a class="btn no-minimum-width margin-0" href="/pay/{{$list->payment_code}}">
                                 @component('components.bootstrap-icons', ['icon' => 'cloud-arrow-up', 'size' => 30])
                                 @endcomponent
@@ -111,7 +113,7 @@
                             @endif
                             @if ($list->attendance_opened && $list->status >= 2)
                                 @if ($list->attendance_is_exit)
-                                    <a class="btn button no-minimum-width button-gradient button-small margin-0" data-toggle="modal" href="" data-target="#joinEvent" role="button" onClick="setEventModalData({{$list->event_id}},'{{$list->url_link}}')">Join Event</a>
+                                    <a class="btn button no-minimum-width buttosn-gradient button-small margin-0" data-toggle="modal" href="" data-target="#joinEvent" role="button" onClick="setEventModalData({{$list->event_id}},'{{$list->url_link}}')">Join Event</a>
                                 @else
                                     <form action="/attendance/{{$list->event_id}}" method="POST">
                                         @csrf
@@ -332,7 +334,7 @@
                   </div>
               </div>
               <div class="text-center">
-                <button type="submit" class="button btn button-gradient">Submit</button>
+                <button type="submit" class="button btn button-gradient" >Submit</button>
                 <!--button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button-->
               </div>
           </div>
@@ -355,6 +357,7 @@
     ?>
 @endif
 <script>
+
     function setEventModalData(id, eventLink) {
         // document.getElementById("qrCanvas").innerHTML = "";
         document.getElementById("joinEvent").action = "/attendance/" + id;
@@ -537,7 +540,7 @@
         } else if (emails.length > emailSet.size){
             document.getElementById("submit-validation").innerHTML = '<div class="alert alert-danger">Error: No duplicate emails allowed.</div>';
         } else {
-            document.getElementById("submit-validation").innerHTML = '<div class="text-center"><b class="red-text">By registering to this competition, you agree to our rules and regulations.<br></b><button type="submit" class="button button-gradient content-divider-short">Submit</button></div>';
+            document.getElementById("submit-validation").innerHTML = `<div class="text-center"><b class="red-text">By registering to this competition, you agree to our rules and regulations.<br></b><button type="submit" class="button button-gradient content-divider-short" onclick="this.form.submit();this.setAttribute('disabled','disabled');">Submit</button></div>`;
         }
     }
 </script>
