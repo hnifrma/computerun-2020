@@ -33,6 +33,7 @@ class CreateDatabaseV2 extends Migration
             $table->text('id_mobile_legends')->nullable();
             $table->text('id_pubg_mobile')->nullable();
             $table->text('id_valorant')->nullable();
+            $table->text('major')->nullable();
         });
         // Create 'tickets' table
         // if (!Schema::hasTable('tickets')) Schema::create('tickets', function (Blueprint $table) {
@@ -91,10 +92,11 @@ class CreateDatabaseV2 extends Migration
         // Create 'attendance' table
         if (!Schema::hasTable('attendance')) Schema::create('attendance', function (Blueprint $table) {
             $table->increments('id');
-            $table->dateTime('timestamp');
+            $table->dateTime('entry_timestamp')->nullable();
+            $table->dateTime('exit_timestamp')->nullable();
             $table->unsignedInteger('registration_id');
             $table->foreign('registration_id')->references('id')->on('registration');
-            $table->text('type');
+            $table->text('remarks');
         });
         // Add ADMIN and Committee
         DB::table('universities')->insert(['name' => 'COMPUTERUN 2020 System Administrator']);

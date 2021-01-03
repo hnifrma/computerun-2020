@@ -30,16 +30,19 @@
     <?php
         $tickets = DB::table('registration')
             ->join("events", "events.id", "=", "registration.event_id")
-            ->where('registration.ticket_id', Auth::user()->id)->get();
+            ->where('registration.ticket_id', Auth::user()->id)
+            ->get();
         $events = DB::table('events')->orderBy('name', 'asc')->get();
-        $events_original = DB::table('events')->orderBy('id', 'asc')->get();
+//        $events_original = DB::table('events')->orderBy('id', 'asc')->get();
         for ($i = 0; $i < count($tickets); $i++){
-            $tickets[$i]->event_name = $events_original[$tickets[$i]->event_id - 1]->name;
-            $tickets[$i]->totp_key = $events_original[$tickets[$i]->event_id - 1]->totp_key;
-            $tickets[$i]->attendance_opened = $events_original[$tickets[$i]->event_id - 1]->attendance_opened;
-            $tickets[$i]->attendance_is_exit = $events_original[$tickets[$i]->event_id - 1]->attendance_is_exit;
-            $tickets[$i]->url_link = $events_original[$tickets[$i]->event_id - 1]->url_link;
+            $tickets[$i]->id = DB::table('registration')->where('registration.ticket_id', Auth::user()->id)->select('id')->first()->id;
+//            $tickets[$i]->event_name = $events_original[$tickets[$i]->event_id - 1]->name;
+//            $tickets[$i]->totp_key = $events_original[$tickets[$i]->event_id - 1]->totp_key;
+//            $tickets[$i]->attendance_opened = $events_original[$tickets[$i]->event_id - 1]->attendance_opened;
+//            $tickets[$i]->attendance_is_exit = $events_original[$tickets[$i]->event_id - 1]->attendance_is_exit;
+//            $tickets[$i]->url_link = $events_original[$tickets[$i]->event_id - 1]->url_link;
         }
+//        dd($tickets);
     ?>
     <!-- Your Tickets -->
     <h1 class="full-underline {{session('status') ? 'content-divider' : ''}}">Your Tickets</h1>
@@ -58,7 +61,7 @@
                     <tr>
                         <th scope="row">{{$list->id}}</th>
                         <td>
-                            <b>{{$list->event_name}}</b>
+                            <b>{{$list->name}}</b>
                             @if ($list->team_id != null && $list->team_id > 0)
                             <br>
                             <b>Team:</b> {{DB::table("teams")->where("id", $list->team_id)->first()->name}} ({{$list->team_id}})
@@ -91,10 +94,11 @@
                                 @default
                                     Unknown
                             @endswitch
-                             {{-- ({{$list->status}}) --}}
                              <br>
-                             <b>Payment Code:</b><br>
-                             {{$list->payment_code}}
+                             @if($list->event_id < 6)
+                                <b>Payment Code:</b><br>
+                                {{$list->payment_code}}
+                             @endif
                         </td>
                         <td>
                             @foreach ($events as $item)
@@ -105,26 +109,15 @@
                                     </a>
                                 @endif
                             @endforeach
-                            @if ($list->status < 2 && $list->files != 0)
+                            @if ($list->status < 2 && $list->files != 0 && $list->event_id < 6)
                             <a class="btn no-minimum-width margin-0" href="/pay/{{$list->payment_code}}">
                                 @component('components.bootstrap-icons', ['icon' => 'cloud-arrow-up', 'size' => 30])
                                 @endcomponent
                             </a>
                             @endif
                             @if ($list->attendance_opened && $list->status >= 2)
-                                @if ($list->attendance_is_exit)
-                                    <a class="btn button no-minimum-width buttosn-gradient button-small margin-0" data-toggle="modal" href="" data-target="#joinEvent" role="button" onClick="setEventModalData({{$list->event_id}},'{{$list->url_link}}')">Join Event</a>
-                                @else
-                                    <form action="/attendance/{{$list->event_id}}" method="POST">
-                                        @csrf
-                                        <input type="hidden" name="ticketnumber" value="{{Auth::user()->id}}">
-                                        <input type="hidden" name="nim" value="{{Auth::user()->nim}}">
-                                        <input type="hidden" name="event-token" value="{{$list->totp_key}}">
-                                        <button class="btn button no-minimum-width button-gradient button-small margin-0" action="submit">Join Event</button>
-                                    </form>
-                                @endif
+                                <a href="/attendance/{{ $list->event_id }}/{{ $list->id }}" class="btn button no-minimum-width button-gradient button-small margin-0">Join Event</a>
                             @endif
-                            
                         </td>
                     </tr>
                 @endforeach
@@ -137,52 +130,8 @@
         </div>
     @endif
     <div class="text-center">
-        <a class="btn button button-gradient" data-toggle="modal" href="#" data-target="#register" role="button">Register</a>
+        <a class="btn button button-gradient" data-toggle   ="modal" href="#" data-target="#register" role="button">Register</a>
     </div>
-
-    <!-- Your Teams -->
-    {{-- <h1 class="full-underline content-divider">Your Teams</h1>
-    @if (count($tickets) > 0))
-        <table class="table margin-0 content-divider-short">
-            <thead>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Event</th>
-                    <th scope="col">Score</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($tickets as $list)
-                    <tr>
-                        <th scope="row">{{$list->id}}</th>
-                        <td>{{$list->event_name}}</td>
-                        <td>{{$list->status}}</td>
-                        <td>
-                            @if ($list->attendance_opened && $list->status_code >= 2)
-                                @if ($list->attendance_is_exit)
-                                    <a class="btn button no-minimum-width button-gradient button-small margin-0" data-toggle="modal" href="" data-target="#joinEvent" role="button" onClick="setEventModalData({{$list->event_id}},'{{$list->url_link}}')">Join Event</a>
-                                @else
-                                    <form action="/attendance/{{$list->event_id}}" method="POST">
-                                        @csrf
-                                        <input type="hidden" name="ticketnumber" value="{{Auth::user()->id}}">
-                                        <input type="hidden" name="nim" value="{{Auth::user()->nim}}">
-                                        <input type="hidden" name="event-token" value="{{$list->totp_key}}">
-                                        <button class="btn button no-minimum-width button-gradient button-small margin-0" action="submit">Join Event</button>
-                                    </form>
-                                @endif
-                            @endif
-                        </td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-    @else
-        <div class="placeholder-sponsors content-divider-short text-center">
-            <h2 class="font-800">No Teams Found.</h2>
-            <p class="h5"><b>Teams are currently available for Business-IT and Mini E-Sport Competitions.</b> If you have registered for one or more, please wait until we approve your registration.</p>
-        </div>
-    @endif --}}
 </div>
 
 <!-- Profile Settings Form -->
@@ -311,35 +260,6 @@
         </div>
       </div>
     </div>
-</form>
-
-<form class="modal" tabindex="-1" role="dialog" id="joinEvent" action="" method="POST">
-    @csrf
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title">Exit Attendance</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-              <div class="card mb-3">
-                  <div class="card-body">
-                      <p>Please enter the <b>Attendance Token</b> to record your attendance, as given during the event.</p>
-                      <p>Masukkan <b>Attendance Token</b> yang telah dibagikan panitia untuk mencatat kehadiran Anda.</p>
-                      <div class="form-group">
-                          <input type="tel" class="form-control" name="event-token" id="event-token" placeholder="Attendance Token (e.g. 123456)">
-                      </div>
-                  </div>
-              </div>
-              <div class="text-center">
-                <button type="submit" class="button btn button-gradient" >Submit</button>
-                <!--button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button-->
-              </div>
-          </div>
-        </div>
-      </div>
 </form>
 
 <script src="/js/registration.js"></script>
@@ -540,7 +460,8 @@
         } else if (emails.length > emailSet.size){
             document.getElementById("submit-validation").innerHTML = '<div class="alert alert-danger">Error: No duplicate emails allowed.</div>';
         } else {
-            document.getElementById("submit-validation").innerHTML = `<div class="text-center"><b class="red-text">By registering to this competition, you agree to our rules and regulations.<br></b><button type="submit" class="button button-gradient content-divider-short" onclick="this.form.submit();this.setAttribute('disabled','disabled');">Submit</button></div>`;
+            document.getElementById("submit-validation").innerHTML = '<div class="alert alert-warning text-center">Untuk event webinar tidak perlu mengirimkan bukti transfer cukup mendaftar saja, apabila menerima email berisi instruksi untuk transfer abaikan saja.</div>';
+            document.getElementById("submit-validation").innerHTML += `<div class="text-center"><b class="red-text">By registering to this competition, you agree to our rules and regulations.<br></b><button type="submit" class="button button-gradient content-divider-short" onclick="this.form.submit();this.setAttribute('disabled','disabled');">Submit</button></div>`;
         }
     }
 </script>

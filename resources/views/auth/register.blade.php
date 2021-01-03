@@ -242,13 +242,17 @@
     function checkBinusian(){
         if (document.getElementById("university_id").value == 4){
             document.getElementById("nim-container").style.display = "flex";
+            document.getElementById("nim").setAttribute("required","true");
         } else {
             document.getElementById("nim-container").style.display = "none";
+            document.getElementById("nim").removeAttribute("required");
         }
         if (document.getElementById("university_id").value == 0){
             document.getElementById("new_university-container").style.display = "flex";
+            document.getElementById("new_university").setAttribute("required","true");
         } else {
             document.getElementById("new_university-container").style.display = "none";
+            document.getElementById("new_university").removeAttribute("required");
         }
     }
 </script>

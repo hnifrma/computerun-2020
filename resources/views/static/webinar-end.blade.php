@@ -12,7 +12,7 @@
             @endcomponent
             <div class="margin-2 text-center content-divider">
                 <h1 class="gradient-text display-2 font-800">THANK YOU!</h1>
-                <h3>for attending {{$event_name}}</h3>
+                <h3>for attending {{$event_name ?? ''}}</h3>
             </div>
             <div class="margin-2 content-divider">
                 <div class="notice">
@@ -20,13 +20,13 @@
                     <p>
                         <span class="h5"><b>IMPORTANT: Please take a screenshot of this card</b> as an evidence of your attendance.</span><br>
                         <ul>
-                            <li><b>Attendance ID:</b> {{$attendance_id}}</li>
-                            <li><b>Registration ID:</b> {{$registration_id}}</li>
-                            <li><b>Event ID:</b> {{$event_id}}</li>
-                            <li><b>Account ID:</b> {{$account_id}}</li>
-                            <li><b>Account Name:</b> {{$account_name}}</li>
-                            <li><b>Attendance Type:</b> {{$attendance_type}}</li>
-                            <li><b>Attended at:</b> {{$attendance_timestamp}} (WIB/ICT, UTC+7)</li>
+                            <li><b>Attendance ID:</b> {{$attendance_id ?? ''}}</li>
+                            <li><b>Registration ID:</b> {{$registration_id ?? ''}}</li>
+                            <li><b>Event ID:</b> {{$event_id ?? ''}}</li>
+                            <li><b>Account ID:</b> {{$account_id ?? ''}}</li>
+                            <li><b>Account Name:</b> {{$account_name ?? ''}}</li>
+                            <li><b>Attendance Type:</b> {{$attendance_type ?? ''}}</li>
+                            <li><b>Attended at:</b> {{$attendance_timestamp ?? ''}} (WIB/ICT, UTC+7)</li>
                         </ul>
                         Your <b>e-certificate</b> and <b>SAT points</b> may be delivered <b>after</b> the end of COMPUTERUN. Please make sure that your <b>Contact Details</b> are active to allow us to distribute the certificates.
                     </p>
@@ -48,7 +48,7 @@
     </body>
     <script src="/js/qrcode.min.js"></script>
     <script>
-        var payload = "{{$url_link}}";
+        var payload = "{{$url_link ?? ''}}";
         var qrcode = new QRCode(document.getElementById("qrcode", payload));
         qrcode.makeCode(payload);
     </script>
