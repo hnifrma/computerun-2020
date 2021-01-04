@@ -34,13 +34,9 @@
             ->get();
         $events = DB::table('events')->orderBy('name', 'asc')->get();
 //        $events_original = DB::table('events')->orderBy('id', 'asc')->get();
+        $id = DB::table('registration')->where('registration.ticket_id', Auth::user()->id)->select('id')->get();
         for ($i = 0; $i < count($tickets); $i++){
-            $tickets[$i]->id = DB::table('registration')->where('registration.ticket_id', Auth::user()->id)->select('id')->first()->id;
-//            $tickets[$i]->event_name = $events_original[$tickets[$i]->event_id - 1]->name;
-//            $tickets[$i]->totp_key = $events_original[$tickets[$i]->event_id - 1]->totp_key;
-//            $tickets[$i]->attendance_opened = $events_original[$tickets[$i]->event_id - 1]->attendance_opened;
-//            $tickets[$i]->attendance_is_exit = $events_original[$tickets[$i]->event_id - 1]->attendance_is_exit;
-//            $tickets[$i]->url_link = $events_original[$tickets[$i]->event_id - 1]->url_link;
+                $tickets[$i]->id = $id[$i]->id;
         }
 //        dd($tickets);
     ?>

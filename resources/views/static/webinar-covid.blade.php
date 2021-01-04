@@ -38,6 +38,7 @@
             <img class="container-clip" src="/img/backgrounds/5.png">
 {{--            <div class="after-container-clip"></div>--}}
             <h2 class="full-underline">Poster</h2>
+            <div class="margin-3 red-text"><b>PENDAFTARAN WEBNINAR DI PERPANJANG HINGGA HARI H</b></div>
             <div class="margin-3">
                 <img src="{{ asset('img/icons/poster-webinar.png') }}" style="width: 1200px;">
             </div>

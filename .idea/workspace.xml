@@ -28,28 +28,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d6d2690-ed5c-4dd0-bf9b-26a10c6c21df" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/img/icons/poster-webinar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/sponsors/cimb.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/sponsors/cimb.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/sponsors/dana.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/sponsors/dana.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/sponsors/tunaiku.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/sponsors/tunaiku.webp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/computerun-2020.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/computerun-2020.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/NewAttendanceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/NewAttendanceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/artisan" beforeDir="false" afterPath="$PROJECT_DIR$/artisan" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_28_162313_create_database_v2.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_28_162313_create_database_v2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/sponsors.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/sponsors.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/static/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/static/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/static/webinar-covid.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/static/webinar-covid.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/static/webinar-end.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/static/webinar-end.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/static/webinar-start.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/static/webinar-start.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,7 +215,8 @@
       <workItem from="1609573161178" duration="10621000" />
       <workItem from="1609604282810" duration="1462000" />
       <workItem from="1609647925341" duration="115000" />
-      <workItem from="1609648053300" duration="30869000" />
+      <workItem from="1609648053300" duration="31943000" />
+      <workItem from="1609730279553" duration="2580000" />
     </task>
     <task id="LOCAL-00001" summary="feat: add new feature for upload case answer">
       <created>1606827824272</created>
@@ -250,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609596883359</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: bismillah it's a fkin wrap :D">
+      <created>1609692959793</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1609692959793</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -272,6 +261,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="feat: add new feature for upload case answer" />
     <MESSAGE value="feat: add validation to registration event" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add validation to registration event" />
+    <MESSAGE value="feat: bismillah it's a fkin wrap :D" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: bismillah it's a fkin wrap :D" />
   </component>
 </project>
