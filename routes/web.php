@@ -50,15 +50,15 @@ Route::get('/valorant', function () {
 // Route::get('/webinar-bchain', function () {
 //     return view('static.webinar-bchain');
 // });
-Route::get('/webinar-covid', function () {
+Route::get('/webinar', function () {
     return view('static.webinar-covid');
 });
-Route::get('/webinar-digital', function () {
-    return view('static.webinar-digital');
-});
-Route::get('/webinar-mobile', function () {
-    return view('static.webinar-mobile');
-});
+//Route::get('/webinar-digital', function () {
+//    return view('static.webinar-digital');
+//});
+//Route::get('/webinar-mobile', function () {
+//    return view('static.webinar-mobile');
+//});
 
 Route::get('/contact', function () {
     return view('static.contact');
@@ -109,8 +109,12 @@ Route::get('/cp/{teamid}', 'UserSettingsController@competitionIndex');
 Route::post('/cp/{teamid}', 'UserSettingsController@competitionHandler');
 
 // Handle attendance
-Route::get('/attendance/{eventId}', ['uses' =>'NewAttendanceController@index']);
-Route::post('/attendance/{eventId}', ['uses' =>'NewAttendanceController@store']);
+Route::get('/attendance/{eventId}/{id}', 'NewAttendanceController@index');
+Route::post('/attendance/{eventId}/{id}', 'NewAttendanceController@store');
+
+// Handle attendance
+//Route::get('/attendance/{eventId}', ['uses' =>'NewAttendanceController@index']);
+//Route::post('/attendance/{eventId}', ['uses' =>'NewAttendanceController@store']);
 // Route::get('/webinarTest', function () {
 //     $payload = [
 //         'attendance_id' => "1",

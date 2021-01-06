@@ -11,6 +11,14 @@
         @component ('components.sponsor-item', ['id' => 'sandimas', 'name' => 'Sandimas Granite & Sanitary'])
         @endcomponent
     </div>
+    <div class="sponsors-container small">
+        @component ('components.sponsor-item', ['id' => 'dana', 'name' => 'Dana Indonesia'])
+        @endcomponent
+        @component ('components.sponsor-item', ['id' => 'cimb', 'name' => 'CIMB Niaga'])
+        @endcomponent
+        @component ('components.sponsor-item', ['id' => 'tunaiku', 'name' => 'Tunaiku'])
+        @endcomponent
+    </div>
     <p>Do you want to sponsor our event too? <b><a href="/sponsor-us">Run before it's too late!</a></b></p>
 </div>
 

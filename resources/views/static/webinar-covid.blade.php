@@ -11,10 +11,7 @@
             @component("components.navbar-mobile", ['template' => 'event-details'])
             @endcomponent
             <div class="margin-2 text-center content-divider">
-                <span class="h4 font-700">WEBINAR</span><br>
-
-                <!-- ini gua kasi style soalnya kalo pake P terlalu ke enter -->
-                <p style="margin-top: .5rem;" class="h1 font-800 gradient-text">How business can survive the COVID 19 pandemic</p>
+                <span class="h1 font-700">WEBINAR</span><br>
             </div>
         </div>
         <div class="container-1">
@@ -29,64 +26,43 @@
                 </div>
                 <div>
                     <p class="h5" style="margin-top: 5rem;">
-                        Webinar atau sesi seminar daring COMPUTERUN tahun ini mengangkat tema <i>How business can survive the COVID 19 pandemic</i> untuk menambah pengetahuan dan berbagai pengalaman baru tentang <i>Technology in Business</i> kepada peserta.
+                        Webinar atau sesi seminar daring COMPUTERUN tahun ini mengangkat tema <i>How business can survive the COVID 19 pandemic</i>, Preparing to be a Professional Workforce in Industry 4.0, and How mobile apps can meet and even exceed user's expectation.
                     </p>
                     <p class="h5">
                         Webinar ini akan diselenggarakan pada saat <i>Closing Ceremony</i> COMPUTERUN 2020.
                     </p>
                 </div>
             </div>
-            <div class="with-computerun-background">
-                <h1>speakers</h1>
-            </div>
         </div>
         <div class="container-0">
             <img class="container-clip" src="/img/backgrounds/5.png">
-            <div class="icons-container items-3 after-container-clip">
-            <div>
-                    <img src="/img/icons/Speaker 1 unnamed.png"><br>
-                    <span class="h4">Coming Soon</span><br>
-                    <span class="h6">CEO of Company Inc.</span><br>
-                    <p class="font-400 margin-2">
-                        <u>Coming Soon</u>
-                    </p>
-                </div>
-                <div>
-                    <img src="/img/icons/Speaker 1 unnamed.png"><br>
-                    <span class="h4">Coming Soon</span><br>
-                    <span class="h6">CEO of Company Inc.</span><br>
-                    <p class="font-400 margin-2">
-                        <u>Coming Soon</u>
-                    </p>
-                </div>
-                <div>
-                    <img src="/img/icons/Speaker 1 unnamed.png"><br>
-                    <span class="h4">Coming Soon</span><br>
-                    <span class="h6">CEO of Company Inc.</span><br>
-                    <p class="font-400 margin-2">
-                        <u>Coming Soon</u>
-                    </p>
-                </div>
-
+{{--            <div class="after-container-clip"></div>--}}
+            <h2 class="full-underline">Poster</h2>
+            <div class="margin-3 red-text"><b>PENDAFTARAN WEBNINAR DI PERPANJANG HINGGA HARI H</b></div>
+            <div class="margin-3">
+                <img src="{{ asset('img/icons/poster-webinar.png') }}" style="width: 1200px;">
             </div>
-            <!-- <h1 class="full-underline after-icons-container">general FAQ</h1>
-            <div class="margin-2 h5">
-                <p>Q: Bagaimana cara untuk mengikuti kompetisi yang diadakan?<br>
-                    <b>A: Setelah mengunjungi web <i><a href="/">www.computerun.id</a></i>, kamu dapat memilih menu "Register" yang terdapat di setiap laman cabang kompetisi yang ingin kamu ikuti.</b>
-                </p>
-                <p>Q: Apakah saya bisa mendaftar untuk 2-3 kompetisi sekaligus?<br>
-                    <b>A: Ya, tentu saja. Asalkan kamu tetap memenuhi persyaratan yang ada.</b>
-                </p>
-                <p>Q: Apa saja persyaratan yang dibutuhkan untuk mengikuti kompetisi Computerun?<br>
-                    <b>A: Silahkan unduh panduan syarat dan ketentuan kompetisi Computerun <a href="#">di sini</a>.</b>
-                </p>
-                <p>Q: Keuntungan apa yang akan saya dapatkan apabila mengikuti kompetisi Computerun?<br>
-                    <b>A: Partisipan akan mendapatkan e-sertifikat dan menambah pengalaman berkompetisi berskala nasional.</b>
-                </p>
-                <p>Q: Setelah mendaftar bagaimana saya mendapatkan informasi lebih lanjut untuk kompetisi?<br>
-                    <b>A: Setelah mendaftar, kamu akan menerima e-mail resmi dari Computerun dan akan mendapat seluruh informasi mengenai kompetisi melalui e-mail.</b>
-                </p>
-            </div> -->
+            <h2 class="full-underline content-divider">How to Regist?</h2>
+            <div class="margin-3">
+                <ol class="text-center">
+                    <li>
+                        Make an account or log-in on <a href="https://computerun.id/">computerun.id</a>.
+                    </li>
+                    <li>
+                        Click register button.
+                    </li>
+                    <li>
+                        Choose the desired event.
+                    </li>
+                    <li>
+                        Click submit button.
+                    </li>
+                    <li>
+                        Wait for the ticket to be approved.
+                    </li>
+                </ol>
+            </div>
+            <div class="content-divider"></div>
             @component ('components.sponsors')
             @endcomponent
             <img class="container-clip for-footer" src="/img/backgrounds/7.png">

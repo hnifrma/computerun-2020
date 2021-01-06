@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -25,15 +28,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8d6d2690-ed5c-4dd0-bf9b-26a10c6c21df" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/computerun-2020.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/computerun-2020.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserSettingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserSettingsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/account/competition.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/account/competition.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/account/payment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/account/payment.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/eventdetails.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/eventdetails.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/static/webinar-covid.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/static/webinar-covid.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +43,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -115,7 +120,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
-      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
@@ -155,19 +159,32 @@
       <path value="$PROJECT_DIR$/vendor/scrivo/highlight.php" />
       <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
       <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
     </include_path>
   </component>
   <component name="ProjectId" id="1kKxY6y22ONwe6E4UJjR1zCcmHb" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="discord-application" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunAnythingCache">
@@ -192,8 +209,37 @@
       <workItem from="1605463130190" duration="4970000" />
       <workItem from="1605509568985" duration="536000" />
       <workItem from="1605521274590" duration="3834000" />
-      <workItem from="1606823141534" duration="4443000" />
+      <workItem from="1606823141534" duration="4835000" />
+      <workItem from="1608716728530" duration="378000" />
+      <workItem from="1609571042604" duration="260000" />
+      <workItem from="1609573161178" duration="10621000" />
+      <workItem from="1609604282810" duration="1462000" />
+      <workItem from="1609647925341" duration="115000" />
+      <workItem from="1609648053300" duration="31943000" />
+      <workItem from="1609730279553" duration="2580000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: add new feature for upload case answer">
+      <created>1606827824272</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1606827824272</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feat: add validation to registration event">
+      <created>1609596883359</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1609596883359</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat: bismillah it's a fkin wrap :D">
+      <created>1609692959793</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1609692959793</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,30 +257,11 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
-  <component name="WindowStateProjectService">
-    <state width="1398" height="240" key="GridCell.Tab.0.bottom" timestamp="1605468343704">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1398" height="240" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1605468343704" />
-    <state width="1398" height="240" key="GridCell.Tab.0.center" timestamp="1605468343703">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1398" height="240" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1605468343703" />
-    <state width="1398" height="240" key="GridCell.Tab.0.left" timestamp="1605468343701">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1398" height="240" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1605468343701" />
-    <state width="1398" height="240" key="GridCell.Tab.0.right" timestamp="1605468343704">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state width="1398" height="240" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1605468343704" />
-    <state x="385" y="210" key="run.anything.popup" timestamp="1605464879582">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="385" y="210" key="run.anything.popup/0.0.1440.900@0.0.1440.900" timestamp="1605464879582" />
-    <state x="385" y="196" key="search.everywhere.popup" timestamp="1605666143351">
-      <screen x="0" y="0" width="1440" height="900" />
-    </state>
-    <state x="385" y="196" key="search.everywhere.popup/0.0.1440.900@0.0.1440.900" timestamp="1605666143351" />
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="feat: add new feature for upload case answer" />
+    <MESSAGE value="feat: add validation to registration event" />
+    <MESSAGE value="feat: bismillah it's a fkin wrap :D" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: bismillah it's a fkin wrap :D" />
   </component>
 </project>
