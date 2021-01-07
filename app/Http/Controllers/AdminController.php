@@ -257,7 +257,7 @@ class AdminController extends Controller
 
         DB::table('registration')->whereRaw("id IN (" . $registration_id_list . ")")->update(["remarks" => "EMAIL SENT!"]);
 
-        Session::put('status', 'Sent email to ' . $i . ' participants:' . $email_list);
+        Session::put('status', 'Sent email to ' . ($i - $j) . ' participants:' . $email_list);
         return redirect('login');
     }
 }
