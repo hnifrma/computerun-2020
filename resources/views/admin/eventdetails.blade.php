@@ -186,6 +186,9 @@
                             @if ($list->nim != null && $list->nim != '')
                                 <br><b>NIM:</b> {{$list->nim}}
                             @endif
+                            @if ($list->remarks != null && $list->remarks != '')
+                                <br>{{$list->remarks}}
+                            @endif
                         </td>
                         <td>
                             @switch ($list->status)
