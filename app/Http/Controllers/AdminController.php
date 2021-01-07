@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SendZoomReminder;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\{Auth, DB, Session};
+use Illuminate\Support\Facades\{Auth, DB, Mail, Session};
 use Illuminate\Support\Str;
 
 class AdminController extends Controller
@@ -205,5 +206,59 @@ class AdminController extends Controller
                 return redirect('home');
             }
         }
+    }
+
+    // Module to send email to participants
+
+    public function sendZoomEmail(Request $request){
+        // Make sure that it's an Admin (Higher Level)
+        if (!Auth::check() || (Auth::user()->university_id != 2)){
+            Session::put('error', 'Admin: Not Authorized');
+            return redirect('login');
+        }
+
+        // Do a SELECT query across multiple tables
+        // $main_query = DB::table('registration')
+        //     ->selectRaw('registration.id AS \'registration_id\', registration.ticket_id, registration.event_id, events.name AS \'event_name\', DATE(events.date) AS \'event_date\', TIME(events.date) AS \'event_time\', users.name AS \'user_name\', users.email AS \'email\', registration.remarks AS \'remarks\'')
+        //     ->join('users','users.id','=','registration.ticket_id')
+        //     ->join('events','events.id','=','registration.event_id')
+        //     ->whereRaw('registration.event_id >= 8 AND registration.event_id <= 10 AND registration.status != 1 AND registration.remarks != \'EMAIL SENT!\'')
+        //     ->orderBy('event_date', 'ASC')
+        //     ->get();
+        $main_query = DB::select("SELECT registration.id AS 'registration_id', registration.ticket_id, registration.event_id, events.name AS 'event_name', DATE(events.date) AS 'event_date', TIME(events.date) AS 'event_time', users.name AS 'user_name', users.email AS 'email', registration.remarks AS 'remarks' FROM registration JOIN users ON users.id = registration.ticket_id JOIN events ON events.id = registration.event_id WHERE registration.event_id >= 8 AND registration.event_id <= 10 AND registration.status != 1 ORDER BY event_date ASC");
+
+        // Make sure that the query non-empty results
+        if (count($main_query) == 0){
+            Session::put('error', 'Admin: No more emails to send');
+            return redirect('login');
+        }
+
+        // Send emails to first 10 emails
+        $email_list = "";
+        $registration_id_list =  "";
+        $j = 0; // Correction
+        for ($i = 0; ($i - $j) < 10 && $i < count($main_query); $i++){
+            // Send Email
+            if ($main_query[$i]->remarks == "EMAIL SENT!"){
+                $j++;
+                continue;
+            }
+            Mail::to($main_query[$i]->email)->send(new SendZoomReminder(json_decode(json_encode($main_query[$i]), true)));
+            $email_list .= " " . $main_query[$i]->email;
+            DB::table('registration')->where("id", $main_query[$i]->id)->update(["remarks" => "EMAIL SENT!"]);
+            $registration_id_list .= $main_query[$i]->registration_id;
+            if ($i + 1 < 10 && $i + 1 < count($main_query)) $registration_id_list .= ", ";
+        }
+
+        // Make sure that the query non-empty results, again
+        if ($registration_id_list == ''){
+            Session::put('error', 'Admin: No more emails to send');
+            return redirect('login');
+        }
+
+        // DB::table('registration')->whereRaw("id IN (" . $registration_id_list . ")")->update(["remarks" => "EMAIL SENT!"]);
+
+        Session::put('status', 'Sent email to ' . ($i - $j) . ' participants:' . $email_list);
+        return redirect('login');
     }
 }
