@@ -1,16 +1,26 @@
 @component('mail::message')
-Hello **{{$data["name"]}}**,
-Thank you for registering to our COMPUTERUN 2020 webinar, **{{$data["event_name"]}}**!
 
-We would like to remind you that the event will start via Zoom. If you haven't installed Zoom yet, please install them first from https://zoom.us/download (under "Zoom Client for Meetings").
+Hi **{{$data["name"]}}**,
 
-On {{$data["event_date"]}}, you will be able to obtain the Zoom meeting link via our website at https://computerun.id. Sign in to your account (as used to register for this webinar), then click on the **Join Event** button next to the chosen webinar. **We recommend you to join at least 15 minutes before the start of the event** to avoid network traffic congestions on our website.
+Wish you have a good day!
 
-We would also like to request you to download and use our provided virtual background [here](https://computerun.id/docs/Virtual%20Background%20Peserta.jpg) (or as attached below) throughout the webinar, especially during the documentation section. And finally, please respect and follow the webinar rules and guidelines, which will be detailed at the start of the event.
+Thank you for your interest to join Webinar Computerun 2020. We have a great event planned and know that you will receive much informative knowledge through the webinar.
 
-<img src="https://computerun.id/docs/Virtual%20Background%20Peserta.jpg" alt="File can be found on https://computerun.id/docs/Virtual%20Background%20Peserta.jpg">
+This email is just a friendly reminder about our upcoming webinar **{{$data["event_name"]}}**, which will be held on:
 
-If you think this is a mistake, please let us know by replying to this message. Thank you for your attention.
+Date : {{$data["event_date"]}}
+Time : {{$data["event_time"]}} 
+
+Make sure to attend on time and don't forget to use the virtual background for participants, which you can download on https://tinyurl.com/VBPeserta.
+
+The zoom link can be found on the profile page in your tickets section.
+
+Thank you and see you at the event!
+
+@component('mail::panel')
+### Important
+If you haven't installed Zoom yet, please install them first from https://zoom.us/download (under "Zoom Client for Meetings").
+@endcomponent
 
 Sincerely,
 COMPUTERUN 2020.
