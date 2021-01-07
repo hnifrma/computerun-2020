@@ -236,7 +236,7 @@ class AdminController extends Controller
         DB::table('registration')
             ->where('id',$registration_id)
             ->update([
-                'remarks'=>'SENT MAIL!'
+                'remarks'=>'EMAIL SENT!'
             ]);
 
         return back()->with('status','success sent the email');
