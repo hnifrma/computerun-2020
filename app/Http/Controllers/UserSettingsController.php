@@ -325,7 +325,7 @@ class UserSettingsController extends Controller
         }
 
         // Send Email for Payment
-        Mail::to(Auth::user()->email)->send(new SendInvoice(["name" => Auth::user()->name, "event_name" => $event->name, "payment_code" => $payment_code, "total_price" => $event->price * $slots]));
+        if($event->price > 0) Mail::to(Auth::user()->email)->send(new SendInvoice(["name" => Auth::user()->name, "event_name" => $event->name, "payment_code" => $payment_code, "total_price" => $event->price * $slots]));
 
         // Return Response
         $request->session()->put('status', "Your registration request has been sent. Please check your email for payment instructions.");

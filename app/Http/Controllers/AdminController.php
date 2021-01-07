@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SendZoomReminder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\{Auth, DB, Session};
 use Illuminate\Support\Str;
@@ -205,5 +206,41 @@ class AdminController extends Controller
                 return redirect('home');
             }
         }
+    }
+
+    // Module to send email to participants
+
+    public function sendZoomEmail(Request $request){
+        // Make sure that it's an Admin (Higher Level)
+        if (!Auth::check() || (Auth::user()->university_id != 2)){
+            Session::put('error', 'Admin: Not Authorized');
+            return redirect('login');
+        }
+
+        // Do a SELECT query across multiple tables
+        $main_query = DB::table('registration')
+            ->selectRaw('registration.id AS \'registration_id\', ticket_id, event_id, events.name AS \'event_name\', DATE(events.date) AS \'event_date\', TIME(events.date) AS \'event_time\', users.name AS \'user_name\', users.email AS \'email\', users.remarks AS \'remarks\'')
+            ->leftjoin('users','users.id','=','registration.ticket_id')
+            ->leftjoin('events','events.id','=','registration.event_id')
+            ->whereRaw('events.id IN (8, 9, 10) AND registration.remarks NOT LIKE \'%EMAIL SENT!%\'')
+            ->orderBy('event_date', 'ASC')
+            ->get();
+        
+        // Make sure that the query non-empty results
+        if (!$main_query){
+            Session::put('error', 'Admin: No more emails to send');
+            return redirect('login');
+        }
+
+        // Send emails to first 10 emails
+        $email_list = "";
+        for ($i = 0; $i < 10 && $i < count($main_query); $i++){
+            // Send Email
+            Mail::to($main_query[$i]->email)->send(new SendZoomReminder($main_query[$i]));
+            $email_list .= " " . $main_query[$i]->email;
+        }
+
+        Session::put('status', 'Sent email to ' . ($i + 1) . ' participants:' . $email_list);
+        return redirect('login');
     }
 }
