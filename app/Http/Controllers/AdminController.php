@@ -237,7 +237,7 @@ class AdminController extends Controller
         $email_list = "";
         $registration_id_list =  "";
         $j = 0; // Correction
-        for ($i = 0; $i < 10 + $j && $i < count($main_query); $i++){
+        for ($i = 0; ($i - $j) < 10 && $i < count($main_query); $i++){
             // Send Email
             if ($main_query[$i]->remarks == "EMAIL SENT!"){
                 $j++;
@@ -245,6 +245,7 @@ class AdminController extends Controller
             }
             Mail::to($main_query[$i]->email)->send(new SendZoomReminder(json_decode(json_encode($main_query[$i]), true)));
             $email_list .= " " . $main_query[$i]->email;
+            DB::table('registration')->where("id", $main_query[$i]->id)->update(["remarks" => "EMAIL SENT!"]);
             $registration_id_list .= $main_query[$i]->registration_id;
             if ($i + 1 < 10 && $i + 1 < count($main_query)) $registration_id_list .= ", ";
         }
@@ -255,7 +256,7 @@ class AdminController extends Controller
             return redirect('login');
         }
 
-        DB::table('registration')->whereRaw("id IN (" . $registration_id_list . ")")->update(["remarks" => "EMAIL SENT!"]);
+        // DB::table('registration')->whereRaw("id IN (" . $registration_id_list . ")")->update(["remarks" => "EMAIL SENT!"]);
 
         Session::put('status', 'Sent email to ' . ($i - $j) . ' participants:' . $email_list);
         return redirect('login');
