@@ -1,6 +1,6 @@
 @component('mail::message')
 
-Hi **{{$data["name"]}}**,
+Hi **{{$data["user_name"]}}**,
 
 Wish you have a good day!
 
@@ -8,8 +8,8 @@ Thank you for your interest to join Webinar Computerun 2020. We have a great eve
 
 This email is just a friendly reminder about our upcoming webinar **{{$data["event_name"]}}**, which will be held on:
 
-Date : {{$data["event_date"]}}
-Time : {{$data["event_time"]}} 
++ **Date:** {{$data["event_date"]}}
++ **Time:** {{$data["event_time"]}} 
 
 Make sure to attend on time and don't forget to use the virtual background for participants, which you can download on https://tinyurl.com/VBPeserta.
 

@@ -144,4 +144,4 @@ Route::get('/admin/event/{event_id}', 'AdminController@getEventParticipants');
 Route::post('/admin/event/{event_id}', 'AdminController@postEventParticipants');
 Route::get('/admin/users', 'AdminController@getAllUsers');
 Route::post('/admin/users', 'AdminController@postAllUsers');
-Route::post('/admin/sendZoomEmail', 'AdminController@sendEmail');
+Route::get('/admin/sendZoomEmail', 'AdminController@sendZoomEmail');

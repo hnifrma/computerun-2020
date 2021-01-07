@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class ZoomReminder extends Mailable
+class SendZoomReminder extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -21,7 +21,7 @@ class ZoomReminder extends Mailable
     public function __construct($data)
     {
         $this->data = $data;
-        $this->subject('Reminder for \"' . $data["event_name"] . '\" webinar on COMPUTERUN 2020');
+        $this->subject('Reminder for "' . $data["event_name"] . '" webinar on COMPUTERUN 2020');
     }
 
     /**
@@ -31,6 +31,6 @@ class ZoomReminder extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.zoomreminder');
+        return $this->markdown('emails.zoomreminder');
     }
 }
