@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SendZoomReminder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\{Auth, DB, Session};
 use Illuminate\Support\Str;
@@ -235,7 +236,7 @@ class AdminController extends Controller
         $email_list = "";
         for ($i = 0; $i < 10 && $i < count($main_query); $i++){
             // Send Email
-            Mail::to($main_query[$i]->email)->send(new SendNewTeamNotification($main_query[$i]));
+            Mail::to($main_query[$i]->email)->send(new SendZoomReminder($main_query[$i]));
             $email_list .= " " . $main_query[$i]->email;
         }
 
